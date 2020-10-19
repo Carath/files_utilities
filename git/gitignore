@@ -1,0 +1,4 @@
+# Name this file .gitignore, and place it next to the .git directory.
+*.o
+*.a
+exec

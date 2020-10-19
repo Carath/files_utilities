@@ -1,0 +1,14 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"theme": "Default.sublime-theme",
+	"font_size": 10,
+	"ui_scale": 1.5,
+	"shift_tab_unindent": true
+}
+// "highlight_modified_tabs": true,
+// "enable_tab_scrolling": false,
+// "preview_on_click": false,
