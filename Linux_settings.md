@@ -187,8 +187,9 @@ numlockx on
 // For vid files infos:
 sudo apt-get install mediainfo
 
-// For CPU infos:
-nano /proc/cpuinfo
+# Pre-installed text editors:
+
+vi, vim, or nano.
 
 # OS things
 
