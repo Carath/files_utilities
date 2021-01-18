@@ -212,3 +212,8 @@ sudo reboot
 sudo ufw status verbose
 sudo ufw enable
 sudo ufw disable
+
+# Additional packages to install:
+
+sudo apt install bash-completion
+sudo apt install glogg

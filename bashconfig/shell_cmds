@@ -1,0 +1,5 @@
+find <dirname> -iname <filename>
+>
+>>
+whereis
+grep -ir 'something' .
