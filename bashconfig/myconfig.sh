@@ -31,19 +31,21 @@ if [ -f /etc/profile.d/bash_completion.sh ]; then
 	source /etc/profile.d/bash_completion.sh
 fi
 
+alias l='ls -CF --color=auto'
 alias ls='ls --color=auto'
-alias ll='ls -alF --color=auto'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='ls -l --color=auto'
+alias la='ls -al --color=auto'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+alias vi='vim'
 alias cl='clear'
 alias py='python3'
-alias compose='docker-compose up -d'
+alias opendir='xdg-open'
+alias compose='sudo docker-compose up -d'
+alias dockerrestart='sudo systemctl restart docker'
 alias proj='cd ~/Documents/PROJECTS/'
 alias cheat='cd ~/Documents/PROJECTS/files_utilities/'
 alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
-alias opendir='xdg-open'

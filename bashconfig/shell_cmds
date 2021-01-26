@@ -3,3 +3,7 @@ find <dirname> -iname <filename>
 >>
 whereis
 grep -ir 'something' .
+
+package chntpw -> remove windows account password.
+sudo netstat -nlpt | grep 3306
+
