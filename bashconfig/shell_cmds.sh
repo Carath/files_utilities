@@ -15,3 +15,5 @@ du -h <dir>
 
 sudo vi /etc/apt/sources.list.d/additional-repositories.list
 dpkg --list
+
+history 50 | grep commandUsed
