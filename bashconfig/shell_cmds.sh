@@ -13,3 +13,5 @@ sed -i 's/Andrew/James/g' /home/some_file.txt
 df -h
 du -h <dir>
 
+sudo vi /etc/apt/sources.list.d/additional-repositories.list
+dpkg --list
