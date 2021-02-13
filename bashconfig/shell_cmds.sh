@@ -17,3 +17,7 @@ sudo vi /etc/apt/sources.list.d/additional-repositories.list
 dpkg --list
 
 history 50 | grep commandUsed
+
+# Removing untagged docker images:
+sudo docker rmi -f $(sudo docker images -aq --filter "dangling=true" --no-trunc)
+
