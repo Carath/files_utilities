@@ -50,3 +50,5 @@ alias dockerrestart='sudo systemctl restart docker'
 alias proj='cd ~/Documents/PROJECTS/'
 alias cheat='cd ~/git_folder/files_utilities/'
 alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
+alias cleanimages='sudo docker rmi -f $(sudo docker images -aq --filter "dangling=true" --no-trunc)'
+
