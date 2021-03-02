@@ -45,6 +45,8 @@ pref("full-screen-api.warning.timeout", 300);
 pref("general.smoothScroll.mouseWheel", false);
 pref("general.smoothScroll.mouseWheel.migrationPercent", 0);
 pref("general.warnOnAboutConfig", false);
+pref("layout.css.devPixelsPerPx", 1.4);
 pref("lightweightThemes.usedThemes", []);
+pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
 pref("pref.downloads.disable_button.edit_actions", false);
 pref("services.sync.tabs.lastSync", 0);
