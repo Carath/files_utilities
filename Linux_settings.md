@@ -99,7 +99,9 @@ See in the vlc/ directory.
 
 ## Other things:
 
-timedatectl set-local-rtc 1 // Tells your Ubuntu system that the hardware clock is set to 'local' time.
+Tells your Ubuntu system that the hardware clock is set to 'local' time:
+
+``` timedatectl set-local-rtc 1 ```
 
 In wired network settings:
 - Disable IPv6
@@ -107,9 +109,7 @@ In wired network settings:
 
 Install latest Nvidia graphic drivers.
 
-// BUGGED (?)
-
-// Getting rid of Num Lock crap:
+Getting rid of Num Lock crap: [BUGGED?]
 sudo apt install numlockx // Allows to have Num Lock On on startup, after turning on the option in Login Window.
 // create 2 startup commands with the following lines:
 xmodmap -e 'keycode 77='
