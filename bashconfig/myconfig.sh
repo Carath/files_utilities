@@ -12,7 +12,7 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 export JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64'
 export M2_HOME='/opt/apache-maven-3.6.3'
 export M2=$M2_HOME/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/mypc/OpenBLAS/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/OpenBLAS/lib/
 
 PATH=
 PATH=$PATH:/usr/bin
@@ -37,7 +37,7 @@ fi
 alias l='ls -CF --color=auto'
 alias ls='ls --color=auto'
 alias ll='ls -lh --color=auto'
-alias la='ls -alh --color=auto'
+alias la='ls -Alh --color=auto'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
