@@ -146,3 +146,27 @@ sudo reboot
 sudo ufw status verbose
 sudo ufw enable
 sudo ufw disable
+
+
+## youtube-dl
+
+* Installation:
+
+```
+sudo apt install ffmpeg # for youtube-dl to mix the best quality possible.
+sudo -H pip3 install --upgrade youtube-dl
+```
+
+* Usage:
+
+- List all available versions:
+
+```
+youtube-dl -F https://www.youtube.com/watch?v=DM_OWuIvPeo
+```
+
+- Download the best found version:
+
+```
+youtube-dl https://www.youtube.com/watch?v=DM_OWuIvPeo
+```
