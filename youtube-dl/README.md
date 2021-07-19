@@ -38,3 +38,15 @@ youtube-dl https://www.youtube.com/watch?v=DM_OWuIvPeo
 ```
 youtube-dl -f mp4 https://www.youtube.com/watch?v=DM_OWuIvPeo
 ```
+
+- Get only the audio part:
+
+```
+youtube-dl -x https://www.youtube.com/watch?v=DM_OWuIvPeo
+```
+
+- Same, by choosing the format:
+
+```
+youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=DM_OWuIvPeo
+```

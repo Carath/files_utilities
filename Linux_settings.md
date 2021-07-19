@@ -21,7 +21,7 @@ sudo apt install libc6-dev git cmake clang g++ gfortran
 sudo apt install gdb valgrind manpages-dev glibc-doc cppman
 
 # Graphic libraries:
-sudo apt install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev
+sudo apt install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
 
 # Other utilities:
 sudo apt install bash-completion gparted screenfetch mediainfo glogg chntpw
