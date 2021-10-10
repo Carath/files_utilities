@@ -47,11 +47,14 @@ alias vi='vim'
 alias cl='clear'
 alias py='python3'
 alias opendir='gio open'
+
+# Docker:
 alias dc='sudo docker-compose'
 alias composeup='sudo docker-compose up -d'
 alias dockerrestart='sudo systemctl restart docker'
-alias proj='cd ~/Documents/PROJECTS/'
+alias cleanimages='sudo docker rmi -f $(sudo docker images -aq --filter "dangling=true" --no-trunc)'
+alias dockershow='sudo docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}"'
+
 alias cheat='cd ~/git/files_utilities/'
 alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
-alias cleanimages='sudo docker rmi -f $(sudo docker images -aq --filter "dangling=true" --no-trunc)'
-
+alias classify='hwrt serve'

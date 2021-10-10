@@ -9,7 +9,13 @@
 - For youtube-dl to mix the best quality possible:
 
 ```
-sudo apt install ffmpeg
+sudo apt-get install ffmpeg
+```
+
+- For youtube-dl to be able to change mpeg4 metadata, e.g thumbnails:
+
+```
+sudo apt-get install atomicparsley
 ```
 
 - The program:
@@ -49,4 +55,10 @@ youtube-dl -x https://www.youtube.com/watch?v=DM_OWuIvPeo
 
 ```
 youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=DM_OWuIvPeo
+```
+
+- Audio only, with a thumbnail. This may require to get the mp3 format:
+
+```
+youtube-dl -x --embed-thumbnail https://www.youtube.com/watch?v=DM_OWuIvPeo
 ```

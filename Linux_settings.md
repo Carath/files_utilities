@@ -15,7 +15,7 @@ Go to System Settings > Font Selection > Text scaling factor := 1.4
 
 ```sh
 # Compilers and various dev things:
-sudo apt install libc6-dev git cmake clang g++ gfortran
+sudo apt install libc6-dev git gitk cmake clang g++ gfortran
 
 # Doc and debugging:
 sudo apt install gdb valgrind manpages-dev glibc-doc cppman
@@ -24,7 +24,7 @@ sudo apt install gdb valgrind manpages-dev glibc-doc cppman
 sudo apt install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
 
 # Other utilities:
-sudo apt install bash-completion gparted screenfetch mediainfo glogg chntpw
+sudo apt install bash-completion gparted screenfetch mediainfo htop glogg chntpw
 ```
 
 To check on the list of all installed packages:
