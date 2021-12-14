@@ -57,8 +57,14 @@ youtube-dl -x https://www.youtube.com/watch?v=DM_OWuIvPeo
 youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=DM_OWuIvPeo
 ```
 
-- Audio only, with a thumbnail. This may require to get the mp3 format:
+- Audio only, with a thumbnail. This often requires to get the mp3 format:
 
 ```
-youtube-dl -x --embed-thumbnail https://www.youtube.com/watch?v=DM_OWuIvPeo
+youtube-dl -x --embed-thumbnail --audio-format mp3 https://www.youtube.com/watch?v=DM_OWuIvPeo
+```
+
+- Getting 3 minutes of a video, starting from the first minute:
+
+```
+youtube-dl https://www.youtube.com/watch?v=DM_OWuIvPeo --external-downloader ffmpeg --external-downloader-args "-ss 00:01:00.00 -t 00:03:00.00"
 ```
