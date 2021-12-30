@@ -24,6 +24,12 @@ sudo apt-get install atomicparsley
 sudo -H pip3 install --upgrade youtube-dl
 ```
 
+- For installing the ``` yt-dlp ``` fork which enables to download age-restricted content:
+
+```
+python3 -m pip install -U yt-dlp
+```
+
 
 ## Usage
 
@@ -67,4 +73,10 @@ youtube-dl -x --embed-thumbnail --audio-format mp3 https://www.youtube.com/watch
 
 ```
 youtube-dl https://www.youtube.com/watch?v=DM_OWuIvPeo --external-downloader ffmpeg --external-downloader-args "-ss 00:01:00.00 -t 00:03:00.00"
+```
+
+- Dowloading age-restricted videos, using ``` yt-dlp ```:
+
+```
+yt-dlp https://www.youtube.com/watch?v=LmS9vcVNr5A
 ```
