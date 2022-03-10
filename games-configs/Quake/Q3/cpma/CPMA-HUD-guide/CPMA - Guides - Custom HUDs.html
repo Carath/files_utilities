@@ -1,0 +1,1194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+        
+                            <meta name="keywords" content="CPMA, Challenge Promode Arena, Quake 3, Q3, Promode, Fast FPS, News, Tournaments, Streams, Rankings, Replays, Quotes, Guides, Servers, Links, Tutorials, Fragmovies, IRC channels">
+                <meta name="author" content="Sylver">
+        <title>
+                CPMA - Guides - Custom HUDs
+        </title>
+        <link href="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/fonts.css" rel="stylesheet" type="text/css">
+        <link href="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/style.css" rel="stylesheet" type="text/css">
+        <link href="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/jquery_002.css" rel="stylesheet" type="text/css">
+        <link href="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/style_003.css" rel="stylesheet" type="text/css">
+        <link href="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/style_002.css" rel="stylesheet" type="text/css">
+        <link href="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/jquery.css" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="http://cpma-news.org/img/WebLogo_favi2.png">
+        <script async="" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/analytics.js"></script><script type="text/javascript" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/jquery-1.js"></script>
+        <script type="text/javascript" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/bootstrap-typeahead.js"></script>
+        <script type="text/javascript" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/bootstrap.js"></script>
+        <script type="text/javascript" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/jquery_003.js"></script>
+        <script type="text/javascript" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/jquery_005.js"></script> <!-- http://qtip2.com -->
+        <script type="text/javascript" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/jquery.js"></script> <!-- http://markitup.jaysalvat.com/examples/bbcode/ -->
+        <script type="text/javascript" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/sets.js"></script>
+        <script type="text/javascript" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/jquery_002.js"></script> <!-- http://www.datatables.net -->
+        <script type="text/javascript" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/knockout-3.js"></script> <!-- http://js.devexpress.com -->
+        <script type="text/javascript" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/globalize.js"></script>
+        <script type="text/javascript" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/dx.js"></script>
+        <script type="text/javascript" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/jquery_004.js"></script>
+
+        <script type="text/javascript" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/javascript.js"></script>
+        <!--<script type="text/javascript" src="/js/runOnLoad.js"></script>-->
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56078332-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    </head>
+    <body>
+        <!--<div class="topBanner">
+            <img class="topBanner" src="/img/banner_small4.png"/>
+        </div>-->
+                <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+        <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+            <a class="navbar-brand" href="http://cpma-news.org/"><img class="logoText" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/cpmalogotext.png"></a>
+            <!--<img class="pull-left" style="height:50px;width:auto;background-color:#dddddd;" src="/img/WebLogo.png"/>-->
+        </div>
+        <div id="navbar-main" class="navbar-collapse collapse">
+
+                
+            <ul id="navigation" class="nav navbar-nav">
+                <li>
+                    <a href="http://cpma-news.org/home">&nbsp;<span class="glyphicon glyphicon-home"></span>&nbsp;</a>
+                </li>
+                                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">News <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                                                                                    <li><a href="http://cpma-news.org/news">News</a></li>
+                                                                                                                 <li><a href="http://cpma-news.org/tourneys">Tourneys</a></li>
+                                                                                                                 <li><a href="http://cpma-news.org/streams">Streams</a></li>
+                                                                             </ul>
+                    </li>
+                                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Misc <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                                                                                    <li><a href="http://cpma-news.org/servers">Servers</a></li>
+                                                                                                                 <li><a href="http://cpma-news.org/irc">IRC</a></li>
+                                                                                                                 <li><a href="http://cpma-news.org/videos">Videos</a></li>
+                                                                                                                 <li><a href="http://cpma-news.org/links">Links</a></li>
+                                                                                                                 <li><a href="http://cpma-news.org/quotes">Quotes</a></li>
+                                                                                                                 <li><a href="http://ws.q3df.org/">Maps</a></li>
+                                                                                                                <li><a href="http://cpma-news.org/replays">Replays</a></li>
+                                                                                                                 <li><a href="http://cpma-news.org/configsrepository">Configs &amp; HUDs</a></li>
+                                                                             </ul>
+                    </li>
+                                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Rankings <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                                                                                    <li><a href="http://cpma-news.org/ranking/players">Players</a></li>
+                                                                                                                 <li><a href="http://cpma-news.org/ranking/tournaments">Tournaments</a></li>
+                                                                                                                 <li><a href="http://cpma-news.org/ranking/versus/index">Versus</a></li>
+                                                                                                                 <li><a href="http://cpma-news.org/ranking/stats/global">Stats</a></li>
+                                                                             </ul>
+                    </li>
+                                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Guides <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                                                                                    <li><a href="http://cpma-news.org/guides/installation">Installation</a></li>
+                                                                                                                 <li><a href="http://cpma-news.org/guides/tutorials">Tutorials</a></li>
+                                                                                                                 <li><a href="http://cpma-news.org/guides/faq">FAQ</a></li>
+                                                                                                                 <li><a href="http://cpma-news.org/guides/content">Guides</a></li>
+                                                                             </ul>
+                    </li>
+                                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Communities <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                                                                                    <li><a href="http://www.cpmpickup.de/">#CPMPICKUP</a></li>
+                                                                                                                <li><a href="http://www.uscpmpickup.com/">#USCPMPICKUP</a></li>
+                                                                                                                <li><a href="http://www.promode.ru/">#PROMODE.RU</a></li>
+                                                                            </ul>
+                    </li>
+                                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Setup <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                                                                                    <li><a href="http://cpma-news.org/search">Search</a></li>
+                                                                                                                 <li><a href="http://cpma-news.org/about">About</a></li>
+                                                                                                                 <li><a href="http://cpma-news.org/users">Users</a></li>
+                                                                             </ul>
+                    </li>
+                            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!--<li class="menuDate"><a><span class="glyphicon glyphicon-calendar"></span>&nbsp;Mar 2022, 10 - 17:59</a></li>-->
+                                <li>
+                    <a href="http://cpma-news.org/login" class="loginButton"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Login</a>
+                </li>
+                <li>
+                    <a href="https://cpma-news.org/register" class=""><span class="glyphicon glyphicon-import"></span>&nbsp;Register</a>
+                </li>
+                
+            </ul>
+            <form class="navbar-form navbar-right" role="search" method="post" action="/search">
+                <div class="form-group">
+                    <input type="text" class="form-control menuSearchInput" placeholder="Search" name="keywords">
+                </div>
+                <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+                
+<div class="container" id="wrap">
+    <div class="well well50 mainContainer">
+                                    <!--<div class="pageBanner"> <img class="pageBanner" src="/img/banners/guides.png"/></div>-->
+                <div class="pageName"><span class="glyphicon glyphicon-chevron-right titleCaret"></span> Guides</div>
+                            	<ul class="breadcrumb" style="margin-bottom: 5px;">
+						          				    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://cpma-news.org/guides" itemprop="url"><span itemprop="title">Guides</span></a></li>
+            			  		  					          				    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://cpma-news.org/guides/content" itemprop="url"><span itemprop="title">Guides list</span></a></li>
+            			  		  					          				    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://cpma-news.org/guides/content/commands" itemprop="url"><span itemprop="title">Commands &amp; Configs</span></a></li>
+            			  		  					          				    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://cpma-news.org/guides/content/config/customhuds" itemprop="url"><span itemprop="title">Custom HUDs</span></a></li>
+            			  		  </ul>
+
+
+<div class="well guides configguide customhudsguide">
+<p class="blockRules">
+	Here is the <a class="inTextLink" href="http://noobsanonymous.raveet.com/wiki/index.php?title=Custom_HUDs" alt="Noobs-anonymous custom huds guide">original page</a>. 
+</p>
+
+<ol class="guidesummary">
+	<li class="spaced"><a class="guidesLink" href="#creating">Creating a HUD .cfg</a></li> 
+	<li class="spaced"><a class="guidesLink" href="#syntax">Syntax</a></li>
+	<li class="spaced"><a class="guidesLink" href="#elements">Elements</a></li>
+	<li class="spaced"><a class="guidesLink" href="#colors">Colors</a></li>
+	<li class="spaced"><a class="guidesLink" href="#element_commands">Element Commands</a></li>
+	<li class="spaced"><a class="guidesLink" href="#issues">Known Issues</a></li>
+	<li class="spaced"><a class="guidesLink" href="#hud_cvars">HUD Related Cvars</a></li>
+	<li class="spaced"><a class="guidesLink" href="#users_huds">User created HUD configs</a></li>
+	<li class="spaced"><a class="guidesLink" href="#links">External links</a></li>
+</ol>
+
+<!-- Creating -->
+<div class="guidesTitle" id="creating"><a name="creating"></a>Creating a HUD .cfg</div>
+<div class="guideContentSection">
+	<p class="blockRules">
+		</p><ul class="basicList">
+			<li><b>ALL hud configs go in Quake3/cpma/hud.</b> CPMA's sample HUDs 1-7 are also in that directory. </li>
+			<li>You can select a config using \ch_file hud where 'hud' is the file you would like to use (without .cfg). You do NOT \exec hud. </li>
+			<li>Use \reloadHUD to reload your HUD if you have changed it. Must also be used after \ch_file change. </li>
+			<li>The default HUD is in the PK3: if you want to customise it, pull 
+it out of there with the unzip utility of your choice, RENAME it, and 
+put the copy in cpma/hud/. 
+			Remember to point ch_file at the new version. </li>
+			<li>The default HUD references (nearly) everything that can be drawn. hud7 has nice examples of decoration use. </li>
+		</ul>
+	<p></p>
+</div>
+
+<!-- Syntax -->
+<div class="guidesTitle" id="syntax"><a name="syntax"></a>Syntax</div>
+<div class="guideContentSection">
+	<p class="blockRules">
+		The syntax in CPMA's SuperHud should be pretty straightforward to 
+comprehend. Supports both multi-line and single-line arguments. 
+		
+		</p><pre class="example">ELEMENT
+{
+    ELEMENT_COMMAND VALUE
+    ELEMENT_COMMAND VALUE
+}
+
+ELEMENT { ELEMENT_COMMAND VALUE; ELEMENT_COMMAND VALUE; }</pre>
+	<p></p>
+
+	<p class="blockRules">
+		You can comment using #. // cannot be used. 
+		<br><br>
+		Some <a class="inTextLink" alt="Element Commands" href="#element_commands">Element Commands</a> have optional "," seperators. 
+	</p>
+</div>
+
+<div id="commandsGuideSearch" class="form-group">
+	<div class="col-lg-6">
+		<input type="text" autocomplete="off" id="commandsGuideSearchInput" placeholder="Search a cvar..." class="form-control" data-provide="typeahead">
+	</div>
+	<div class="col-lg-6">
+		<button class="btn btn-primary" id="commandsGuideSearchSubmit">Filter!</button>
+	</div>
+</div>
+
+<!-- Elements -->
+<div class="guidesTitle" id="elements"><a name="elements"></a>Elements</div>
+<div class="guideContentSection">
+	<p class="blockRules">
+		Each piece of the HUD is called an ELEMENT. Elements are sorted z-layer-wise alphabetically. 
+		Each element can be hidden or shown using <b>hud_hide/hud_show &lt;element&gt;</b>.
+	</p>
+
+	<div class="blockConfig" data-name="!DEFAULT">
+	<h2>&nbsp;!DEFAULT </h2>
+	<p class="blockConfig">
+		The first element in the hudfile MUST be "!DEFAULT", and every other element inherits from that default: 
+		this gives you an easy way to change fonts/colors/etc for a whole bunch of elements at once. <br>
+		!DEFAULT can be reused later in the document affecting every following
+ element but it will not overwrite the parameters set by previous 
+!DEFAULT(s). 
+	    It is advisable to place Team1-8 and Chat1-8 at the bottom of your 
+hud config so that !DEFAULTs can be used without interfering with other 
+elements. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="PreDecorate-PostDecorate">
+	<h2>&nbsp;PreDecorate and PostDecorate </h2>
+	<p class="blockConfig">
+		Empty elements that can be used to draw separator bars etc. Limit 64 total. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="AmmoMessage">
+	<h2>&nbsp;AmmoMessage</h2>
+	<p class="blockConfig">
+		Low ammo/Out of ammo. The audio feedback "click" can be toggled using cg_ammoWarning. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="AttackerIcon">
+	<h2>&nbsp;AttackerIcon</h2>
+	<p class="blockConfig">
+		Who attacked you last. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="AttackerName">
+	<h2>&nbsp;AttackerName</h2>
+	<p class="blockConfig">
+		Who attacked you last. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="Chat1-8">
+	<h2>&nbsp;Chat1-8 </h2>
+	<p class="blockConfig">
+		Chat area - if you want the order of the messages reversed then reverse the Y coordinates. 
+		<br>Examples: 
+		</p><pre class="example">!DEFAULT
+{
+    textalign l
+    time 5000
+    color 1 1 1 1
+    fade 0.5 0.5 0.5 0
+    font id
+    fontsize 7 8
+}
+
+# Normal order
+Chat1 { rect 0 340 640 8; }
+Chat2 { rect 0 348 640 8; }
+Chat3 { rect 0 356 640 8; }
+Chat4 { rect 0 364 640 8; }
+Chat5 { rect 0 372 640 8; }
+Chat6 { rect 0 380 640 8; }
+Chat7 { rect 0 388 640 8; }
+Chat8 { rect 0 396 640 8; }
+
+# Reversed order
+Chat1 { rect 0 396 640 8; }
+Chat2 { rect 0 388 640 8; }
+Chat3 { rect 0 380 640 8; }
+Chat4 { rect 0 372 640 8; }
+Chat5 { rect 0 364 640 8; }
+Chat6 { rect 0 356 640 8; }
+Chat7 { rect 0 348 640 8; }
+Chat8 { rect 0 340 640 8; }	</pre>
+	<p></p>
+	</div>
+
+	<div class="blockConfig" data-name="Console">
+	<h2>&nbsp;Console</h2>
+	<p class="blockConfig">
+		Replacement for ID's console. Requires con_notifyTime -1. 
+		</p><pre class="example">Console
+{
+	rect 0 0 640 48
+	#monospace
+	time 3000
+}</pre>
+	<p></p>
+	</div>
+
+	<div class="blockConfig" data-name="FlagStatus_NME">
+	<h2>&nbsp;FlagStatus_NME </h2>
+	<p class="blockConfig">
+		Status of enemy flag. To get old RED/BLUE use color T and color E, plus bgcolor. Check hud/old.cfg. 
+		</p><pre class="example"># Oldschool RED/BLUE style
+FlagStatus_NME { rect 568 400 32 32; bgcolor 1 1 1 1; color E; }
+
+# Green
+FlagStatus_NME { rect 568 400 32 32; color 0 1 0 1; }</pre>	
+	<p></p>
+	</div>
+
+	<div class="blockConfig" data-name="FlagStatus_OWN">
+	<h2>&nbsp;FlagStatus_OWN </h2>
+	<p class="blockConfig">
+		Status of your flag. To get old RED/BLUE use color T and color E, plus bgcolor. Check hud/old.cfg. 
+		</p><pre class="example"># Oldschool RED/BLUE style
+FlagStatus_OWN { rect 608 400 32 32; bgcolor 1 1 1 1; color T; }
+
+# White
+FlagStatus_OWN { rect 608 400 32 32; color 1 1 1 1; }</pre>
+	<p></p>
+	</div>
+
+	<div class="blockConfig" data-name="FollowMessage">
+	<h2>&nbsp;FollowMessage </h2>
+	<p class="blockConfig">
+		Following &lt;Player&gt;. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="FPS">
+	<h2>&nbsp;FPS </h2>
+	<p class="blockConfig">
+		Frames Per Second. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="FragMessage">
+	<h2>&nbsp;FragMessage </h2>
+	<p class="blockConfig">
+		You fragged &lt;Player&gt;. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="GameTime">
+	<h2>&nbsp;GameTime </h2>
+	<p class="blockConfig">
+		Game Clock. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="GameType">
+	<h2>&nbsp;GameType </h2>
+	<p class="blockConfig">
+		Game Type - Warmup only. Cannot be omitted. To hide place at off-screen x,y coordinates or set alpha 0. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="ItemPickup">
+	<h2>&nbsp;ItemPickup</h2>
+	<p class="blockConfig">
+		Text string of item you pick up. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="ItemPickupIcon">
+	<h2>&nbsp;ItemPickupIcon</h2>
+	<p class="blockConfig">
+		Icon of item you pick up. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="NetGraph">
+	<h2>&nbsp;NetGraph</h2>
+	<p class="blockConfig">
+		Lagometer.
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="NetGraphPing">
+	<h2>&nbsp;NetGraphPing</h2>
+	<p class="blockConfig">
+		Ping. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="PlayerSpeed">
+	<h2>&nbsp;PlayerSpeed</h2>
+	<p class="blockConfig">
+		Units Per Second. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="PowerUp1_Icon-PowerUp4_Icon">
+	<h2>&nbsp;PowerUp1_Icon to PowerUp4_Icon </h2>
+	<p class="blockConfig">
+		Powerup Icons. PowerUp1_Icon is also used for the O/D indicator in CTFS - and also for FLAG. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="PowerUp1_Time-PowerUp4_Time">
+	<h2>&nbsp;PowerUp1_Time to PowerUp4_Time </h2>
+	<p class="blockConfig">
+		Powerup Time left. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="RankMessage">
+	<h2>&nbsp;RankMessage</h2>
+	<p class="blockConfig">
+		Placed 1st with 30 frags. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="Score_Limit">
+	<h2>&nbsp;Score_Limit </h2>
+	<p class="blockConfig">
+		Frag/Cap/round limit (if set). Cannot be omitted. To hide place at off-screen x,y coordinates or set alpha 0. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="Score_NME">
+	<h2>&nbsp;Score_NME </h2>
+	<p class="blockConfig">
+		Enemy score. Cannot be omitted. To hide place at off-screen x,y coordinates or set alpha 0. 
+		To get old RED/BLUE use color T and color E, plus bgcolor. Check hud/old.cfg. 
+		</p><pre class="example"># Oldschool RED/BLUE style
+Score_NME { rect 0, 440, 32, 20; textalign R; fontsize 16 20; bgcolor 1 1 1 0.5; fill; color E; }
+
+# Green
+Score_NME { rect 0, 460, 32, 20; textalign R; fontsize 20; bgcolor 0 1 0 0.5; fill; }</pre>
+	<p></p>
+	</div>
+
+	<div class="blockConfig" data-name="Score_OWN">
+	<h2>&nbsp;Score_OWN </h2>
+	<p class="blockConfig">
+		Your score. Cannot be omitted. To hide place at off-screen x,y coordinates or set alpha 0. 
+		To get old RED/BLUE use color T and color E, plus bgcolor. Check hud/old.cfg. 
+		</p><pre class="example"># Oldschool RED/BLUE style
+Score_OWN { rect 0, 440, 32, 20; textalign R; fontsize 16 20; bgcolor 1 1 1 0.5; fill; color T; }
+
+# White
+Score_OWN { rect 0, 440, 32, 20; textalign R; fontsize 20; bgcolor 1 1 1 0.5; fill; }</pre>
+	<p></p>
+	</div>
+
+	<div class="blockConfig" data-name="SpecMessage">
+	<h2>&nbsp;SpecMessage</h2>
+	<p class="blockConfig">
+		SPECTATOR, FRAGGED (in CA/CTFS/FT). 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="StatusBar_ArmorBar">
+	<h2>&nbsp;StatusBar_ArmorBar </h2>
+	<p class="blockConfig">
+		Armor level in bar form. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="StatusBar_ArmorCount">
+	<h2>&nbsp;StatusBar_ArmorCount </h2>
+	<p class="blockConfig">
+		Armor level in number form. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="StatusBar_ArmorIcon">
+	<h2>&nbsp;StatusBar_ArmorIcon </h2>
+	<p class="blockConfig">
+		Type of armor - essential in cpm but irrelevant in vq3. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="StatusBar_AmmoBar">
+	<h2>&nbsp;StatusBar_AmmoBar </h2>
+	<p class="blockConfig">
+		Ammo level in bar form. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="StatusBar_AmmoCount">
+	<h2>&nbsp;StatusBar_AmmoCount </h2>
+	<p class="blockConfig">
+		Ammo level in number form. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="StatusBar_AmmoIcon">
+	<h2>&nbsp;StatusBar_AmmoIcon </h2>
+	<p class="blockConfig">
+		Current weapon ammo icon. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="StatusBar_HealthBar">
+	<h2>&nbsp;StatusBar_HealthBar </h2>
+	<p class="blockConfig">
+		Health level in bar form. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="StatusBar_HealthCount">
+	<h2>&nbsp;StatusBar_HealthCount </h2>
+	<p class="blockConfig">
+		Health level in number form. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="StatusBar_HealthIcon">
+	<h2>&nbsp;StatusBar_HealthIcon </h2>
+	<p class="blockConfig">
+		Defaults to mynx icon but can be any model, image or shader found in 
+pk3s - provided that the pk3 is on the pure server you join. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="TargetName">
+	<h2>&nbsp;TargetName </h2>
+	<p class="blockConfig">
+		Current target's playername - requires cg_drawCrosshairNames above 0. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="TargetStatus">
+	<h2>&nbsp;TargetStatus </h2>
+	<p class="blockConfig">
+		Current friendly target's health/armor level - requires cg_drawCrosshairNames above 0. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="TeamCount_NME">
+	<h2>&nbsp;TeamCount_NME </h2>
+	<p class="blockConfig">
+		Players alive on enemy team (CA/CTFS/FT). 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="TeamCount_OWN">
+	<h2>&nbsp;TeamCount_OWN </h2>
+	<p class="blockConfig">
+		Players alive on your team (CA/CTFS/FT). 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="TeamIcon_NME">
+	<h2>&nbsp;TeamIcon_NME </h2>
+	<p class="blockConfig">
+		Defaults to sarge icon but can be any model, image or shader found in 
+pk3s - provided that the pk3 is on the pure server you join. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="TeamIcon_OWN">
+	<h2>&nbsp;TeamIcon_OWN </h2>
+	<p class="blockConfig">
+		Defaults to mynx icon but can be any model, image or shader found in 
+pk3s - provided that the pk3 is on the pure server you join. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="Team1-8">
+	<h2>&nbsp;Team1-8 </h2>
+	<p class="blockConfig">
+		Teamoverlay. 
+		<br>Examples: 
+		</p><pre class="example"># Top-right
+!DEFAULT { textalign r; font id; fontsize 7 8; monospace; bgcolor 0 0 0 0.5; color 1 1 1 1; }
+Team1 { rect 0 0 640 8; }
+Team2 { rect 0 8 640 8; }
+Team3 { rect 0 16 640 8; }
+Team4 { rect 0 24 640 8; }
+Team5 { rect 0 32 640 8; }
+Team6 { rect 0 40 640 8; }
+Team7 { rect 0 48 640 8; }
+Team8 { rect 0 56 640 8; }
+
+# Bottom-right
+!DEFAULT { textalign r; font id; fontsize 7 8; monospace; bgcolor 0 0 0 0.5; color 1 1 1 1; }
+Team1 { rect 0 472 640 8; }
+Team2 { rect 0 464 640 8; }
+Team3 { rect 0 456 640 8; }
+Team4 { rect 0 448 640 8; }
+Team5 { rect 0 440 640 8; }
+Team6 { rect 0 432 640 8; }
+Team7 { rect 0 424 640 8; }
+Team8 { rect 0 416 640 8; }
+
+# Bottom-left
+!DEFAULT { textalign l; font id; fontsize 7 8; monospace; bgcolor 0 0 0 0.5; color 1 1 1 1; }
+Team1 { rect 0 472 640 8; }
+Team2 { rect 0 464 640 8; }
+Team3 { rect 0 456 640 8; }
+Team4 { rect 0 448 640 8; }
+Team5 { rect 0 440 640 8; }
+Team6 { rect 0 432 640 8; }
+Team7 { rect 0 424 640 8; }
+Team8 { rect 0 416 640 8; }
+
+# Top-left
+!DEFAULT { textalign l; font id; fontsize 7 8; monospace; bgcolor 0 0 0 0.3; color 1 1 1 1; }
+Team1 { rect 0 0 640 8; }
+Team2 { rect 0 8 640 8; }
+Team3 { rect 0 16 640 8; }
+Team4 { rect 0 24 640 8; }
+Team5 { rect 0 32 640 8; }
+Team6 { rect 0 40 640 8; }
+Team7 { rect 0 48 640 8; }
+Team8 { rect 0 56 640 8; }
+
+# Low-centered
+!DEFAULT { textalign c; font id; fontsize 7 8; monospace; bgcolor 0 0 0 0.5; color 1 1 1 1; }
+Team1 { rect 0 372 640 8; }
+Team2 { rect 0 364 640 8; }
+Team3 { rect 0 356 640 8; }
+Team4 { rect 0 348 640 8; }
+Team5 { rect 0 340 640 8; }
+Team6 { rect 0 332 640 8; }
+Team7 { rect 0 324 640 8; }
+Team8 { rect 0 316 640 8; }	</pre>
+	<p></p>
+	</div>
+
+	<div class="blockConfig" data-name="VoteMessageArena">
+	<h2>&nbsp;VoteMessageArena </h2>
+	<p class="blockConfig">
+		Multiarena, ra3maps. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="VoteMessageWorld">
+	<h2>&nbsp;VoteMessageWorld </h2>
+	<p class="blockConfig">
+		Normal votes. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="WarmupInfo">
+	<h2>&nbsp;WarmupInfo </h2>
+	<p class="blockConfig">
+		10sec countdown, Waiting for players, etc. Cannot be omitted. To hide place at off-screen x,y coordinates or set alpha 0. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="WeaponList">
+	<h2>&nbsp;WeaponList </h2>
+	<p class="blockConfig">
+		The WeaponList has to get a little funky to be able to handle all the 
+legacyhud tricks: W and H are the size of EACH weapon, not the total. <br>
+	    For the horizontal weaponlist (textalign C) X is the point to center around. <br>
+	    Use fill to show ammo for weapons you do not have, useful for tdm. <br>
+	    Weaponlist wraps at the bottom of the screen so you can sneak a multi-column one in. <br>
+	    Supports TIME. <br>
+		Examples: 
+		</p><pre class="example"># Bottom-left, triple-column
+WeaponList
+{
+    rect 0 441 33 9
+    color 0.2 0.2 0.7 0.75
+    font id
+    fontsize 11
+    textalign l
+}
+
+# Low-centered
+WeaponList
+{
+    rect 320 428 34 13
+    color 0.2 0.2 0.7 0.75
+    font id
+    textalign C
+    fontsize 11 13
+}
+
+# Left
+WeaponList
+{
+    rect 0 80 48 16
+    color 0.25 0.25 1 0.75
+    bgcolor 0.25 0.25 0.25 0.75
+    fontsize 12 16
+    textalign l
+    fill
+}</pre>
+	<p></p>
+	</div>
+</div>
+
+<!-- Colors -->
+<div class="guidesTitle" id="colors"><a name="colors"></a>Colors</div>
+<div class="guideContentSection">
+	<div data-name="colors"><p class="blockRules">
+		CPMA hud uses <b>r g b a</b>, which is red green blue alpha. Each channel can have values from 0-1.<br><br>
+
+		Color 1 1 1 1 is white, full alpha.<br><br>
+
+		Color 0 0 0 0.5 is black, half transparent.<br><br>
+
+		Color 0.25 0.25 1 0.75 is blue, somewhat transparent.<br><br>
+
+		Note that colors set in SuperHud do not override colors set elsewhere.
+ For example if your \nick or \name is ^3hello it will be yellow 
+regardless. 
+	</p></div>
+
+	<div class="guidessubTitle">Special colors</div>
+
+	<div data-name="specialcolors"><p class="blockRules">
+		Color T and color E for elements to use red/blue according to your 
+current team. Useful for flag modes, but not necessarily for tdm/1v1. 
+		Set bgcolor for these, even for images - see hud/old.cfg.<br><br>
+
+		Some elements will have special functions (for instance Bars) when color 0 0 0 0 is used. 
+	</p></div>
+
+	<div class="blockConfig" data-name="ch_teamBackground">
+	<h2>&nbsp;ch_teamBackground </h2>
+	<p class="blockConfig">
+		ch_teamBackground does not exist any longer but the same effect can be achieved using:
+		</p><pre class="example">PreDecorate { rect 0 420 640 60; bgcolor 1 1 1 0.3; color T; image "white"; }</pre>
+	<p></p>
+	<p class="blockConfig">
+		Or you can use a more pretty and fancy version such as:
+		</p><pre class="example">PreDecorate { rect 0 420 640 60; bgcolor 1 1 1 0.8; color T; image "gfx/2d/grad_mid"; }</pre>
+	<p></p>
+	</div>
+</div>
+
+<!-- Element Commands -->
+<div class="guidesTitle" id="element_commands"><a name="element_commands"></a>Element Commands</div>
+<div class="guideContentSection">
+	<p class="blockRules">
+		The commands you can use within an element are: 
+	</p>
+
+	<div class="blockConfig" data-name="ANGLES">
+	<h2>&nbsp;ANGLES &lt;pitch&gt; &lt;yaw&gt; &lt;roll&gt; [+pan | -rotate]  </h2>
+	<p class="blockConfig">
+		Alters the display of MODEL. Note that most Q3 models do not work properly if r_vertexlight is on. <br>
+		Example: 
+		</p><pre class="example">PostDecorate { rect 300 440 40 40; ANGLES 10 -180 0 45; MODEL "models/powerups/armor/armor_red.md3" }</pre>
+	<p></p>
+	</div>
+
+	<div class="blockConfig" data-name="BGCOLOR">
+	<h2>&nbsp;BGCOLOR r g b a  </h2>
+	<p class="blockConfig">
+		Sets the background color for the element. <br>
+	    The element must have a width and height. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="COLOR">
+	<h2>&nbsp;COLOR r g b a  </h2>
+	<p class="blockConfig">
+		Sets the foreground color for the element. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="DOUBLEBAR">
+	<h2>&nbsp;DOUBLEBAR  </h2>
+	<p class="blockConfig">
+		Makes bars two lines. Obviously only works on BAR elements (StatusBar_ArmorBar etc). Check out hud7 for examples. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="DRAW3D">
+	<h2>&nbsp;DRAW3D  </h2>
+	<p class="blockConfig">
+		If both a model and an icon are present, use the model - irrelevant for most elements. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="FADE">
+	<h2>&nbsp;FADE r g b a  </h2>
+	<p class="blockConfig">
+		If the element has a TIME, its text will fade from COLOR to this linearly over TIME milliseconds. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="FILL">
+	<h2>&nbsp;FILL </h2>
+	<p class="blockConfig">
+		If the element has a background color, this fills the area it occupies with that color. <br>
+	    The element must have a width and height. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="FONT">
+	<h2>&nbsp;FONT name  </h2>
+	<p class="blockConfig">
+		<b>CPMA</b>, Bitstream Vera Bold, which is a high-resolution font best suited to 1024x768 and up - or large font-size on low-resolution. <br>
+	    <b>ID</b>, which is the standard Q3 font - good for small font-size and/or low-resolution. <br>
+	    <b>IDBLOCK</b>, only supports numbers, NOT letters. <br>
+	    <b>THREEWAVE</b>, which is an outlined copy of the id font. <br>
+	    <b>SANSMAN</b>, Digital Graphics Labs "Enter Sansman".
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="FONTSIZE">
+	<h2>&nbsp;FONTSIZE pointsize | xsize ysize  </h2>
+	<p class="blockConfig">
+		The CPMA font is correctly aspect-adjusted already, and looks best if you just specify a pointsize. <br>
+	    The other fonts are square, and look much better if you specify distinct x and y sizes, with y being 25-50% larger than x. <br>
+	    Element texts can be mirrored using negative x y. Note this is an 
+unintended and unsupported "hack", so might be a bit buggy. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="IMAGE">
+	<h2>&nbsp;IMAGE pathname  </h2>
+	<p class="blockConfig">
+		Display the image specified. Or the skin for a MODEL if it's a player model. You can use ANY image or shader found in pk3s.
+		Mostly useful for displaying team/enemy model icons in CA/CTFS/FT but you can also have some fun with it: 
+		</p><pre class="example">PreDecorate { rect 0 0 640 480; image "models/powerups/health/red_sphere"; }
+PreDecorate { rect 0 0 640 480; image "textures/sfx/logo512"; color 1 1 1 0.9; }
+PostDecorate { rect 0 352 128 128; image "rocketExplosionNPM"; }
+PostDecorate { rect 512 352 128 128; image "grenadeExplosionNPM"; }
+PostDecorate { rect 0 330 640 640; image "textures/sfx/fan"; }	</pre>
+	<p></p>
+	<p class="blockConfig">
+		Surely someone will come up with more useful implementations of this feature, like alternative, but useful, crosshairs ;) 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="MODEL">
+	<h2>&nbsp;MODEL </h2>
+	<p class="blockConfig">
+		Can be any model in the game. Note that most Q3 models do not work properly if r_vertexlight is on. <br>
+		Example: 
+		</p><pre class="example">	PostDecorate { rect 300 440 40 40; ANGLES 0 0 0 -120; MODEL "models/powerups/armor/armor_red.md3" }
+		</pre>
+	<p></p>
+	</div>
+
+	<div class="blockConfig" data-name="MONOSPACE">
+	<h2>&nbsp;MONOSPACE </h2>
+	<p class="blockConfig">
+		By default, all HUD fonts are proportionally spaced, meaning that an "i" takes up less room than an "m". <br>
+		Monospacing forces every character to take up the same amount of 
+space. It's very useful for the team overlay, as it keeps everyone's 
+		health and armor in the same columns, but generally looks worse than 
+proportional spacing on everything else, especially chat. <br>
+		It also takes up more room overall. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="OFFSET">
+	<h2>&nbsp;OFFSET x y z  </h2>
+	<p class="blockConfig">
+		Offset MODEL along x y z axis. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="RECT">
+	<h2>&nbsp;RECT x y w h  </h2>
+	<p class="blockConfig">
+		Sets the position and size of the element. Note that text is NOT "clipped" to this rectangle. <br>
+	    Elements can be mirrored using negative w h. Note this is an unintended and unsupported "hack", so might be a bit buggy. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="TEXT">
+	<h2>&nbsp;TEXT string  </h2>
+	<p class="blockConfig">
+		Mostly useful for decorations. Requires RECT. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="TEXTALIGN">
+	<h2>&nbsp;TEXTALIGN l | c | r  </h2>
+	<p class="blockConfig">
+		Justify the text either Left, Centered, or Right within RECT. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="TEXTSTYLE">
+	<h2>&nbsp;TEXTSTYLE flags  </h2>
+	<p class="blockConfig">
+		Currently only one flag is supported: "1", for dropshadowed text. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="TIME">
+	<h2>&nbsp;TIME </h2>
+	<p class="blockConfig">
+		How long the element will be displayed for if it doesn't update again.
+ Generally used for item pickups, frag messages, chat, etc.  
+	</p>
+	</div>
+</div>
+
+<!-- Known issues -->
+<div class="guidesTitle" id="issues"><a name="issues"></a>Known Issues</div>
+<div class="guideContentSection" data-name="knownissues">
+	<p class="blockRules">
+		<b>Limitation:</b> Color fails on elements with color codes embedded 
+in their strings (StatusBar_HealthCount, StatusBar_ArmorCount, 
+NetGraphPing, etc).<br><br>
+
+		<b>Limitation:</b> Alpha fails on some elements containing images (StatusBar_AmmoIcon, StatusBar_ArmorIcon, etc).<br><br>
+
+		<b>Limitation:</b> Fade fails on some elements containing images without alpha channels (ItemPickupIcon etc).<br><br>
+
+		<b>Limitation:</b> If a !DEFAULT sets MONOSPACE, FILL or DOUBLEBAR 
+there is no method to remove it again (so don't do it, unless it's at 
+the end of the document).<br><br>
+
+		<b>Limitation:</b> Color T and E act funny when in non-teamplay modes such as 1v1 (like the #ch_teamBackground hack).<br><br>
+
+		<b>Limitation:</b> FILL plus bgcolor when used on elements that disappear without having TIME makes bgcolor remain indefinately.<br><br>
+
+		<b>Not implimented:</b> cg_drawRewards element not included in SuperHud. 
+	</p>
+</div>
+
+<!-- Huds cvars -->
+<div class="guidesTitle" id="hud_cvars"><a name="hud_cvars"></a>HUD Related Cvars</div>
+<div class="guideContentSection">
+	<p class="blockRules">
+		These cvars do not directly influence the SuperHud but are still related to the HUD in some way. 
+	</p>
+
+	<div class="blockConfig" data-name="cg_customLoc">
+	<pre>cg_customLoc &lt;0|1&gt; (default = 1) </pre>
+	<p class="blockConfig">
+		Use custom locations for a map if possible. <br>
+	    Loc files are locs/map.cfg, and must have a "v2" header. <br>
+	    Can only replace existing locations. <br>
+	    <a href="http://massman.dk/q3/dl.php?file=locs.zip" class="inTextLink">bspfix</a> 
+		Small utility to extract map locations directly from map files. VERY useful for making custom locations. <br> 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="cg_drawRewards">
+	<pre>cg_drawRewards &lt;0|1&gt; (default = 1) </pre>
+	<p class="blockConfig">
+		Toggle display of reward icons and the accompanying sounds (IMPRESSIVE! EXCELLENT! etc..) <br>
+	    Might get merged with the superhud but it is not a priority at the moment.  
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="cg_teamChatsOnly">
+	<pre>cg_teamChatsOnly &lt;0|1&gt; (default = 0) </pre>
+	<p class="blockConfig">
+		Controls what text reaches the HUD Chat elements if set, non-team text still shows up in the console area. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="ch_3waveFont">
+	<pre>ch_3waveFont &lt;0|1&gt; (default = 1) </pre>
+	<p class="blockConfig">
+		Toggle use of the Threewave font - does not affect SuperHud settings.  
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="ch_drawWarmup">
+	<pre>ch_drawWarmup (&lt;0|1&gt; (default = 0) </pre>
+	<p class="blockConfig">
+		Toggle display of arena settings before a game starts.  
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="ch_drawWeaponSelect">
+	<pre>ch_drawWeaponSelect &lt;0|1&gt; (default = 0) </pre>
+	<p class="blockConfig">
+		Toggle id standard weapon selection.  
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="ch_recordMessage">
+	<pre>ch_recordMessage &lt;0|1&gt; (default = 1) </pre>
+	<p class="blockConfig">
+		0 gets rid of the sodding "recording blahblah" message - must be set before demo record start.  
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="ch_selfOnTeamOverlay">
+	<pre>ch_selfOnTeamOverlay &lt;0|1&gt; (default = 1) </pre>
+	<p class="blockConfig">
+		Toggle your own information showing in the team overlay.  
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="ch_shortNames">
+	<pre>ch_shortNames &lt;0|1&gt; (default = 0) </pre>
+	<p class="blockConfig">
+		Toggle use of \nick - set a short name to use for team chat/overlay. <br>
+	    Limited to 5 visible characters, but allows colors. <br>
+	    Useful to have your \nick shown instead of [longclantag] in team chat/overlay. <br>
+	    <b>Note:</b> \nick is only used for team chat/overlay. \name is still used for anything else.  
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="ch_wstatsTime">
+	<pre>ch_wstatsTime &lt;seconds&gt; (default = 10) </pre>
+	<p class="blockConfig">
+		How long the auto-wstats window stays up at the end of a game. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="con_notifyTime">
+	<pre>con_notifyTime &lt;seconds&gt; (default = 3) </pre>
+	<p class="blockConfig">
+		-1 uses the CPMA Console hud element instead of id's. <br>
+	    Doesn't affect the console *buffer*, just the text in the top left.  
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="mvw_DM">
+	<pre>mvw_DM (default "464 48 160 120") </pre>
+	<p class="blockConfig">
+		x, y, width, height of Picture in Picture window for DM games.  
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="mvw_TDM1-9&quot;&quot;">
+	<pre>mvw_TDM&lt;1-9&gt; </pre>
+	<p class="blockConfig">
+		Controls teamplay Multi View layout. br/&gt;
+	    Format is the same as mvw_DM, default no child windows.  
+		</p><pre class="example">seta mvw_TDM1 "480 65 160 120"
+seta mvw_TDM2 "480 190 160 120"
+seta mvw_TDM3 "480 315 160 120"	
+		</pre>
+	<p></p>
+	</div>
+
+	<div class="guidessubTitle">Crosshair Cvars</div>
+
+	<div class="blockConfig" data-name="cg_crosshairHealth">
+	<pre>cg_crosshairHealth &lt;0|1&gt; (default = 0) </pre>
+	<p class="blockConfig">
+		Red crosshair when low on health - turn off or ch_crosshairColor will not work.  
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="cg_crosshairsize">
+	<pre>cg_crosshairsize &lt;value&gt; (default = 24) </pre>
+	<p class="blockConfig">
+		Size of crosshair.  
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="cg_drawcrosshair">
+	<pre>cg_drawcrosshair &lt;0-19&gt; (default = 4) </pre>
+	<p class="blockConfig">
+		Switch between different crosshairs. 11-19 are high res, high quality crosshairs. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="ch_crosshairAlpha">
+	<pre>ch_crosshairAlpha &lt;0.0 to 1.0&gt; (default = 0.8) </pre>
+	<p class="blockConfig">
+		Controls the transparency of the crosshair.  
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="cg_drawCrosshairNames">
+	<pre>cg_drawCrosshairNames 0-2 (default = 1) </pre>
+	<p class="blockConfig">
+		Toggles TargetName and TargetStatus. 
+		</p><ol class="basicList" start="0">
+			<li>Off </li>
+			<li>On </li>
+			<li>Only friendly targets </li>
+		</ol>
+	<p></p>
+	</div>
+
+	<div class="blockConfig" data-name="ch_crosshairColor">
+	<pre>ch_crosshairColor &lt;color&gt; (default = y (White)) </pre>
+	<p class="blockConfig">
+		<a href="http://cpma-news.org/guides/content/config/clientsettings#colors" class="inTextLink">CPMA_Colors.</a><br>
+	    <b>Important note: </b>cg_crosshairHealth overrides this function, turn it off to use colored crosshairs. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="ch_crosshairPulse">
+	<pre>ch_crosshairPulse &lt;0|1&gt; (default = 0) </pre>
+	<p class="blockConfig">
+		Controls crosshair size changes when picking up items. 
+	</p>
+	</div>
+
+	<div class="blockConfig" data-name="ch_crosshairText">
+	<pre>ch_crosshairText &lt;string&gt; (default = "" disabled) </pre>
+	<p class="blockConfig">
+		Use any text sting as crosshair.  
+	</p>
+	</div>
+
+</div>
+
+<!-- Users HUDs -->
+<div class="guidesTitle" id="users_huds"><a name="users_huds"></a>User created HUD configs</div>
+<div class="guideContentSection">
+	<p class="blockRules">
+	<!-- TODO FIX THE INTERNAL LINK !!! -->
+		You can find some huds, <a class="inTextLink" alt="Users list" href="http://cpma-news.org/guides/content/config/index.php?page=userList">here</a>, on the profile of the users (if they have added one).<br>
+		Here are some from Noob-anonymous website.
+		</p><ul class="basicList">
+			<li><a class="inTextLink" href="http://noobsanonymous.raveet.com/wiki/index.php?title=User:MassMan/HUD&amp;action=edit&amp;redlink=1">MassMan</a></li>
+			<li><a class="inTextLink" href="http://noobsanonymous.raveet.com/wiki/index.php?title=User:.syL/HUD&amp;action=edit&amp;redlink=1">.syL</a></li>
+			<li><a class="inTextLink" href="http://noobsanonymous.raveet.com/wiki/index.php?title=User:XYGVOT/HUD&amp;action=edit&amp;redlink=1">xyGvot</a></li>
+			<li><a class="inTextLink" href="http://noobsanonymous.raveet.com/wiki/index.php?title=User:Keymaster/HUD&amp;action=edit&amp;redlink=1">Keymaster</a></li>
+			<li><a class="inTextLink" href="http://noobsanonymous.raveet.com/wiki/index.php?title=User:Rotatorn/HUD&amp;action=edit&amp;redlink=1">RAXhud</a></li>
+			<li><a class="inTextLink" href="http://noobsanonymous.raveet.com/wiki/index.php?title=User:Balaf/HUD&amp;action=edit&amp;redlink=1">Balaf</a></li>
+			<li><a class="inTextLink" href="http://noobsanonymous.raveet.com/wiki/index.php?title=User:Has3/HUD">Has3 </a></li>
+		</ul>
+	<p></p>
+</div>
+
+<!-- External Links -->
+<div class="guidesTitle" id="links"><a name="links"></a>External Links</div>
+<div class="guideContentSection">
+	<p class="blockRules">
+		</p><ul class="basicList">
+			<li><a class="inTextLink" href="http://plrf.org/superhudeditor/">CPMA HUD editor</a></li>
+			<li><a class="inTextLink" href="http://www.esreality.com/?a=post&amp;id=1161438">OSP style HUDs (ESReality)</a></li>
+			<li><a class="inTextLink" href="http://www.esreality.com/?a=post&amp;id=1152891">User created SuperHuds (ESReality)</a></li>
+		</ul>
+	<p></p>
+</div>
+<script type="text/javascript">
+	function filterBlocks(kw) {
+		$('div[data-name]').each(function() {
+			if($(this).data('name').indexOf(kw) !== -1) {
+				$(this).show();
+			} else {
+				$(this).hide();
+			}
+		});
+	}
+
+	var comlist = new Array();
+	$(document).ready(function() {
+		$('div[data-name]').each(function() {
+			comlist.push($(this).data('name'));
+		});
+
+		$("#commandsGuideSearchInput").typeahead({
+			source: comlist
+		});
+
+		$('#commandsGuideSearchSubmit').on('click',function() {
+			filterBlocks($("#commandsGuideSearchInput").val());
+		});
+
+		$("#commandsGuideSearchInput").keyup(function (e) {
+		    if (e.keyCode == 13) {
+		        filterBlocks($("#commandsGuideSearchInput").val());
+		    }
+		});
+	});
+</script>
+
+    </div>
+</div>
+
+    <div class="footer">
+        <div class="container">
+            <img style="height:30px;width:30px" src="CPMA%20-%20Guides%20-%20Custom%20HUDs_files/WebLogo_inverted.png">
+            © cpma-news.org 2011-2022
+        </div>
+    </div>
+
+    
+</div></body></html>

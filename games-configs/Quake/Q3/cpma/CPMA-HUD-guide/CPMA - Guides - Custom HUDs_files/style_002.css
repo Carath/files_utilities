@@ -1,0 +1,74 @@
+/* -------------------------------------------------------------------
+// markItUp!
+// By Jay Salvat - http://markitup.jaysalvat.com/
+// ------------------------------------------------------------------*/
+.markItUp .bbcbold a	{
+	background-image:url(glyphicons/png/glyphicons_102_bold.png);
+}
+.markItUp .bbcitalic a	{
+	background-image:url(glyphicons/png/glyphicons_101_italic.png);
+}
+.markItUp .bbcunderline a	{
+	background-image:url(glyphicons/png/glyphicons_103_text_underline.png);
+}
+.markItUp .bbcstroke a	{
+	background-image:url(glyphicons/png/glyphicons_104_text_strike.png);
+}
+.markItUp .bbcleft a	{
+	background-image:url(glyphicons/png/glyphicons_110_align_left.png);
+}
+.markItUp .bbccenter a	{
+	background-image:url(glyphicons/png/glyphicons_111_align_center.png);
+}
+.markItUp .bbcright a	{
+	background-image:url(glyphicons/png/glyphicons_112_align_right.png);
+}
+.markItUp .bbcjustify a	{
+	background-image:url(glyphicons/png/glyphicons_113_justify.png);
+}
+
+
+.markItUp .bbcpic a	{
+	background-image:url(glyphicons/png/glyphicons_138_picture.png);
+}
+.markItUp .bbclink a	{
+	background-image:url(glyphicons/png/glyphicons_050_link.png);
+}
+
+.markItUp .bbcfont a	{
+	background-image:url(glyphicons/png/glyphicons_100_font.png);
+}
+.markItUp .bbcul a	{
+	background-image:url(glyphicons/png/glyphicons_114_list.png);
+}
+.markItUp .bbcol a	{
+	background-image:url(glyphicons/png/glyphicons_114_olist.png);
+}
+.markItUp .bbcli a	{
+	background-image:url(glyphicons/png/glyphicons_169_record.png);
+}
+
+.markItUp .bbcquote a	{
+	background-image:url(glyphicons/png/glyphicons_300_microphone.png);
+}
+.markItUp .bbccode a	{
+	background-image:url(glyphicons/png/glyphicons_117_embed.png);
+	background-size: 14px 14px;
+}
+.markItUp .bbchide a	{
+	background-image:url(glyphicons/png/glyphicons_367_expand.png);
+}
+	
+.markItUp .clean a {
+	background-image:url(glyphicons/png/glyphicons_192_circle_remove.png);
+}
+.markItUp .preview a {
+	background-image:url(glyphicons/png/glyphicons_193_circle_ok.png);
+}
+.markItUp .bbccolors a {
+	background-image:url(images/colors.png);
+}
+
+.markItUpButton a{
+	background-size: auto 14px;
+}

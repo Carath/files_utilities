@@ -1,0 +1,4217 @@
+// Edit by KorbaK[vioc]
+// Version du 31 ao�t 2004
+// Pour Frozen Throne v1.17
+//
+//
+// Pour tout bug, faute d'orthographe, erreur, probl�me de traduction, remarque ou suggestion 
+// merci de me poster sur le forum du site des [vioc] :
+//
+// http://www.clan-vioc.fr.st ("Radotage" puis "Bo�te � Z'outils")
+//
+//
+// Principe :
+// ----------
+// J'ai cr�� des raccourcis en rattachant les 12 cases d'ic�nes aux 12 touches suivantes :
+// AZER
+// QSDF
+// WXCV
+// J'ai aussi d�plac� quelques ic�nes, mais �a reste exceptionnel. 
+//
+//
+// Nouveaut�s :
+// ------------
+// - L'Alchimiste
+// - Le Seigneur de feu
+// 
+//
+// Exceptions et limites :
+// -----------------------
+// - J'ai laisse le "Unsummon" des Acolytes Mort-Vivants avec le raccourci (U), j'ai trouve un peu dangereux de le
+// mettre sur le (X) juste � cote du (S) qui sert � r�parer un b�timent.   
+// - Il est d�conseill� d'utiliser le raccourci (V) de s�lection du client dans la boutique elfe, il est en conflit avec 
+// l'Uproot du b�timent : (V) entra�ne le d�racinement.
+// - Certains creeps se retrouvent avec deux voir trois sorts diff�rents sur le m�me raccourci clavier (tr�s tr�s rare).
+// - Les camps de mercenaires sur les cartes de type "Dallaran" ou "Cit�" me posent encore quelques probl�mes...
+//
+//
+//
+// SOMMAIRE :
+// ----------
+//
+//-  1 - Commandes partag�es
+//
+//-  2 - Humains          : les Unit�s
+//
+//-  3 - Humains          : b�timents et Upgrades
+//
+//-  4 - Humains          : les H�ros
+//
+//-  5 - Orcs             : les Unit�s
+//
+//-  6 - Orcs             : b�timents et Upgrades
+//
+//-  7 - Orcs             : les H�ros
+//
+//-  8 - Elfes de la nuit : les Unit�s
+//
+//-  9 - Elfes de la nuit : b�timents et Upgrades
+//
+//- 10 - Elfes de la nuit : les H�ros
+//
+//- 11 - Morts vivants    : les Unit�s
+//
+//- 12 - Morts vivants    : b�timents et Upgrades
+//
+//- 13 - Morts vivants    : les H�ros
+//
+//- 14 - Les h�ros neutres
+//
+//- 15 - Les boutiques
+//
+//- 16 - Les sorts des creeps et mercenaires
+//
+//- 17 - Engager les mercenaires et invoquer des Dragons
+//
+//- 18 - Les Nagas
+//
+//- 19 - Les h�ros de la campagne solo
+//
+//- 20 - Codage des accents (pour info)
+
+
+
+
+///////////////////////////////////////
+//- 1 - Commandes partag�es
+///////////////////////////////////////
+
+//move
+[CmdMove]
+Buttonpos=1,0
+Tip=|cffffcc00Z :|r Avancer
+Hotkey=Z
+
+//attack
+[CmdAttack]
+Buttonpos=0,0
+Tip=|cffffcc00A :|r Attaquer
+Hotkey=A
+
+//attack ground
+[CmdAttackGround]
+Tip=|cffffcc00F :|r Attaquer le sol
+Hotkey=F
+
+//build (generic)
+[CmdBuild]
+Tip=|cffffcc00W :|r Construire un bâtiment
+Hotkey=W
+
+//build (human)
+[CmdBuildHuman]
+Tip=|cffffcc00W :|r Construire un bâtiment
+Hotkey=W
+
+//build (orc)
+[CmdBuildOrc]
+Tip=|cffffcc00W :|r Construire un bâtiment
+Hotkey=W
+
+//build (nightelf)
+[CmdBuildNightElf]
+Tip=|cffffcc00W :|r Créer un bâtiment
+Hotkey=W
+
+//build (undead)
+[CmdBuildUndead]
+Tip=|cffffcc00W :|r Invoquer un bâtiment
+Hotkey=W
+
+//build (naga)
+[CmdBuildNaga]
+Tip=|cffffcc00W :|r Construire un bâtiment
+Hotkey=W
+
+//cancel
+[CmdCancel]
+Tip=Annuler (|cffffcc00ESC|r)
+Hotkey=512
+
+//cancel build
+[CmdCancelBuild]
+Tip=Annuler (|cffffcc00ESC|r)
+Hotkey=512
+
+//cancel train
+[CmdCancelTrain]
+ButtonPos=3,0
+Tip=Annuler (|cffffcc00ESC|r)
+Hotkey=512
+
+//cancel revive
+[CmdCancelRevive]
+Tip=Annuler (|cffffcc00ESC|r)
+Hotkey=512
+
+//hold position
+Buttonpos=2,0
+[CmdHoldPos]
+Tip=|cffffcc00E :|r Tenir position
+Hotkey=E
+
+//patrol
+[CmdPatrol]
+Buttonpos=0,1
+Tip=|cffffcc00Q :|r Patrouiller
+Hotkey=Q
+
+//rally
+[CmdRally]
+Tip=|cffffcc00F :|r Point de ralliement
+Hotkey=F
+
+//select skill
+[CmdSelectSkill]
+Tip=|cffffcc00F :|r Compétences des héros
+Hotkey=F
+
+//stop
+[CmdStop]
+Buttonpos=3,0
+Tip=|cffffcc00R :|r Stop
+Hotkey=R
+
+//normal harvest
+[Ahar]
+Tip=|cffffcc00F :|r Récolter
+Untip=|cffffcc00F :|r Ramener Ressources
+Hotkey=F
+Unhotkey=F
+
+//lumber harvest (ghoul)
+[Ahrl]
+Tip=|cffffcc00F :|r Récolter
+Untip=|cffffcc00F :|r Ramener Ressources
+Hotkey=F
+Unhotkey=F
+
+// peon/peasant repair ability
+[Arep]
+Tip=|cffffcc00S :|r Réparer
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=S
+Unhotkey=S
+
+// human repair
+[Ahrp]
+Tip=|cffffcc00S :|r Réparer
+Hotkey=S
+UnHotkey=S
+
+// Selectionner un client dans une boutique
+[Anei]
+Tip=|cffffcc00V :|r Sélectionner le client.
+Hotkey=V
+
+// Cargo Load (Zeppelin)
+[Aloa]
+Tip=|cffffcc00W :|r Charger
+Hotkey=W
+
+// Cargo Unload (zeppelin)
+[Adro]
+Tip=|cffffcc00X :|r Tout décharger
+Hotkey=X
+
+//cargo load (sea transports)
+[Slo3]
+Tip=|cffffcc00W :|r Charger
+Hotkey=W
+
+//cargo unload (sea transports)
+[Sdro]
+Tip=|cffffcc00X :|r Tout décharger
+Hotkey=X
+
+
+
+/////////////////////////////
+//- 2 - Humains : les Unit�s
+/////////////////////////////
+
+//dragonhawk 
+[hdhw]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner un Chevaucheur de Dragon faucon
+
+// Aerial Shackles
+[Amls]
+Tip=|cffffcc00W :|r Entraves aériennes
+Hotkey=W
+
+// Cloud
+[Aclf]
+Tip=|cffffcc00X :|r Nuage
+Hotkey=X
+
+//footman
+[hfoo]	
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner un Fantassin
+
+// Defend
+[Adef]
+Tip=|cffffcc00W :|r Défense
+Untip=|cffffcc00W :|r Arrêter défense
+Hotkey=W
+Unhotkey=W
+
+//flying machine
+[hgyr]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner un Gyrocoptère
+
+//knight
+[hkni]
+Hotkey=E
+Tip=|cffffcc00E :|r Entraîner un Chevalier
+
+//priest
+[hmpr]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Entraîner un Prêtre
+
+// Inner Fire
+[Ainf]
+Tip=|cffffcc00C :|r Feu intérieur
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=C
+Unhotkey=C
+
+// Heal
+[Ahea]
+Tip=|cffffcc00W :|r Soins
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=W
+Unhotkey=W
+
+// Dispel Magic
+[Adis]
+Tip=|cffffcc00X :|r Dissiper magie
+Hotkey=X
+
+//mortar team
+[hmtm]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Entraîner un Mortier
+
+// Flare
+[Afla]
+Tip=|cffffcc00W :|r Fusée éclairante
+Hotkey=W
+
+//peasant
+[hpea]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner un Paysan
+
+// Call to Arms (For one or several peons)
+[Amil]
+Tip=|cffffcc00X :|r Appel aux armes
+Untip=|cffffcc00C :|r Retour au travail
+Hotkey=X
+Unhotkey=C
+
+// Call to Arms (for all nearby peons, on a town hall)
+[Amic]
+Tip=|cffffcc00X :|r Appel aux armes
+Untip=|cffffcc00C :|r Retour au travail
+Hotkey=X
+Unhotkey=C
+
+//rifleman
+[hrif]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Entraîner un Fusilier
+
+//sorceress
+[hsor]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner une Sorcière
+
+// Slow
+[Aslo]
+Tip=|cffffcc00W :|r Lenteur
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=W
+Unhotkey=W
+
+// Polymorph
+[Aply]
+Tip=|cffffcc00C :|r Polymorphe
+Hotkey=C
+
+// Invisibility
+[Aivs]
+Tip=|cffffcc00X :|r Invisibilité
+Hotkey=X
+
+//spell breaker
+[hspt]
+Hotkey=E
+Tip=|cffffcc00E :|r Entraîner un Brisesort
+
+// Spell Steal
+[Asps]
+Tip=|cffffcc00W :|r Vol de sort
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=W
+Unhotkey=W
+
+// Control Magic
+[Acmg]
+Tip=|cffffcc00X :|r Contrôle de la magie
+Hotkey=X
+
+//siege engine (without barrage)
+[hmtt]
+Hotkey=E
+Tip=|cffffcc00E :|r Construire un Engin de siège
+
+//siege engine (with barrage)
+[hrtt]
+Hotkey=E
+Tip=|cffffcc00E :|r Construire un Engin de siège
+
+//gryphon rider
+[hgry]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Entraîner un Chevaucheur de Griffon
+
+
+
+///////////////////////////////////////
+//- 3 - Humains : b�timents et Upgrades
+///////////////////////////////////////
+
+//control magic
+[Rhss]
+Tip=|cffffcc00C :|r Rechercher Contrôle de la magie
+Buttonpos=2,2
+Hotkey=C
+
+//iron swords upgrades
+[Rhme]
+Tip=|cffffcc00A :|r Améliorer en Epées de fer,|cffffcc00A :|r Améliorer en Epées d'acier,|cffffcc00A :|r Améliorer en Epées de mithril
+Hotkey=A,A,A
+
+//gunpowder upgrades
+[Rhra]
+Tip=|cffffcc00Z :|r Améliorer en Poudre noire,|cffffcc00Z :|r Améliorer en Poudre raffinée,|cffffcc00Z :|r Améliorer en Poudre enchantée
+Hotkey=Z,Z,Z
+
+//iron armor upgrades
+[Rhar]
+Tip=|cffffcc00Q :|r Améliorer en Armure de fer,|cffffcc00Q :|r Améliorer en Armure de fer,|cffffcc00Q :|r Améliorer en Armure de mithril
+Hotkey=Q,Q,Q
+
+//leather armor upgrades
+[Rhla]
+Tip=|cffffcc00S :|r Améliorer en  Cuir clouté,|cffffcc00S :|r Améliorer en Cuir renforcé,|cffffcc00S :|r Améliorer en Cuir de dragon
+Hotkey=S,S,S
+
+//masonry upgrades
+[Rhac]
+Tip=|cffffcc00Z :|r Améliorer en Maçonnerie renforcée,|cffffcc00Z :|r Améliorer Maçonnerie avancée,|cffffcc00Z :|r Améliorer Maçonnerie enchantée
+Hotkey=Z,Z,Z
+
+//flying machine bombs
+[Rhgb]
+Tip=|cffffcc00W :|r Rechercher Bombes de Machine volante
+Hotkey=W
+
+//improved lumber harvesting upgrades
+[Rhlh]
+Tip=|cffffcc00A :|r Améliorer en Collecte de bois perfectionnée,|cffffcc00A :|r Améliorer en Collecte de bois avancée
+Hotkey=A,A
+
+//defend upgrade
+[Rhde]
+Tip=|cffffcc00W :|r Rechercher Défensif
+Hotkey=W
+
+//war animal training upgrade
+[Rhan]
+Tip=|cffffcc00C :|r Rechercher Elevage
+Hotkey=C
+
+//priest training upgrade
+[Rhpt]
+Tip=|cffffcc00X :|r Formation de Prêtre Adepte,|cffffcc00X :|r Formation de Prêtre Maître
+Hotkey=X,X
+
+//sorceress training upgrade
+[Rhst]
+Tip=|cffffcc00W :|r Formation de Sorcière Adepte,|cffffcc00W :|r Formation de Sorcière Maître
+Hotkey=W,W
+
+//long rifles upgrade
+[Rhri]
+Tip=|cffffcc00X :|r Améliorer en Canons longs
+Hotkey=X
+
+//magic sentry upgrade
+[Rhse]
+Buttonpos=3,0
+Tip=|cffffcc00R :|r Rechercher Sentinelle magique
+Hotkey=R
+
+//flare upgrade
+[Rhfl]
+Tip=|cffffcc00X :|r Rechercher Fusée éclairante
+Hotkey=X
+
+//storm hammers upgrade
+[Rhhb]
+Tip=|cffffcc00X :|r Rechercher Marteaux des tempêtes
+Hotkey=X
+
+//barrage upgrade
+[Rhrt]
+Tip=|cffffcc00C :|r Rechercher Barrage
+Hotkey=C
+
+//backpack upgrade
+[Rhpm]
+Tip=|cffffcc00R :|r Rechercher Sac
+Hotkey=R
+
+//flak cannons upgrade
+[Rhfc]
+Tip=|cffffcc00Q :|r Rechercher Canons de flak
+Hotkey=Q
+
+//frag shards upgrade
+[Rhfs]
+Tip=|cffffcc00S :|r Rechercher Obus �  fragmentation
+Hotkey=S
+
+//cloud upgrade
+[Rhcd]
+Tip=|cffffcc00W :|r Rechercher Nuage
+Hotkey=W
+
+//altar of kings
+[halt]
+Hotkey=S
+Tip=|cffffcc00S :|r Construire un Autel des rois
+
+//workshop
+[harm]	
+Hotkey=F
+Tip=|cffffcc00F :|r Construire un Atelier
+
+//arcane sanctum
+[hars]
+Hotkey=D
+Tip=|cffffcc00D :|r Construire un Arcane Sanctum
+
+//human barracks
+[hbar]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Construire une Caserne
+
+//blacksmith
+[hbla]
+Hotkey=R
+Tip=|cffffcc00R :|r Construire une Forge
+
+//farm
+[hhou]
+Hotkey=Q
+Tip=|cffffcc00Q :|r Construire une Ferme
+
+//gryphon aviary
+[hgra]
+Hotkey=X
+Tip=|cffffcc00X :|r Construire une Tour des Griffons
+
+//Cannon Tower
+[hctw]
+Hotkey=X
+Tip=|cffffcc00X :|r Améliorer en Tour canon
+
+//guard tower
+[hgtw]
+Hotkey=W
+Tip=|cffffcc00W :|r Améliorer en Tour de garde
+//scout tower
+[hwtw]
+Hotkey=W
+Tip=|cffffcc00W :|r Construire une Tour de guet
+
+//arcane tower
+[hatw]
+Hotkey=C
+Tip=|cffffcc00C :|r Améliorer en Tour des arcanes
+
+// reveal on arcane tower
+[AHta]
+Tip=|cffffcc00W :|r Révéler
+Hotkey=W
+
+//arcane vault
+[hvlt]
+Hotkey=C
+Tip=|cffffcc00C :|r Construire une Salle des Arcanes
+
+//lumber mill
+[hlum]
+Hotkey=E
+Tip=|cffffcc00E :|r Construire une Scierie
+
+//keep
+[hkee]	
+Hotkey=W
+Tip=|cffffcc00W :|r Améliorer en Donjon
+
+//castle
+[hcas]
+Hotkey=W
+Tip=|cffffcc00W :|r Améliorer en Château
+
+//town hall
+[htow]
+Hotkey=A
+Tip=|cffffcc00A :|r Constuire un Hôtel de ville
+
+
+
+/////////////////////////////
+//- 4 - Humains : les H�ros
+/////////////////////////////
+
+//blood mage
+[Hblm]
+Hotkey=Q
+Tip=|cffffcc00Q :|r Invoquer le Mage de sang
+Revivetip=Ressusciter le Mage de sang
+Awakentip=Ressusciter instantanement le Mage de sang
+
+// Siphon Mana
+[AHdr]
+Tip=|cffffcc00C :|r Siphon de mana - [|cffffcc00Niveau 1|r],|cffffcc00C :|r Siphon de mana - [|cffffcc00Niveau 2|r],|cffffcc00C :|r Siphon de mana - [|cffffcc00Niveau 3|r]
+Hotkey=C
+Researchtip="|cffffcc00E :|r Apprendre Siphon de mana - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Flame Strike
+[AHfs]
+Tip=|cffffcc00W :|r Choc de flammes - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Choc de flammes - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Choc de flammes - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Choc de flammes - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Banish
+[AHbn]
+Tip=|cffffcc00X :|r Bannir - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Bannir - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Bannir - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Bannir - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Summon Phoenix
+[AHpx]
+Tip=|cffffcc00V :|r Phènix
+Hotkey=V
+Researchtip=|cffffcc00R :|r Apprendre Phènix
+Researchhotkey=R
+
+//archmage
+[Hamg]
+Hotkey=W
+Tip=|cffffcc00W :|r Invoquer l'Archimage
+Revivetip=Ressusciter l'Archimage
+Awakentip=Ressusciter instantanement l'Archimage
+
+// Blizzard
+[AHbz]
+Tip=|cffffcc00W :|r Blizzard - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Blizzard - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Blizzard - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Blizzard - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Summon Water Elemental
+[AHwe]
+Tip=|cffffcc00X :|r Invoquer un Elémentaire d'eau - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Invoquer un Elémentaire d'eau - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Invoquer un Elémentaire d'eau - [|cffffcc00Niveau 3|r] 
+Researchtip="|cffffcc00Z :|r Apprendre Invoquer un Elémentaire d'eau - [|cffffcc00Niveau %d|r]"
+Hotkey=X
+Researchhotkey=Z
+
+// Brilliance Aura
+[AHab]
+Tip=Aura d'illumination - [|cffffcc00Niveau 1|r],Aura d'illumination - [|cffffcc00Niveau 2|r],Aura d'illumination - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00E :|r Apprendre Aura d'illumination - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Mass Teleport
+[AHmt]
+Tip=|cffffcc00V :|r Téléportation en groupe
+Hotkey=V
+Researchtip=|cffffcc00R :|r Apprendre Téléportation en groupe
+Researchhotkey=R
+
+//mountain king
+[Hmkg]
+Hotkey=X
+Tip=|cffffcc00X :|r Invoquer le Roi de la montagne
+Revivetip=Ressusciter le Roi de la montagne
+Awakentip=Ressusciter instantanement le Roi de la montagne
+
+// Storm Bolt
+[AHtb]
+Tip=|cffffcc00W :|r Boule de foudre - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Boule de foudre - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Boule de foudre - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Boule de foudre - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Thunder Clap
+[AHtc]
+Tip=|cffffcc00X :|r Coup de tonnerre - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Coup de tonnerre - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Coup de tonnerre - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Coup de tonnerre - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Bash
+[AHbh]
+Tip=Assommoir - [|cffffcc00Niveau 1|r],Assommoir - [|cffffcc00Niveau 2|r],Assommoir - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00E :|r Apprendre Assommoir - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Avatar
+[AHav]
+Tip=|cffffcc00V :|r Activer l'Avatar
+Untip=|cffffcc00V :|r Desactiver l'Avatar
+Hotkey=V
+Unhotkey=V
+Researchtip=|cffffcc00R :|r Apprendre Avatar
+Researchhotkey=R
+
+//paladin
+[Hpal]
+Hotkey=C
+Tip=|cffffcc00C :|r Invoquer le Paladin
+Revivetip=Ressusciter le Paladin
+Awakentip=Ressusciter instantanement le Paladin
+
+// Holy Light
+[AHhb]
+Tip=|cffffcc00W :|r Feu sacré - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Feu sacré - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Feu sacré - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Feu sacré - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Divine Shield
+[AHds]
+Tip=|cffffcc00X :|r Activer le Bouclier divin -[|cffffcc00Niveau 1|r],|cffffcc00X :|r Activer le Bouclier divin - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Activer le Bouclier divin - [|cffffcc00Niveau 3|r]
+Untip=|cffffcc00X :|r Desactiver le Bouclier divin
+Hotkey=X
+Unhotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Bouclier divin - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Devotion Aura
+[AHad]
+Tip=Aura de dévotion - [|cffffcc00Niveau 1|r],Aura de dévotion - [|cffffcc00Niveau 2|r],Aura de dévotion - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00E :|r Apprendre Aura de dévotion - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// R�surrection
+[AHre]
+Tip=|cffffcc00V :|r Résurrection
+Hotkey=V
+Researchtip=|cffffcc00R :|r Apprendre Résurrection
+Researchhotkey=R
+
+
+
+/////////////////////////
+//- 5 - Orcs : les unit�s
+/////////////////////////
+
+//demolisher
+[ocat]
+Hotkey=E
+Tip=|cffffcc00E :|r Entraîner un Démolisseur
+
+//witch doctor
+[odoc]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Entraîner un Sorcier docteur
+
+// Sentry Ward
+[Aeye]
+Tip=|cffffcc00W :|r Balise sentinelle
+Hotkey=W
+
+// Stasis Trap spell
+[Asta]
+Tip=|cffffcc00X :|r Champ de stase
+Hotkey=X
+
+// Healing Ward
+[Ahwd]
+Tip=|cffffcc00C :|r Balise de soins
+Hotkey=C
+
+//grunt
+[ogru]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner un Grunt
+
+//troll headhunter
+[ohun]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Entraîner un Chasseur de tete Troll
+
+//troll berserker
+[otbk]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Entraîner un Berserker Troll
+
+// Berserk
+[Absk]
+Tip="|cffffcc00W :|r Folie furieuse"
+Hotkey=W
+
+//kodo beast
+[okod]
+Hotkey=E
+Tip=|cffffcc00E :|r Entraîner une Bête Kodo
+
+// Devour
+[Adev]
+Tip=|cffffcc00W :|r Festin
+Hotkey=W
+
+//peon
+[opeo]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner un Péon
+
+//raider
+[orai]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner un Chevaucheur de loup
+
+//Ensnare
+[Aens]
+Tip=|cffffcc00W :|r Filet
+Hotkey=W
+
+//shaman
+[oshm]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner un Chaman
+
+//Expiation pour Reign of Chaos
+[Aprg]
+Tip=|cffffcc00W :|r Expiation
+Hotkey=W
+
+//Expiation pour Frozen Throne
+[Apg2]
+Tip=|cffffcc00W :|r Expiation
+Hotkey=W
+
+//Lightning Shield
+[Alsh]
+Tip=|cffffcc00X :|r Bouclier de foudre
+Hotkey=X
+
+//Bloodlust
+[Ablo]
+Tip=|cffffcc00C :|r Furie sanguinaire
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=C
+Unhotkey=C
+
+//tauren
+[otau]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner un Tauren
+
+//troll batrider
+[otbr]
+Hotkey=R
+Tip=|cffffcc00R :|r Entraîner un Chevaucheur de chauve-souris Troll
+
+// Unstable Concoction
+[Auco]
+Tip="|cffffcc00W :|r Concoction instable"
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=W
+Unhotkey=W
+
+
+//wind rider
+[owyv]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Entraîner une Wyverne
+
+//spirit walker
+[ospm]
+Hotkey=E
+Tip=|cffffcc00E :|r Entraîner un Esprit marcheur
+
+// Ancestral Spirit
+[Aast]
+Tip="|cffffcc00C :|r Esprit ancestral"
+Hotkey=C
+
+// Disenchant (new)
+[Adcn]
+Tip="|cffffcc00X :|r Désespérance"
+Hotkey=X
+
+// Corporeal Form
+[Acpf]
+Tip="|cffffcc00V :|r Forme corporelle"
+Untip="|cffffcc00V :|r Forme etheree"
+Hotkey=V
+Unhotkey=V
+
+// Ethereal Form
+[Aetf]
+Tip="|cffffcc00V :|r Forme éthérée"
+Untip="|cffffcc00V :|r Forme corporelle"
+Hotkey=V
+Unhotkey=V
+
+// Spirit Link
+[Aspl]
+Tip="|cffffcc00W :|r Lien spirituel"
+Hotkey=W
+
+
+
+////////////////////////////////////////
+//- 6 - Orcs : les b�timents et Upgrades
+////////////////////////////////////////
+
+//orc mélée weapon upgrades
+[Rome]
+Tip=|cffffcc00A :|r Améliorer en Armes de mélée d'acier,|cffffcc00A :|r Améliorer en Armes de mélée de thorium,|cffffcc00A :|r Améliorer en Armes de mélée d'arcanite
+Hotkey=A,A,A
+
+//orc ranged weapon upgrades
+[Rora]
+Tip=|cffffcc00Z :|r Améliorer en Armes de jet d'acier,|cffffcc00Z :|r Améliorer en Armes de jet de thorium,|cffffcc00Z :|r Améliorer en Armes de jet d'arcanite
+Hotkey=Z,Z,Z
+
+//orc armor upgrades
+[Roar]
+Tip=|cffffcc00Q :|r Améliorer en Armures d'acier,|cffffcc00Q :|r Améliorer en Armures de thorium,|cffffcc00Q :|r Améliorer en Armures d'arcanite
+Hotkey=Q,Q,Q
+
+//war drums upgrade
+[Rwdm]
+Tip=|cffffcc00C :|r Améliorer Tambours de guerre
+Hotkey=C
+
+// pillage upgrade
+[Ropg]
+Tip=|cffffcc00E :|r Pillage
+Hotkey=E
+
+//berserker strength upgrade
+[Robs]
+Tip=|cffffcc00W :|r Rechercher Folie furieuse
+Hotkey=W
+
+//pulverize upgrade
+[Rows]
+Tip=|cffffcc00W :|r Rechercher Pulvériser
+Hotkey=W
+
+//ensnare upgrade
+[Roen]
+Tip=|cffffcc00W :|r Rechercher Filet
+Hotkey=W
+
+//envenomed spears upgrade
+[Rovs]
+Tip=|cffffcc00S :|r Rechercher Lances empoisonnées
+Hotkey=S
+
+//witch doctor training upgrade
+[Rowd]
+Tip=|cffffcc00X :|r Formation Sorcier docteur Adepte,|cffffcc00X :|r Formation Sorcier docteur Maître
+Hotkey=X,X
+
+//shaman training upgrade
+[Rost]
+Tip=|cffffcc00W :|r Formation Chaman Adepte,|cffffcc00W :|r Formation Chaman Maître
+Hotkey=W,W
+
+//spided barricades upgrade
+[Rosp]
+Tip=|cffffcc00E :|r Améliorer en Barricade d'épieux,|cffffcc00E :|r Améliorer en Barricade d'épieux perfectionnée,|cffffcc00E:|r Améliorer en Barricade d'épieux avancée
+Hotkey=E,E,E
+
+//troll regeneration upgrade
+[Rotr]
+Tip=|cffffcc00S :|r Rechercher Régénération,|cffffcc00S :|r Rechercher Regeneration,|cffffcc00S :|r Rechercher Regeneration
+Hotkey=S
+
+//liquid fire upgrade
+[Rolf]
+Tip=|cffffcc00D :|r Rechercher Feu liquide
+Hotkey=D
+
+//backpack Améliorer (orc)
+[Ropm]
+Tip=|cffffcc00R :|r Rechercher Sac
+Hotkey=R
+
+//spirit walker training upgrade
+[Rowt]
+Tip=|cffffcc00C :|r Formation Esprit marcheur Adepte,|cffffcc00C :|r Formation Esprit marcheur Maître
+Hotkey=C,C
+
+//troll berserker upgrade
+[Robk]
+Tip=|cffffcc00X :|r Amelioration Berserker
+Hotkey=X
+
+//reinforced defenses upgrade
+[Rorb]
+Tip=|cffffcc00D :|r Défenses renforcées
+Hotkey=D
+
+//burning oil upgrade
+[Robf]
+Tip=|cffffcc00C :|r Rechercher Liquide enflammé
+Hotkey=C
+
+//altar of storms
+[oalt]
+Hotkey=S
+Tip=|cffffcc00S :|r Construire un Autel des tempêtes
+
+//orc barracks
+[obar]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Construire une Caserne
+
+//bestiary
+[obea]
+Hotkey=F
+Tip=|cffffcc00F :|r Construire un Bestiaire
+
+//war mill
+[ofor]
+Hotkey=E
+Tip=|cffffcc00E :|r Construire un Chantier
+
+//fortress
+[ofrt]
+Hotkey=W
+Tip=|cffffcc00W :|r Améliorer en Forteresse
+
+//great hall
+[ogre]
+Hotkey=A
+Tip=|cffffcc00A :|r Construire un Village
+
+//spirit lodge
+[osld]
+Hotkey=D
+Tip=|cffffcc00D :|r Construire un Autel des esprits
+
+//stronghold
+[ostr]
+Hotkey=W
+Tip=|cffffcc00W :|r Améliorer en Bastion
+
+//orc burrow
+[otrb]
+Hotkey=Q
+Tip=|cffffcc00Q :|r Construire un Antre des Orcs
+
+//battle stations
+[Abtl]
+Tip=|cffffcc00W :|r Postes de combat
+Hotkey=W
+
+//stand down from battle stations
+[Astd]
+Tip=|cffffcc00X :|r Repos
+Hotkey=X
+
+//reinforced orc burrow
+[orbr]
+Hotkey=Q
+Tip=|cffffcc00Q :|r Construire un Antre des Orcs renforcé
+
+//tauren totem
+[otto]
+Hotkey=W
+Tip=|cffffcc00W :|r Construire un Totem Tauren
+
+//voodoo lounge
+[ovln]
+Hotkey=X
+Tip=|cffffcc00X :|r Construire une Chambre vaudou
+
+//watch tower
+[owtw]
+Hotkey=R
+Tip=|cffffcc00R :|r Construire une Tour défensive
+
+
+
+////////////////////////
+//- 7 - Orcs : les h�ros
+////////////////////////
+
+// Maître-lame
+[Obla]
+Hotkey=W
+Tip=|cffffcc00W :|r Invoquer le Maître-lame
+Revivetip=Ressusciter le Maître-lame
+Awakentip=Ressusciter instantanement le Maître-lame
+
+// Wind Walk
+[AOwk]
+Tip=|cffffcc00W :|r Vent divin - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Vent divin - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Vent divin - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Vent divin - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Critical Strike
+[AOcr]
+Tip=Coup critique - [|cffffcc00Niveau 1|r],Coup critique - [|cffffcc00Niveau 2|r],Coup critique - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00E :|r Apprendre Coup critique - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Mirror Image
+[AOmi]
+Tip=|cffffcc00X :|r Miroir - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Miroir - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Miroir - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Miroir - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Bladestorm
+[AOww]
+Tip=|cffffcc00V :|r Tourbillon de lames
+Hotkey=V
+Researchtip=|cffffcc00R :|r Apprendre Tourbillon de lames
+Researchhotkey=R
+
+// Proph�te
+[Ofar]
+Hotkey=X
+Tip=|cffffcc00X :|r Invoquer le Prophète
+Revivetip=Ressusciter le Prophète
+Awakentip=Ressusciter instantanement le Prophète
+
+// Chain Lightning
+[AOcl]
+Tip=|cffffcc00W :|r Chaine d'éclairs - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Chaine d'éclairs - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Chaine d'éclairs - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Chaine d'éclairs - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Far Sight
+[AOfs]
+Tip=|cffffcc00X :|r Double vue - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Double vue - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Double vue - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Double vue - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Feral Spirit
+[AOsf]
+Tip=|cffffcc00C :|r Esprit sauvage - [|cffffcc00Niveau 1|r],|cffffcc00C :|r Esprit sauvage - [|cffffcc00Niveau 2|r],|cffffcc00C :|r Esprit sauvage - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00E :|r Apprendre Esprit sauvage - [|cffffcc00Niveau %d|r]."
+Hotkey=C
+Researchhotkey=E
+
+// Earthquake
+[AOeq]
+Tip=|cffffcc00V :|r Séisme
+Hotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Séisme"
+Researchhotkey=R
+
+// Chasseur d'ombre
+[Oshd]
+Hotkey=Q
+Tip=|cffffcc00Q :|r Invoquer le Chasseur des ombres
+Revivetip=Ressusciter le Chasseur des ombres
+Awakentip=Ressusciter instantanement le Chasseur des ombres
+
+// Healing Wave
+[AOhw]
+Tip=|cffffcc00W :|r Vague de soins - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Vague de soins - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Vague de soins - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Vague de soins - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Serpent Ward
+[AOsw]
+Tip=|cffffcc00C :|r Protection du serpent - [|cffffcc00Niveau 1|r],|cffffcc00C :|r Protection du serpent - [|cffffcc00Niveau 2|r],|cffffcc00C :|r Protection du serpent - [|cffffcc00Niveau 3|r]
+Hotkey=C
+Researchtip="|cffffcc00E :|r Apprendre Protection du serpent - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Hex
+[AOhx]
+Tip=|cffffcc00X :|r Hex - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Hex - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Hex - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Hex - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Voodoo
+[AOvd]
+Tip=|cffffcc00V :|r Grand méchant vaudou
+Hotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Grand méchant vaudou"
+Researchhotkey=R
+
+// Chef Tauren
+[Otch]
+Hotkey=C
+Tip=|cffffcc00C :|r Invoquer le Chef Tauren
+Revivetip=Ressusciter le Chef Tauren
+Awakentip=Ressusciter instantanement le Chef Tauren
+
+
+// Shockwave
+[AOsh]
+Tip=|cffffcc00W :|r Onde de choc - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Onde de choc - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Onde de choc - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Onde de choc - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Endurance Aura
+[AOae]
+Tip=Aura d'endurance - [|cffffcc00Niveau 1|r],Aura d'endurance - [|cffffcc00Niveau 2|r],Aura d'endurance - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00E :|r Apprendre Aura d'endurance - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// War Stomp (Chieftan)
+[AOws]
+Tip=|cffffcc00X :|r Choc martial - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Choc martial - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Choc martial - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00Z :|r Apprendre Choc martial - [|cffffcc00Niveau %d|r]."
+Hotkey=X
+Researchhotkey=Z
+
+// Reincarnation
+[AOre]
+Tip=Réincarnation
+Researchtip=|cffffcc00R :|r Apprendre Réincarnation
+Researchhotkey=R
+
+
+
+//////////////////////////////////////
+//- 8 - Elfes de la nuits : les unit�s
+//////////////////////////////////////
+
+// Shadow Meld 
+[Ashm]
+Tip=|cffffcc00D :|r Dissimulation
+Hotkey=D
+
+//glaive thrower
+[ebal]
+Hotkey=E
+Tip=|cffffcc00E :|r Construire un Lanceur de glaive
+
+//chimaera
+[echm]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner une Chimère
+
+//druid of the claw, night elf form
+[edoc]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Entraîner un Druide-ours
+
+// Roar, night elf form
+[Aroa]
+Tip=|cffffcc00W :|r Rugissement
+Hotkey=W
+
+// Rejuvenation
+[Arej]
+Tip=|cffffcc00X :|r Récupération
+Hotkey=X
+
+// Bear Form
+[Abrf]
+Tip=|cffffcc00V :|r Forme d'Ours
+Hotkey=V
+Untip=|cffffcc00V :|r Forme d'Elfe de la nuit
+Unhotkey=V
+
+// Roar (bear form)
+[Ara2]
+Tip=|cffffcc00W :|r Rugissement
+Hotkey=W
+
+//druid of the talon
+[edot]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Entraîner un Druide-corbeau
+
+// Faerie Fire
+[Afae]
+Tip=|cffffcc00W :|r Lucioles
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=W
+Unhotkey=W
+
+// Cyclone
+[Acyc]
+Tip=|cffffcc00X :|r Cyclone
+Hotkey=X
+
+// Crow Form
+[Arav]
+Tip=|cffffcc00V :|r Forme de Corbeau
+Hotkey=V
+Untip=|cffffcc00V :|r Forme d'Elfe de la nuit
+Unhotkey=V
+
+// Faerie Fire (Crow form)
+[Afa2]
+Tip=|cffffcc00W :|r Lucioles
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=W
+Unhotkey=W
+
+//wisp
+[ewsp]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner un Feu follet
+
+// Renew
+[Aren]
+Tip=|cffffcc00S :|r Rénovation
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=S
+Unhotkey=S
+
+// Wisp Harvest
+[Awha]
+Tip=|cffffcc00F :|r Récolter
+Hotkey=F
+
+// Detonate
+[Adtn]
+Tip=|cffffcc00X :|r Détonation
+Hotkey=X
+
+//huntress
+[esen]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Entraîner une Chasseresse
+
+// Sentinel
+[Aesn]
+Tip=|cffffcc00W :|r Sentinelle
+Hotkey=W
+
+//archer
+[earc]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner un Archer
+
+// Mount Hippogryph
+[Aco2]
+Tip=|cffffcc00W :|r Monter un hippogryphe
+Hotkey=W
+
+// Dismount Hippogryph
+[Adec]
+Tip=|cffffcc00W :|r Descendre l'archer de l'hippogryphe
+Hotkey=W
+
+//dryad
+[edry]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner une Dryade
+
+// Auto-Dispel Magic
+[Aadm]
+Tip=|cffffcc00W :|r Abolir magie
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=W
+Unhotkey=W
+
+//hippogryph
+[ehip]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner un Hippogryphe
+
+// Pick up Archer
+[Aco3]
+Tip=|cffffcc00W :|r Chercher archer
+Hotkey=W
+
+//mountain giant
+[emtg]
+Hotkey=E
+Tip=|cffffcc00E :|r Entraîner un Géant des montagnes
+
+// War Club
+[Agra]
+Tip=|cffffcc00X :|r Gourdin de guerre
+Hotkey=X
+
+// Taunt
+[Atau]
+Tip=|cffffcc00W :|r Provocation
+Hotkey=W
+
+//faerie dragon
+[efdr]
+Hotkey=E
+Tip=|cffffcc00E :|r Entraîner un Dragon féerique
+
+// Mana Flare
+[Amfl]
+Tip=|cffffcc00X :|r Flammes de mana	
+Untip=|cffffcc00X :|r Arreter flammes de mana
+Hotkey=X
+Unhotkey=X
+
+// Phase Shift
+[Apsh]
+Tip=|cffffcc00W :|r Phase
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=W
+Unhotkey=W
+
+
+
+////////////////////////////////////////////////////
+//- 9 - Elfes de la nuit : les b�timents et upgrades
+////////////////////////////////////////////////////
+
+//strength of the moon upgrades
+[Resm]
+Tip=|cffffcc00A :|r Améliorer en Force de la lune,|cffffcc00A :|r Améliorer en Force de la lune superieure,|cffffcc00A :|r Améliorer en Force de la lune grandiose
+Hotkey=A,A,A
+
+//strength of the wild upgrades
+[Resw]
+Tip=|cffffcc00Z :|r Améliorer en Force de la nature,|cffffcc00Z :|r Améliorer en Force de la nature superieure,|cffffcc00Z :|r Améliorer en Force de la nature grandiose
+Hotkey=Z,Z,Z
+
+//moon armor upgrades
+[Rema]
+Tip=|cffffcc00Q :|r Améliorer en Armure lunaire,|cffffcc00Q :|r Améliorer en Armure lunaire superieure,|cffffcc00Q :|r Améliorer en Armure lunaire grandiose
+Hotkey=Q,Q,Q
+
+//reinforced hide upgrades
+[Rerh]
+Tip=|cffffcc00S :|r Améliorer en Cuir renforcé,|cffffcc00S :|r Améliorer en Cuir superieur,|cffffcc00S :|r Améliorer en Cuir grandiose
+Hotkey=S,S,S
+
+//ultravision
+[Reuv]
+Tip=|cffffcc00E :|r Améliorer en Ultravision
+Hotkey=E
+
+//nature's blessing upgrade
+[Renb]
+Tip=|cffffcc00E :|r Rechercher Bénédiction de la nature
+Hotkey=E
+
+//improved bows upgrade
+[Reib]
+Tip=|cffffcc00Q :|r Rechercher Archerie améliorée
+Hotkey=Q
+
+//marksmanship upgrade
+[Remk]
+Tip=|cffffcc00W :|r Rechercher Précision
+Hotkey=W
+
+//sentinel upgrade
+[Resc]
+Tip=|cffffcc00S :|r Rechercher Sentinelle
+
+//moon glaive upgrade
+[Remg]
+Tip=|cffffcc00X :|r Améliorer en Glaive lunaire
+Hotkey=X
+
+//druid of the talon training upgrade
+[Redt]
+Tip=|cffffcc00X :|r Formation de Duide-corbeau Adepte,|cffffcc00X :|r Formation de Druide-corbeau Maître
+Hotkey=X,X
+
+//druid of the claw training upgrade
+[Redc]
+Tip=|cffffcc00X :|r Formation de Druide-ours Adepte,|cffffcc00X :|r Formation de Druide-ours Maître
+Hotkey=X,X
+
+//abolish magic upgrade
+[Resi]
+Tip=|cffffcc00W :|r Rechercher Abolir magie
+Hotkey=W
+
+//hippogryph taming upgrade
+[Reht]
+Tip=|cffffcc00W :|r Rechercher Domptage des hippogryphes
+Hotkey=W
+
+//corrosive breath upgrade
+[Recb]
+Tip=|cffffcc00W :|r Rechercher Souffle corrosif
+Hotkey=W
+
+//vorpal blades upgrade
+[Repb]
+Tip=|cffffcc00C :|r Rechercher Glaives vorpaliens
+Hotkey=C
+
+//resistant skin upgrade
+[Rers]
+Tip=|cffffcc00C :|r Rechercher Peau résistante
+Hotkey=C
+
+//hardened skin upgrade
+[Rehs]
+Tip=|cffffcc00D :|r Rechercher Peau dure
+Hotkey=D
+
+//mark of the claw upgrade
+[Reeb]
+Tip=|cffffcc00S :|r Rechercher Marque de l'ours
+Hotkey=S
+
+//mark of the talon upgrade
+[Reec]
+Tip=|cffffcc00S :|r Rechercher Marque du corbeau
+Hotkey=S
+
+//wellspring upgrade
+[Rews]
+Tip=|cffffcc00R :|r Rechercher Puits de printemps
+Hotkey=R
+
+//backpack upgrade
+[Repm]
+Tip=|cffffcc00R :|r Rechercher Sac
+Hotkey=R
+
+// Eat Tree
+[Aeat]
+Tip=|cffffcc00W :|r Sacrifice Sylvestre
+Hotkey=W
+
+// Root
+[Aroo]
+Tip=|cffffcc00V :|r Prendre racine
+Hotkey=V
+Untip=|cffffcc00C :|r Déraciner
+Unhotkey=C
+
+// Root Ancien
+[Aro1]
+Tip=|cffffcc00V :|r Prendre racine
+Hotkey=V
+Untip=|cffffcc00V :|r Déraciner
+Unhotkey=V
+
+// Root Protecteur
+[Aro2]
+Tip=|cffffcc00V :|r Prendre racine
+Hotkey=V
+Untip=|cffffcc00V :|r Déraciner
+Unhotkey=V
+
+//ancient protector
+[etrp]
+Hotkey=R
+Tip=|cffffcc00R :|r Créer un Ancien protecteur
+
+//tree of life
+[etol]
+Hotkey=A
+Tip=|cffffcc00A :|r Créer un Arbre de vie
+
+// Entangle gold mine
+[Aent]
+Tip=|cffffcc00X :|r Herbes folles
+Hotkey=X
+
+// Entangled Gold Mine Cargo (load/unload)
+[Aenc]
+Tip=|cffffcc00W :|r Charger un feu follet
+Hotkey=W
+Untip=|cffffcc00X :|r Décharger
+Unhotkey=X
+
+// Cargo Load entangled mine
+[Slo2]
+Tip=|cffffcc00W :|r Charger un feu follet
+Ubertip="Charge un feu follet dans la mine."
+Hotkey=W
+
+// Cargo Unload (Instant, gold mine)
+[Adri]
+Tip=|cffffcc00X :|r Décharger toutes les unités
+Hotkey=X
+
+//upgrade to tree of ages
+[etoa]
+Hotkey=W
+Tip=|cffffcc00W :|r Améliorer en Arbre des ages
+
+//upgrade to tree of eternity
+[etoe]
+Hotkey=W
+Tip=|cffffcc00W :|r Améliorer en Arbre d'éternité
+
+//hunter's hall
+[edob]
+Hotkey=E
+Tip=|cffffcc00E :|r Créer un Hall du chasseur
+
+//altar of elders
+[eate]
+Hotkey=S
+Tip=|cffffcc00S :|r Créer un Autel des aieux
+
+//ancient of lore
+[eaoe]
+Hotkey=D
+Tip=|cffffcc00D :|r Créer un Ancien du savoir
+
+//ancient of war
+[eaom]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Créer un Ancien de la guerre
+
+//ancient of wind
+[eaow]
+Hotkey=W
+Tip=|cffffcc00W :|r Créer un Ancien des vents
+
+//ancient of wonders
+[eden]
+Hotkey=C
+Tip=|cffffcc00C :|r Créer un Ancien des merveilles
+
+//chimaera roost
+[edos]
+Hotkey=X
+Tip=|cffffcc00X :|r Créer un Nid des chimères
+
+//moon well
+[emow]
+Hotkey=Q
+Tip=|cffffcc00Q :|r Créer un Puit de lune
+
+// Moon pool mana replenish
+[Ambt]
+Tip=|cffffcc00A :|r rendre mana et points de vie
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=A
+Unhotkey=A
+
+
+
+//////////////////////////////////////
+//- 10 - Elfes de la nuits : les h�ros
+//////////////////////////////////////
+
+//Demon Hunter
+[Edem]
+Hotkey=W
+Tip=|cffffcc00W :|r Invoquer le Chasseur de démon
+Revivetip=Ressusciter le Chasseur de démon
+Awakentip=Ressusciter instantanement le Chasseur de démon
+
+// Mana Burn
+[AEmb]
+Tip=|cffffcc00W :|r Brûlure de mana - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Brûlure de mana - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Brûlure de mana - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Brûlure de mana - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Immolation
+[AEim]
+Tip=|cffffcc00X :|r Activer immolation - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Activer immolation - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Activer immolation - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Untip=|cffffcc00X :|r Désactiver Immolation
+Unhotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Immolation - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Evasion
+[AEev]
+Tip=Esquive - [|cffffcc00Niveau 1|r],Esquive - [|cffffcc00Niveau 2|r],Esquive - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00E :|r Apprendre Esquive - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Metamorphosis
+[AEme]
+Tip=|cffffcc00V :|r Métamorphose
+Hotkey=V
+Researchtip=|cffffcc00R :|r Apprendre Métamorphose
+Researchhotkey=R
+
+//keeper of the grove
+[Ekee]
+Hotkey=X
+Tip=|cffffcc00X :|r Invoquer le Gardien du bosquet
+Revivetip=Ressusciter le Gardien du bosquet
+Awakentip=Ressusciter instantanement le Gardien du bosquet
+
+// Entangling Roots
+[AEer]
+Tip=|cffffcc00W :|r Sarments - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Sarments - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Sarments - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Sarments - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Force of Nature
+[AEfn]
+Tip=|cffffcc00X :|r Evolution naturelle - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Evolution naturelle - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Evolution naturelle - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Evolution naturelle - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Thorns Aura
+[AEah]
+Tip=Aura d'épines - [|cffffcc00Niveau 1|r],Aura d'épines - [|cffffcc00Niveau 2|r],Aura d'épines - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00E :|r Apprendre Aura d'épines - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Tranquility
+[AEtq]
+Tip=|cffffcc00V :|r Tranquilité
+Hotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Tranquilité"
+Researchhotkey=R
+
+//priestess of the moon
+[Emoo]
+Hotkey=C
+Tip=|cffffcc00C :|r Invoquer la Prêtresse de la lune
+Revivetip=Ressusciter la Prêtresse de la lune
+Awakentip=Ressusciter instantanement la Prêtresse de la lune
+
+// Scout
+[AEst]
+Tip=|cffffcc00W :|r Reconnaissance - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Reconnaissance - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Reconnaissance - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Reconnaissance - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Searing Arrows
+[AHfa]
+Tip=|cffffcc00X :|r Flèches de flamme - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Flèches de flamme - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Flèches de flamme - [|cffffcc00Niveau 3|r]
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=X
+Unhotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Flèches de flamme - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Trueshot Aura
+[AEar]
+Tip=Aura de précision- [|cffffcc00Niveau 1|r],Aura de précision - [|cffffcc00Niveau 2|r],Aura de précision - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00E :|r Apprendre Aura de précision - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Starfall
+[AEsf]
+Tip=|cffffcc00V :|r Etoiles filantes
+Hotkey=V
+Researchtip=|cffffcc00R :|r Apprendre Etoiles filantes
+Researchhotkey=R
+
+//warden
+[Ewar]
+Hotkey=Q
+Tip=|cffffcc00Q :|r Invoquer la Gardienne
+Revivetip=Ressusciter la Gardienne	
+Awakentip=Ressusciter instantanement la Gardienne
+
+// Blink
+[AEbl]
+Tip=|cffffcc00X :|r Transfert - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Transfert - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Transfert - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Transfert - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Fan of Knives
+[AEfk]
+Tip=|cffffcc00W :|r Tourbillons de lames - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Tourbillons de lames - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Tourbillons de lames - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Tourbillons de lames - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Shadow Strike
+[AEsh]
+Tip=|cffffcc00C :|r Choc des tènébres - [|cffffcc00Niveau 1|r],|cffffcc00C :|r Choc des tènébres - [|cffffcc00Niveau 2|r],|cffffcc00C :|r Choc des tènébres - [|cffffcc00Niveau 3|r]
+Hotkey=C
+Researchtip="|cffffcc00E :|r Apprendre Choc des tènébres - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+
+// Avatar of Vengeance
+[AEsv]
+Tip=|cffffcc00V :|r Vengeance
+Hotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Vengeance"
+Researchhotkey=R
+
+
+// Vengeance
+[Avng]
+Tip=|cffffcc00W :|r Esprit de vengeance
+Hotkey=W
+Untip="|cffc3dbffBouton droit pour activer l'action automatique."
+
+
+
+///////////////////////////////////
+//- 11 - Morts vivants : les unit�s
+///////////////////////////////////
+
+//acolyte
+[uaco]
+Tip=|cffffcc00A :|r Entraîner un Acolyte
+Hotkey=A
+
+// Unsummon
+[Auns]
+Tip=|cffffcc00U :|r Renvoyer bâtiment
+Hotkey=U
+
+// Acolyte Harvest
+[Aaha]
+Tip=|cffffcc00F :|r Récolter
+Untip=|cffffcc00F :|r Ramener ressources
+Hotkey=F
+Unhotkey=F
+
+// Restore (acolyte repair)
+[Arst]
+Tip=|cffffcc00S :|r Restauration
+Untip="|cffc3dbffBouton droit pour activer l'action automatique."
+Hotkey=S
+Unhotkey=S
+
+//abomination
+[uabo]
+Tip=|cffffcc00Z :|r Entraîner une Abomination
+Hotkey=Z
+
+// Cannibalize (abomination)
+[Acn2]
+Tip=|cffffcc00W :|r Cannibalisme
+Hotkey=W
+
+//banshee
+[uban]
+Tip=|cffffcc00Z :|r Entraîner une Banshee
+Hotkey=Z
+
+// Curse
+[Acrs]
+Tip=|cffffcc00W :|r Malédiction
+Untip="|cffc3dbffBouton droit pour activer l'action automatique."
+Hotkey=W
+Unhotkey=W
+
+// Anti-magic Shell (version RoC)
+[Aams]
+Tip=|cffffcc00X :|r Bouclier antimagie
+Hotkey=X
+
+// Anti-magic Shell
+[Aam2]
+Tip=|cffffcc00X :|r Bouclier antimagie
+Hotkey=X
+
+// Possession (version RoC)
+[Apos]
+Tip=|cffffcc00C :|r Possession
+Hotkey=C
+
+// Possession
+[Aps2]
+Tip=|cffffcc00C :|r Possession
+Hotkey=C
+
+//crypt fiend
+[ucry]
+Tip=|cffffcc00Z :|r Entraîner un Démon des cryptes
+Hotkey=Z
+
+// Web
+[Aweb]
+Tip=|cffffcc00W :|r Rets
+Untip="|cffc3dbff|cffc3dbffBouton droit pour activer l'action automatique."
+Hotkey=W
+Unhotkey=W
+
+// Burrow (crypt fiend)
+[Abur]
+Buttonpos=1,2
+Unbuttonpos=1,2
+Tip=|cffffcc00X :|r Enfouissement
+Untip=|cffffcc00X :|r Ressortir
+Hotkey=X
+Unhotkey=X
+
+//frost wyrm
+[ufro]
+Tip=|cffffcc00A :|r Entraîner une Wyrm des glaces
+Hotkey=A
+
+//gargoyle
+[ugar]
+Tip=|cffffcc00E :|r Entraîner une Gargouille
+Hotkey=E
+
+// Stone Form
+[Astn]
+Tip=|cffffcc00W :|r Forme minérale
+Hotkey=W
+Untip=|cffffcc00W :|r Forme de Gargouille
+Unhotkey=W
+
+//ghoul
+[ugho]
+Tip=|cffffcc00A :|r Entraîner une Goule
+Hotkey=A
+
+// Cannibalize (goule)
+[Acan]
+Tip=|cffffcc00W :|r Cannibalisme
+Hotkey=W
+
+//necromancer
+[unec]
+Tip=|cffffcc00A :|r Entraîner un Nécromancien
+Hotkey=A
+
+// Raise Dead
+[Arai]
+Tip=|cffffcc00W :|r Invocation morbide
+Untip="|cffc3dbffBouton droit pour activer l'action automatique."
+Hotkey=W
+Unhotkey=W
+
+// Unholy Frenzy
+[Auhf]
+Tip=|cffffcc00X :|r Frénésie impie
+Hotkey=X
+
+// Cripple
+[Acri]
+Tip=|cffffcc00C :|r Faiblesse
+Hotkey=C
+
+//meat wagon
+[umtw]
+Tip=|cffffcc00A :|r Entraîner un Chariot �  viande
+Hotkey=A
+
+// Load Corpse
+[Amel]
+Tip=|cffffcc00W :|r Ramasser un cadavre
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=W
+Unhotkey=W
+
+// Unload Corpse
+[Amed]
+Tip=|cffffcc00X :|r Déposer les cadavres
+Hotkey=X
+
+//obsidian statue
+[uobs]
+Tip=|cffffcc00E :|r Créer une Statue d'obsidienne
+Hotkey=E
+
+// Spirit Touch 
+[Arpm]
+Tip=|cffffcc00X :|r Aura spirituelle
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=X
+Unhotkey=X
+
+// Essence of Blight
+[Arpl]
+Tip=|cffffcc00W :|r Essence de flétrissure
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=W
+Unhotkey=W
+
+//destroyer
+[ubsp]
+Tip=|cffffcc00V :|r Mutation en Destructeur
+Hotkey=V
+
+// Orb d'Annihilation
+[Afak]
+Tip="|cffffcc00V :|r Orb d'annihilation"
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Buttonpos=3,2
+Unbuttonpos=3,2
+Hotkey=V
+Unhotkey=V
+
+// Devour Magic
+[Advm]
+Tip="|cffffcc00W :|r Festin magique"
+Buttonpos=0,2
+Hotkey=W
+
+
+// Absorb Mana
+[Aabs]
+Tip="|cffffcc00X :|r Absorber le mana"
+Buttonpos=1,2
+Hotkey=X
+
+
+//////////////////////////////////////////////////
+//- 12 - Morts vivants : les bâtiments et upgrades
+//////////////////////////////////////////////////
+
+//destroy form upgrade
+[Rusp]
+Tip=|cffffcc00C :|r Rechercher Forme de Destructeur
+Hotkey=C
+
+//unholy strength upgrades
+[Rume]
+Tip=|cffffcc00A :|r Améliorer en Force impie,|cffffcc00A :|r Améliorer en Force impie perfectionnée,|cffffcc00A :|r Améliorer en Force impie avancée
+Hotkey=A,A,A
+
+//creature attack upgrades
+[Rura]
+Tip=|cffffcc00Z :|r Améliorer en Attaque décuplée,|cffffcc00Z :|r Améliorer en Attaque décuplée perfectionnée,|cffffcc00Z :|r Améliorer en Attaque décuplée avancée
+Hotkey=Z,Z,Z
+
+//unholy armor upgrades
+[Ruar]
+Tip=|cffffcc00Q :|r Améliorer en Armure impie,|cffffcc00Q :|r Améliorer en Armure impie perfectionnée,|cffffcc00Q :|r Améliorer en Armure impie avancée
+Hotkey=Q,Q,Q
+
+//creature carapace upgrades
+[Rucr]
+Tip=|cffffcc00S :|r Améliorer en Carapace,|cffffcc00S :|r Améliorer en Carapace perfectionnée,|cffffcc00S :|r Améliorer en Carapace avancée
+Hotkey=S,S,S
+
+//cannabalize upgrade
+[Ruac]
+Tip=|cffffcc00Q :|r Rechercher Cannibalisme
+Hotkey=Q
+
+//ghoul frenzy upgrade
+[Rugf]
+Tip=|cffffcc00W :|r Rechercher Frénésie des goules
+Hotkey=W
+
+//web upgrade
+[Ruwb]
+Tip=|cffffcc00X :|r Rechercher Rets
+Hotkey=X
+
+//stone form upgrade
+[Rusf]
+Tip=|cffffcc00C :|r Rechercher Forme minérale
+Hotkey=C
+
+//necromancer training upgrades
+[Rune]
+Tip=|cffffcc00W :|r Formation de Nécromancien Adepte,|cffffcc00W :|r Formation de Nécromancien Maître
+Hotkey=W,W
+
+//banshee training upgrades
+[Ruba]
+Tip=|cffffcc00X :|r Formation de Banshee Adepte,|cffffcc00X :|r Formation de Banshee Maître
+Hotkey=X,X
+
+//freezing breath upgrade
+[Rufb]
+Tip=|cffffcc00W :|r Rechercher Souffle glacial
+Hotkey=W
+
+//skeletal longevity upgrade
+[Rusl]
+Tip=|cffffcc00C :|r Rechercher Longevité squelettique
+Hotkey=C
+
+//disease cloud upgrade
+[Rupc]
+Tip=|cffffcc00X :|r Rechercher Nuée maléfique
+Hotkey=X
+
+//skeletal mastery upgrade
+[Rusm]
+Tip=|cffffcc00D :|r Rechercher Maîtrise morbide
+Hotkey=D
+
+//burrow upgrade
+[Rubu]
+Tip=|cffffcc00S :|r Rechercher Enfouissement
+Hotkey=S
+
+//exhume corpses upgrade
+[Ruex]
+Tip=|cffffcc00W :|r Rechercher Exhumation
+Hotkey=W
+
+//backpack upgrade
+[Rupm]
+EditorSuffix= (Undead)
+Tip=|cffffcc00R :|r Rechercher Sac
+Hotkey=R
+
+//boneyard
+[ubon]
+Tip=|cffffcc00X :|r Invoquer un Ossuaire
+Hotkey=X
+
+//sacrificial pit
+[usap]
+Tip=|cffffcc00W :|r Invoquer un Puit sacrificiel
+Hotkey=W
+
+// Sacrifice (Acolyte's button)
+[Alam]
+Tip=|cffffcc00V :|r Sacrifice
+Hotkey=V
+
+// Sacrifice (Sacrificial Pit's button)
+[Asac]
+Tip=|cffffcc00A :|r Sacrifice
+Hotkey=A
+
+//slaughterhouse
+[uslh]
+Tip=|cffffcc00F :|r Invoquer un Abattoir
+Hotkey=F
+
+//graveyard
+[ugrv]
+Tip=|cffffcc00R :|r Invoquer un Cimetière
+Hotkey=R
+
+//altar of darkness
+[uaod]
+Tip=|cffffcc00S :|r Invoquer un Autel des tènébres
+Hotkey=S
+
+//necropolis
+[unpl]
+Tip=|cffffcc00A :|r Invoquer une Nécropole
+Hotkey=A
+
+//halls of the dead
+[unp1]
+Tip=|cffffcc00W :|r Améliorer en Salle des morts
+Hotkey=W
+
+//black citadel
+[unp2]
+Tip=|cffffcc00W :|r Améliorer en Catacombes
+Hotkey=W
+
+//crypt
+[usep]
+Tip=|cffffcc00Z :|r Invoquer une Crypte
+Hotkey=Z
+
+//temple of the damned
+[utod]
+Tip=|cffffcc00D :|r Invoquer un Temple des damnés
+Hotkey=D
+
+//tomb of relics
+[utom]
+Hotkey=C
+Tip=|cffffcc00C :|r Invoquer une Tombe des reliques
+
+//haunted gold mine
+[ugol]
+Tip=|cffffcc00E :|r Hanter une mine d'or
+Hotkey=E
+
+//ziggurat
+[uzig]
+Tip=|cffffcc00Q :|r Invoquer une Ziggourat
+Hotkey=Q
+
+//spirit tower
+[uzg1]
+Tip=|cffffcc00W :|r Améliorer en Tour des esprits
+Hotkey=W
+
+//nerubian tower
+[uzg2]
+Tip=|cffffcc00X :|r Améliorer en Tour nérubienne
+Hotkey=X
+
+
+
+//////////////////////////////////
+//- 13 - Morts vivants : les h�ros
+//////////////////////////////////
+
+//crypt lord
+[Ucrl]
+Tip=|cffffcc00Q :|r Invoquer le Seigneur des cryptes
+Hotkey=Q
+Revivetip=Ressusciter le Seigneur des cryptes
+Awakentip=Ressusciter instantanement le Seigneur des cryptes
+
+// Impale
+[AUim]
+Tip=|cffffcc00W :|r Empaler - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Empaler - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Empaler - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Empaler - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+//spiked carapace
+[AUts]
+Tip=Carapace d'épines - [|cffffcc00Niveau 1|r],Carapace d'épines - [|cffffcc00Niveau 2|r],Carapace d'épines - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00Z :|r Apprendre Carapace d'épines - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Carrion Beetles
+[AUcb]
+Tip=|cffffcc00C :|r Scarabées charognards - [|cffffcc00Niveau 1|r],|cffffcc00C :|r Scarabées charognards - [|cffffcc00Niveau 2|r],|cffffcc00C :|r Scarabées charognards - [|cffffcc00Niveau 3|r]
+Hotkey=C
+Researchtip="|cffffcc00E :|r Apprendre Scarabées charognards - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+Untip="|cffc3dbffBouton droit pour activer l'action automatique."
+
+// Burrow (scarab lvl 2)
+[Abu2]
+Buttonpos=1,2
+Unbuttonpos=1,2
+Tip=|cffffcc00X :|r Enfouissement
+Untip=|cffffcc00X :|r Ressortir
+Hotkey=X
+Unhotkey=X
+
+// Burrow (scarab lvl 3)
+[Abu3]
+Buttonpos=1,2
+Unbuttonpos=1,2
+Tip=|cffffcc00X :|r Enfouissement
+Untip=|cffffcc00X :|r Ressortir
+Hotkey=X
+Unhotkey=X
+
+// Infestation
+[AUls]
+Tip=|cffffcc00V :|r Infestation
+Hotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Infestation"
+Researchhotkey=R
+
+//death knight
+[Udea]
+Tip=|cffffcc00W :|r Invoquer le Chevalier de la mort
+Revivetip=Ressusciter le Chevalier de la mort
+Awakentip=Ressusciter instantanement le Chevalier de la mort
+Hotkey=W
+
+// Death Coil
+[AUdc]
+Tip=|cffffcc00W :|r Voile mortel - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Voile mortel - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Voile mortel - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Voile mortel - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Unholy Aura
+[AUau]
+Tip=Aura impie - [|cffffcc00Niveau 1|r],Aura impie - [|cffffcc00Niveau 2|r],Aura impie - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00E :|r Apprendre Aura impie - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Death Pact
+[AUdp]
+Tip=|cffffcc00X :|r Pacte maudit - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Pacte maudit - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Pacte maudit - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Pacte maudit - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Animate Dead
+[AUan]
+Tip=|cffffcc00V :|r Réanimation
+Hotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Réanimation"
+Researchhotkey=R
+
+//dreadlord
+[Udre]
+Tip=|cffffcc00X :|r Invoquer le Seigneur de l'effroi
+Revivetip=Ressusciter le Seigneur de l'effroi
+Awakentip=Ressusciter instantanement le Seigneur de l'effroi
+Hotkey=X
+
+// Carrion Swarm
+[AUcs]
+Tip=|cffffcc00W :|r Essaim putride - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Essaim putride - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Essaim putride - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Essaim putride - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Sleep
+[AUsl]
+Tip=|cffffcc00X :|r Torpeur - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Torpeur - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Torpeur - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Torpeur - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Vampiric Aura
+[AUav]
+Tip=Aura vampirique - [|cffffcc00Niveau 1|r],Aura vampirique - [|cffffcc00Niveau 2|r],Aura vampirique - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00E :|r Apprendre Aura vampirique - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+//inferno
+[AUin]
+Tip=|cffffcc00V :|r Inferno
+Hotkey=V
+Researchtip=|cffffcc00R :|r Apprendre Inferno
+Researchhotkey=R
+
+//lich
+[Ulic]
+Tip=|cffffcc00C :|r Invoquer la Liche
+Revivetip=Ressusciter la Liche
+Awakentip=Ressusciter instantanement la Liche
+Hotkey=C
+
+// Frost Nova
+[AUfn]
+Tip=|cffffcc00W :|r Nova de glace - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Nova de glace - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Nova de glace - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Nova de glace - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Frost Armor (Autocast, Lich)
+[AUfu]
+Tip=|cffffcc00X :|r Armure de glace - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Armure de glace - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Armure de glace - [|cffffcc00Niveau 3|r]
+Untip="|cffc3dbffBouton droit pour activer l'action automatique."
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Armure de glace - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Dark Ritual
+[AUdr]
+Tip=|cffffcc00C :|r Rituel maléfique - [|cffffcc00Niveau 1|r],|cffffcc00C :|r Rituel maléfique - [|cffffcc00Niveau 2|r],|cffffcc00C :|r Rituel maléfique - [|cffffcc00Niveau 3|r]
+Hotkey=C
+Researchtip="|cffffcc00E :|r Apprendre Rituel maléfique - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Death And Decay
+[AUdd]
+Tip=|cffffcc00V :|r Décomposition
+Hotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Décomposition"
+Researchhotkey=R
+
+
+
+//////////////////////////
+//- 14 - Les h�ros neutres
+//////////////////////////
+
+/////////////////////
+// Sea Witch Abilities
+/////////////////////
+
+//sea witch
+[Nngs]
+Hotkey=Q
+Tip=|cffffcc00Q :|r Invoquer la Sorcière des mers Naga
+Revivetip=Ressusciter la Sorcière des mers Naga
+Awakentip=Ressusciter instantanement la Sorcière des mers Naga
+
+// Mana Shield (Sea Witch)
+[ANms]
+Tip=|cffffcc00C :|r Activer Bouclier de mana - [|cffffcc00Niveau 1|r],|cffffcc00C :|r Activer Bouclier de mana - [|cffffcc00Niveau 2|r],|cffffcc00C :|r Activer Bouclier de mana - [|cffffcc00Niveau 3|r]
+Untip=|cffffcc00C :|r Desactiver Bouclier de mana
+Hotkey=C
+Unhotkey=C
+Researchtip="|cffffcc00E :|r Apprendre Bouclier de mana - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Forked Lightning (Sea Witch)
+[ANfl]
+Tip=|cffffcc00W :|r Pluie d'éclairs - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Pluie d'éclairs - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Pluie d'éclairs - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Pluie d'éclairs - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Frost Arrows (Sea Witch)
+[ANfa]
+Tip=|cffffcc00X :|r Flèches de glace - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Flèches de glace - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Flèches de glace - [|cffffcc00Niveau 3|r]
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=X
+Unhotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Flèches de glace - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Tornado (Sea Witch)
+[ANto]
+Tip=|cffffcc00V :|r Tornade
+Hotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Tornade"
+Researchhotkey=R
+
+/////////////////////
+// Pit Lord
+/////////////////////
+
+//pit lord
+[Nplh]
+Hotkey=W
+Tip=|cffffcc00W :|r Invoquer le Seigneur des abimes
+Revivetip=Ressusciter le Seigneur des abimes
+Awakentip=Ressusciter instantanement le Seigneur des abimes
+
+// Howl of Terror (Pit Lord)
+[ANht]
+Tip=|cffffcc00X :|r Hurlement - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Hurlement - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Hurlement - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Hurlement - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Rain of Fire (Pit Lord)
+[ANrf]
+Tip=|cffffcc00W :|r Pluie de flammes - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Pluie de flammes - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Pluie de flammes - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip=|cffffcc00A :|r Apprendre Pluie de flammes - [|cffffcc00Niveau %d|r]
+Researchhotkey=A
+
+// Cleaving Attack (Pit Lord)
+[ANca]
+Tip=Fendoir - [|cffffcc00Niveau 1|r],Fendoir - [|cffffcc00Niveau 2|r],Fendoir - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00E :|r Apprendre Fendoir - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Doom (Pit Lord)
+[ANdo]
+Tip=|cffffcc00V :|r Condamnation
+Hotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Condamnation"
+Researchhotkey=R
+
+// war stomp
+[Awrs]
+Tip=|cffffcc00W :|r Choc martial
+Buttonpos=0,2
+Hotkey=W
+
+// Rain of Fire (greater, creep)
+[ACrf]
+Tip=|cffffcc00C :|r Pluie de flammes
+Hotkey=C
+ButtonPos=2,2
+
+// Cripple
+[Accr]
+Tip=|cffffcc00V :|r Faiblesse
+Hotkey=V
+ButtonPos=3,2
+
+
+
+
+////////////////////////////////
+// Pandaren Brewmaster 
+////////////////////////////////
+
+//pandaren brewmaster
+[Npbm]
+Hotkey=D
+Tip=|cffffcc00D :|r Invoquer le Pandaren Brewmaster
+Revivetip=Ressusciter le Pandaren Brewmaster
+Awakentip=Ressusciter instantanement le Pandaren Brewmaster
+
+// Breath of Fire (Pandaren Brewmaster)
+[ANbf]
+Tip=|cffffcc00W :|r Souffle de feu - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Souffle de feu - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Souffle de feu - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Souffle de feu - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Drunken Brawler (Pandaren Brewmaster)
+[ANdb]
+Tip=Homme ivre - [|cffffcc00Niveau 1|r],Homme ivre - [|cffffcc00Niveau 2|r],Homme ivre - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00E :|r Apprendre Homme ivre - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Drunken Haze (Pandaren Brewmaster)
+[ANdh]
+Tip=|cffffcc00X :|r Ivresse - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Ivresse - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Ivresse - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Ivresse - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Terre, vent et feu (Pandaren Brewmaster)
+[ANef]
+Tip="|cffffcc00V :|r Terre, vent et feu"
+Hotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Terre, vent et feu"
+Researchhotkey=R
+
+
+//////////////////////
+//Mini-Panda Abilities
+//////////////////////
+
+// Wind Walk (wind panda)
+[ANwk]
+Tip=|cffffcc00W :|r Vent divin
+Hotkey=W
+ButtonPos=0,2
+
+// cyclone (Wind panda + various creeps -- shared ability)
+[ACcy]
+Tip=|cffffcc00C :|r Cyclone
+Hotkey=C
+ButtonPos=2,2
+
+// dispel magic (wind panda + various creeps -- shared ability)
+[Adsm]
+Tip=|cffffcc00X :|r Dissiper magie
+Hotkey=X
+ButtonPos=1,2
+
+// Taunt (earth panda)
+[ANta]
+Tip=|cffffcc00X :|r Provocation
+Hotkey=X
+ButtonPos=1,2
+
+////////////////////////
+// Beastmaster
+////////////////////////
+
+//beastmaster
+[Nbst]
+Hotkey=X
+Tip=|cffffcc00X :|r Invoquer le Belluaire
+Revivetip=Ressusciter le Belluaire
+Awakentip=Ressusciter instantanement le Belluaire
+
+// Invoquer Bear (Beastmaster)
+[ANsg]
+Tip=|cffffcc00W :|r Invoquer un Ours - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Invoquer un Ours - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Invoquer un Ours - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip= |cffffcc00A :|r Apprendre Invoquer un Ours - [|cffffcc00Niveau %d|r]
+Researchhotkey=A
+
+
+// Invoquer Quilbeast (Beastmaster)
+[ANsq]
+Tip=|cffffcc00X :|r Invoquer un Porc-épic - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Invoquer un Porc-épic - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Invoquer un Porc-épic - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip=|cffffcc00Z :|r Apprendre Invoquer un Porc-épic - [|cffffcc00Niveau %d|r]
+Researchhotkey=Z
+
+// Invoquer Hawk (Beastmaster)
+[ANsw]
+Tip=|cffffcc00C :|r Invoquer un Faucon - [|cffffcc00Niveau 1|r],|cffffcc00C :|r Invoquer un Faucon - [|cffffcc00Niveau 2|r],|cffffcc00C :|r Invoquer un Faucon - [|cffffcc00Niveau 3|r]
+Hotkey=C
+Researchtip=|cffffcc00E :|r Apprendre Invoquer un Faucon - [|cffffcc00Niveau %d|r]
+Researchhotkey=E
+
+// Stampede (Beastmaster)
+[ANst]
+Tip=|cffffcc00V :|r Charge
+Hotkey=V
+Researchtip=|cffffcc00R :|r Apprendre Charge
+Researchhotkey=R
+
+// Blink (beastmaster bear)
+[ANbl]
+Hotkey=W
+Tip=|cffffcc00W :|r Transfert
+
+// Bloodlust (Porc-epic)
+[Afzy]
+Tip=|cffffcc00W :|r Frénésie
+Hotkey=W
+UnHotkey=W
+
+
+
+///////////////////////
+//Dark Ranger Abilities
+///////////////////////
+
+[Nbrn]
+Hotkey=S
+Tip=|cffffcc00S :|r Invoquer le Ranger sombre
+Revivetip=Ressusciter le Ranger sombre
+Awakentip=Ressusciter instantanement le Ranger sombre
+
+// Black Arrow (Dark Ranger)
+[ANba]
+Tip=|cffffcc00X :|r Flèche noire - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Flèche noire - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Flèche noire - [|cffffcc00Niveau 3|r]
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Flèche noire - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Silence (Dark Ranger)
+[ANsi]
+Tip=|cffffcc00W :|r Silence - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Silence - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Silence - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Silence - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Life Drain  (Dark Ranger)
+[ANdr]
+Tip=|cffffcc00C :|r Drain - [|cffffcc00Niveau 1|r],|cffffcc00C :|r Drain - [|cffffcc00Niveau 2|r],|cffffcc00C :|r Drain - [|cffffcc00Niveau 3|r]
+Hotkey=C
+Researchtip="|cffffcc00E :|r Apprendre Drain - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Charm (Dark Ranger)
+[ANch]
+Tip=|cffffcc00V :|r Charme
+Hotkey=V
+Researchtip=|cffffcc00R :|r Apprendre Charme
+Researchhotkey=R
+
+
+
+///////////////////////
+// Tinker
+///////////////////////
+
+// Tinker
+[Ntin]
+Tip=|cffffcc00C :|r Invoquer l'Artisan gobelin
+Hotkey=C
+Revivetip=Ressusciter l'Artisan gobelin
+Awakentip=Ressusciter l'Artisan gobelin
+
+// Tinker (morph / robo-goblin)
+[Nrob]
+Tip=|cffffcc00C :|r Invoquer l'Artisan gobelin
+Hotkey=C
+Revivetip=Revive l'Artisan gobelin
+Awakentip=Revive l'Artisan gobelin
+
+// Pocket Factory
+[ANsy]
+Tip=|cffffcc00W :|r Fabrique de poche - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Fabrique de poche - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Fabrique de poche - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Fabrique de poche - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+[ANs1]
+Tip=|cffffcc00W :|r Fabrique de poche - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Fabrique de poche - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Fabrique de poche - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Fabrique de poche - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+[ANs2]
+Tip=|cffffcc00W :|r Fabrique de poche - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Fabrique de poche - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Fabrique de poche - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Fabrique de poche - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+[ANs3]
+Tip=|cffffcc00W :|r Fabrique de poche - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Fabrique de poche - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Fabrique de poche - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Fabrique de poche - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+
+// Cluster Rockets
+[ANcs]
+Tip=|cffffcc00X :|r Roquettes - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Roquettes - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Roquettes - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Roquettes - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+[ANc1]
+Tip=|cffffcc00X :|r Roquettes - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Roquettes - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Roquettes - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Roquettes - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+[ANc2]
+Tip=|cffffcc00X :|r Roquettes - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Roquettes - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Roquettes - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Roquettes - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+[ANc3]
+Tip=|cffffcc00X :|r Roquettes - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Roquettes - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Roquettes - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Roquettes - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Engineering Upgrade
+[ANeg]
+Tip=Amélioration ingénieur - [|cffffcc00Niveau 1|r],Amélioration ingénieur - [|cffffcc00Niveau 2|r],Amélioration ingénieur - [|cffffcc00Niveau 3|r]
+Hotkey=C
+Researchtip="|cffffcc00E :|r Apprendre Amélioration ingénieur - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Robo-Goblin
+[ANrg]
+Tip="|cffffcc00V :|r Robo-Gobelin"
+Hotkey=V
+Untip="|cffffcc00V :|r Forme d'Artisan"
+Unhotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Robo-Gobelin"
+Researchhotkey=R
+
+[ANg1]
+Tip="|cffffcc00V :|r Robo-Gobelin"
+Hotkey=V
+Untip="|cffffcc00V :|r Forme d'Artisan"
+Unhotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Robo-Gobelin"
+Researchhotkey=R
+
+[ANg2]
+Tip="|cffffcc00V :|r Robo-Gobelin"
+Hotkey=V
+Untip="|cffffcc00V :|r Forme d'Artisan"
+Unhotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Robo-Gobelin"
+Researchhotkey=R
+
+[ANg3]
+Tip="|cffffcc00V :|r Robo-Gobelin"
+Hotkey=V
+Untip="|cffffcc00V :|r Forme d'Artisan"
+Unhotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Robo-Gobelin"
+Researchhotkey=R
+
+// Kaboom! (Clockwerk goblin Niveau 1)
+[Asdg]
+Tip=|cffffcc00W :|r Kaboom!
+Hotkey=W
+Unhotkey=W
+
+// Kaboom! (Clockwerk goblin Niveau 2)
+[Asd2]
+Tip=|cffffcc00W :|r Kaboom!
+Hotkey=W
+Unhotkey=W
+
+// Kaboom! (Clockwerk goblin Niveau 3)
+[Asd3]
+Tip=|cffffcc00W :|r Kaboom!
+Hotkey=W
+Unhotkey=W
+
+
+
+///////////////////////
+// Alchemist
+///////////////////////
+
+// Alchimiste
+[Nalc]
+Hotkey=V
+Tip=|cffffcc00V :|r Invoquer l'Alchimiste
+Revivetip=Ressusciter l'Alchimiste
+Awakentip=Ressusciter l'Alchimiste
+
+// Alchimiste (morph)
+[Nalm]
+Hotkey=V
+Tip=|cffffcc00V :|r Invoquer l'Alchimiste
+Revivetip=Ressusciter l'Alchimiste
+Awakentip=Ressusciter l'Alchimiste
+
+// Alchimiste (morph, 2)
+[Nal2]
+Hotkey=V
+Tip=|cffffcc00V :|r Invoquer l'Alchimiste
+Revivetip=Ressusciter l'Alchimiste
+Awakentip=Ressusciter l'Alchimiste
+
+// Alchimiste (morph, 3)
+[Nal3]
+Hotkey=V
+Tip=|cffffcc00V :|r Invoquer l'Alchimiste
+Revivetip=Ressusciter l'Alchimiste
+Awakentip=Ressusciter l'Alchimiste
+
+// Healing Spray
+[ANhs]
+Tip=|cffffcc00W :|r Brume de soins - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Brume de soins - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Brume de soins - [|cffffcc00Niveau 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Healing Spray - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Chemical Rage
+[ANcr]
+Tip=|cffffcc00X :|r Rage chimique - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Rage chimique - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Rage chimique - [|cffffcc00Niveau 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Rage chimique - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Acid Bomb
+[ANab]
+Tip=|cffffcc00C :|r Bombe d'acide - [|cffffcc00Niveau 1|r],|cffffcc00C :|r Bombe d'acide - [|cffffcc00Niveau 2|r],|cffffcc00C :|r Bombe d'acide - [|cffffcc00Niveau 3|r]
+Hotkey=C
+Researchtip="|cffffcc00E :|r Apprendre Bombe d'acide - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Transmute
+[ANtm]
+Tip="|cffffcc00V :|r Transmutation"
+Hotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Transmutation"
+Researchhotkey=R
+
+
+
+///////////////////////
+// Fire Lord
+///////////////////////
+
+[Nfir]
+Hotkey=F
+Tip=|cffffcc00F :|r Invoquer le Seigneur du feu
+Revivetip=Ressusciter le Seigneur du feu
+Awakentip=Ressusciter le Seigneur du feu
+
+
+// Soul Burn
+[ANso]
+Tip=|cffffcc00W :|r Brûlure d'âme - [|cffffcc00Level 1|r],|cffffcc00W :|r Brûlure d'âme - [|cffffcc00Level 2|r],|cffffcc00W :|r Brûlure d'âme - [|cffffcc00Level 3|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Brûlure d'âme - [|cffffcc00Level %d|r]"
+Researchhotkey=A
+
+// Summmon Lava Spawn
+[ANlm]
+Tip=|cffffcc00X :|r Etre de lave - [|cffffcc00Level 1|r],|cffffcc00X :|r Etre de lave - [|cffffcc00Level 2|r],|cffffcc00X :|r Etre de lave - [|cffffcc00Level 3|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Etre de lave - [|cffffcc00Level %d|r]"
+Researchhotkey=Z
+
+// Incinerate
+[ANic]
+Tip=Incinération - [|cffffcc00Level 1|r],Incinération - [|cffffcc00Level 2|r],Incinération - [|cffffcc00Level 3|r]
+Researchtip="|cffffcc00E :|r Apprendre Incinération - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Volcan
+[ANvc]
+Tip="|cffffcc00V :|r Volcan"
+Hotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Volcan"
+Researchhotkey=R
+
+
+
+//////////////////////
+//- 15 - Les Boutiques
+//////////////////////
+
+//////////////////
+// La Boutique Orc
+[hslv]
+Tip=|cffffcc00A :|r Acheter la Salve Régénérante
+Hotkey=A
+
+[plcl]
+Tip=|cffffcc00Z :|r Acheter la Potion de clarté mineure
+Hotkey=Z
+
+[shas]
+Tip=|cffffcc00E :|r Acheter le Parchemin vitesse
+Hotkey=E
+
+[phea]
+Tip=|cffffcc00Q :|r Acheter la Potion de soin
+Hotkey=Q
+
+[pman]
+Tip=|cffffcc00S :|r Acheter la Potion de mana
+Hotkey=S
+
+[stwp]
+Tip=|cffffcc00D :|r Acheter le Parchemin de portail de ville
+Hotkey=D
+
+[oli2]
+Tip=|cffffcc00W :|r Acheter l'Orbe de foudre
+Hotkey=W
+
+[tgrh]
+Tip=|cffffcc00X :|r Acheter le Village miniature
+Hotkey=X
+
+
+//////////////////////
+// La Boutique Humaine
+[sreg]
+Tip=|cffffcc00A :|r Acheter le Parchemin de régénération
+Hotkey=A
+
+[mcri]
+Tip=|cffffcc00E :|r Acheter le Monstre mécanique
+Hotkey=E
+
+[tsct]
+Tip=|cffffcc00F :|r Acheter la Tour d'ivoire 
+Hotkey=F
+
+[ofir]
+Tip=|cffffcc00W :|r Acheter l'Orbe de feu
+Hotkey=W
+
+[ssan]
+Tip=|cffffcc00X :|r Acheter le Baton de sanctuaire
+Hotkey=X
+
+
+///////////////////////////
+// La Boutique Mort-Vivante
+[rnec]
+Tip=|cffffcc00A :|r Acheter le Bâton de nécromancie
+Hotkey=A
+
+[skul]
+Tip=|cffffcc00E :|r Acheter le Crâne sacrificiel
+Hotkey=E
+
+[dust]
+Tip=|cffffcc00R :|r Acheter la Poudre d'apparition
+Hotkey=R
+
+[ocor]
+Tip=|cffffcc00W :|r Acheter l'Orbe de corruption
+Hotkey=W
+
+[shea]
+Tip=|cffffcc00X :|r Acheter le Parchemin de soin
+Hotkey=X
+
+///////////////////
+// La Boutique Elfe
+[moon]
+Tip=|cffffcc00A :|r Acheter la Pierre de lune
+Hotkey=A
+
+[spre]
+Tip=|cffffcc00F :|r Acheter le Baton de préservation
+Hotkey=F
+
+[oven]
+Tip=|cffffcc00W :|r Acheter l'Orbe venimeuse
+Hotkey=W
+
+[pams]
+Tip=|cffffcc00X :|r Acheter la Potion d'antimagie
+Hotkey=X
+
+///////////////////////
+// La Boutique Gobeline
+
+[bspd]
+Tip=|cffffcc00A :|r Acheter les Bottes de vitesse
+Hotkey=A
+
+[prvt]
+Tip=|cffffcc00Z :|r Acheter le Fétiche de vitalité
+Hotkey=Z
+
+[cnob]
+Tip=|cffffcc00E :|r Acheter le Diadème de noblesse
+Hotkey=E
+
+[spro]
+Tip=|cffffcc00Q :|r Acheter le Parchemin de protection
+Hotkey=Q
+
+[pinv]
+Tip=|cffffcc00S :|r Acheter la Potion d'invisibilité
+Hotkey=S
+
+[stel]
+Tip=|cffffcc00F :|r Acheter le Baton de téléportation
+Hotkey=F
+
+[tret]
+Tip=|cffffcc00W :|r Acheter le Tome de formation
+Hotkey=W
+
+[pnvl]
+Tip=|cffffcc00C :|r Acheter la Potion d'invulnerabilité|nmineure
+Hotkey=C
+
+
+///////////////////////////
+// Laboratoire des Gobelins
+
+// Engager un sapeur
+[ngsp]
+Tip=|cffffcc00A :|r Engager le Sapeur gobelin
+Hotkey=A
+
+// Le Kaboom des sapeurs
+[Asds]
+Tip=|cffffcc00W :|r Kaboom!
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=W
+UnHotkey=W
+
+// Engager un Zeppelin
+[nzep]
+Tip=|cffffcc00Z :|r Engager le Zeppelin
+Hotkey=Z
+
+// Engager un d�coupeur
+[ngir]
+Tip=|cffffcc00E :|r Engager le Découpeur gobelin
+Hotkey=E
+
+// La r�colte des resources du decoupeur gobelin
+[Ahr3]
+Tip=|cffffcc00F :|r Récolter
+UnTip=|cffffcc00F :|r Ramener Ressources
+Hotkey=F
+UnHotkey=F
+
+// D�voiler la carte
+[Andt]
+Tip=|cffffcc00R :|r Dévoiler
+Hotkey=R
+Buttonpos=3,0
+
+
+/////////////////////////
+// Chantier naval gobelin
+[nbot]
+Hotkey=A
+Tip=|cffffcc00A :|r Engager un navire de transport
+
+
+
+
+//////////////////////////////////////////////////////////////////
+//- 16 - Les Sorts des Creeps mercenaires, poss�d�s ou ressuscit�s
+//////////////////////////////////////////////////////////////////
+//
+// Liste exhaustive (du moins j'esp�re!)
+//
+//
+// Creeps ayant des conflits de raccourcis (ce sont rarement des unit�s jouables) :
+//
+// Grande salamandre (niv 10), Salamandre vizir (niv 7) 
+// Revenant des profondeurs (niv 10), B�h�moth g�ant des mers (niv 8)
+// Entourloupeur sans-visage (niv 6), Sorcier centaure (niv5)
+//
+//
+
+// Bloodlust de l'Ogre Magi
+[ACbb]
+Tip=|cffffcc00W :|r Furie sanguinaire
+Hotkey=W
+UnHotkey=W
+
+// Bloodlust du N�crolyte Stormreaver
+[ACbl]
+Tip=|cffffcc00W :|r Furie sanguinaire
+Hotkey=W
+UnHotkey=W
+
+// Purge du Garde Gnoll
+[ACpu]
+Tip=|cffffcc00W :|r Expiation
+Hotkey=W
+
+// Soins du pr�tre Troll
+[Anh1]
+Buttonpos=1,2
+Unbuttonpos=1,2
+Tip=|cffffcc00X :|r Soins
+Hotkey=X
+UnHotkey=X
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+
+// Soins du grand pr�tre Troll
+[Anh2]
+Buttonpos=1,2
+Unbuttonpos=1,2
+Tip=|cffffcc00X :|r Soins
+Hotkey=X
+UnHotkey=X
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+
+// Abolir magie du pr�tre Troll
+[ACdm]
+Buttonpos=0,2
+Unbuttonpos=0,2
+Tip=|cffffcc00W :|r Abolir magie
+Hotkey=W
+UnTip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+UnHotkey=W
+
+// Abolir magie du grand pr�tre Troll
+[ACd2]
+Buttonpos=0,2
+Unbuttonpos=0,2
+Tip=|cffffcc00W :|r Abolir magie
+Hotkey=W
+UnTip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+UnHotkey=W
+
+// Inner fire du pr�tre Troll
+[ACif]
+Tip=|cffffcc00C :|r Feu intérieur
+UnTip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Hotkey=C
+UnHotkey=C
+
+// Armure de glace du pr�tre Troll
+[ACf2]
+Tip=|cffffcc00C :|r Armure de glace
+Hotkey=C
+Unhotkey=C
+Buttonpos=2,2
+Unbuttonpos=2,2
+UnTip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+
+// Festin des Dragons niveau 10
+//[ACdv]
+[acdv]
+Tip=|cffffcc00W :|r Festin
+Hotkey=W
+
+// Filet du chasseur Murloc
+[acen]
+Tip=|cffffcc00W :|r Filet
+Hotkey=W
+
+// Mal�diction du Satyre et de la Harpie
+[ACcs]
+Tip=|cffffcc00W :|r Malédiction
+Hotkey=W
+UnHotkey=W
+UnTip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+
+// Esprit sauvage de l'Homme-m�decine Razormane
+[acs9]
+Tip=|cffffcc00X :|r Esprit sauvage
+Hotkey=X
+
+// Balise de soins de l'Homme-m�decine Razormane
+[AChw]
+Tip=|cffffcc00W :|r Balise de soins
+Hotkey=W
+
+// Rets des N�rubians
+[ACwb]
+Tip=|cffffcc00W :|r Rets
+UnTip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Buttonpos=0,2
+Unbuttonpos=0,2
+Hotkey=W
+UnHotkey=W
+
+// Invocation morbide des Satyres et des N�rubians
+[ACrd]
+Tip=|cffffcc00X :|r Invocation morbide
+Hotkey=X
+UnHotkey=X
+Buttonpos=1,2
+Unbuttonpos=1,2
+UnTip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+
+// Lenteur du Golem du boue et des Sludges
+[ACsw]
+Tip=|cffffcc00X :|r Lenteur
+Hotkey=X
+UnHotkey=X
+Buttonpos=1,2
+Unbuttonpos=1,2
+UnTip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+
+// Rocher du gros Golem
+[actb]
+Tip=|cffffcc00W:|r Rocher
+Hotkey=W
+
+// Choc du tr�s gros golem
+[ACtc]
+Tip=|cffffcc00X :|r Choc
+Hotkey=X
+
+// Choc du L�zard
+[ACt2]
+Tip=|cffffcc00W :|r Choc
+Hotkey=W
+
+// Br�lure de mana des Satyres
+[ambd]
+Tip=|cffffcc00W :|r Brûlure de mana
+Hotkey=W
+
+// Blizzard du Revenant
+[acbz]
+Tip=|cffffcc00W :|r Blizzard
+Hotkey=W
+
+// Torpeur de la Harpie
+[ACsl]
+Tip=|cffffcc00C :|r Torpeur
+Hotkey=C
+ButtonPos=2,2
+
+// Lucioles de la Harpie
+[ACff]
+Tip=|cffffcc00W :|r Lucioles
+Hotkey=W
+UnHotkey=W
+
+// Cannibalisme du Murloc
+[Accn]
+Tip=|cffffcc00W :|r Cannibalisme
+Hotkey=W
+UnHotkey=W
+
+// R�cup�ration du Shaman Furbolg
+[ACr2]
+Tip=|cffffcc00W :|r Récuperation
+Hotkey=W
+
+// Sarments de l'Oracle Makrura
+[Aenw]
+Tip=|cffffcc00W :|r Sarments
+Hotkey=W
+
+// Servants des eaux de l'Oracle Makrura
+[Aslp]
+Tip=|cffffcc00X :|r Invoquer Servants des eaux
+Hotkey=X
+Buttonpos=1,2
+
+// Eclairs du N�croman Stormweaver
+[Accl]
+Tip=|cffffcc00X :|r Chaîne d'éclairs
+Hotkey=X
+Buttonpos=1,2
+
+// Brul�re de mana du Traqueur corrompu
+[ambb]
+Tip=|cffffcc00W :|r Brûlure de mana
+Hotkey=W
+
+// Nova de glace du Revenant
+[ACfn]
+Tip=|cffffcc00W :|r Nova de glace
+Hotkey=W
+
+// Immolation de l'Assassin Draenei
+[ACim]
+Tip=|cffffcc00W :|r Activer immolation
+Hotkey=W
+Untip=|cffffcc00W :|r Désactiver Immolation
+Unhotkey=W
+Buttonpos=0,2
+UnButtonpos=0,2
+
+// Fl�che de glace du Marcheur �th�r�
+[ACcw]
+Tip=|cffffcc00W :|r Flèches de glace
+Hotkey=W
+Untip="|cffc3dbffBouton droit pour activer l'action automatique.|r"
+Unhotkey=W
+
+// Rayon de rupture du Messager Draenei
+[Ache]
+Tip=|cffffcc00X :|r Rayon de rupture
+Hotkey=X
+
+// Fl�che de flammes du Squelette Ardent
+[ACsa]
+Tip=|cffffcc00W :|r Flèches de flammes
+Hotkey=W
+Buttonpos=0,2
+UnButtonpos=0,2
+
+// Silence du Tourmenteur
+[ACsi]
+Tip=|cffffcc00W :|r Silence
+Hotkey=W
+
+// Mousson du Warlock stormreaver
+[ACmo]
+Tip=|cffffcc00W :|r Mousson
+Hotkey=W
+
+// Polymorphe du Sorcier des t�n�bres
+[ACpy]
+Tip=|cffffcc00V :|r Polymorphe
+Hotkey=V
+
+// Rugissement des Loups sauvages
+[ACro]
+Tip=|cffffcc00W :|r Rugissement
+Hotkey=W
+
+// Sarments des Treants
+[Aenr]
+Tip=|cffffcc00C :|r Sarments
+Hotkey=C
+Buttonpos=2,2
+
+// Evolution naturelle des Sasquatsh
+[ACfr]
+Tip=|cffffcc00W :|r Evolution naturelle
+Hotkey=W
+Buttonpos=0,2
+
+// Doigt de souffrance du Warlock eredar
+[ACfd]
+Tip=|cffffcc00W :|r Doigt de souffrance
+Hotkey=W
+
+// Possession du Fantome et du Spectre
+[ACps]
+Tip=|cffffcc00C :|r Possession
+Hotkey=C
+
+// Onde de choc de l'Ogre Chieftain
+[ACsh]
+Tip=|cffffcc00W :|r Onde de choc
+Hotkey=W
+
+// Hex de l'Exhalombre Mur'gul
+[AChx]
+Tip=|cffffcc00X :|r Hex
+Hotkey=X
+
+// Choc martial de l'HYdre ancestrale
+[Awrh]
+Tip=|cffffcc00X :|r Choc martial
+Hotkey=X
+
+// Hurlement du Baron
+[Acht]
+Tip=|cffffcc00W :|r Hurlement
+Hotkey=W
+
+// Bouclier divin du Roi bandit
+[ACds]
+Tip=|cffffcc00X :|r Bouclier divin
+UnTip=|cffffcc00X :|r Desactiver le Bouclier divin
+Hotkey=X
+UnHotkey=X
+
+// Drain de vie de la Vierge de douleur
+[ACdr]
+Tip=|cffffcc00W :|r Drain de vie 
+Hotkey=W
+
+// Charme de la Reine des souffrance
+[ACch]
+Tip=|cffffcc00V :|r Charme
+Hotkey=V
+
+// Fr�n�sie impie du tisseur d'ombre
+[ACuf]
+Tip=|cffffcc00X :|r Frénésie impie
+Hotkey=X
+
+// Fl�che noire du Ravageur corrompu
+[ACbk]
+Tip=|cffffcc00W :|r Flèche noire
+Hotkey=W
+
+// Festin magique du Ravageur corrompu
+[ACde]
+Tip=|cffffcc00X :|r Festin magique
+Hotkey=X
+Buttonpos=1,2
+
+// Parasite du Demonolatre Eredar
+[ACpa]
+Tip=|cffffcc00W :|r Parasite
+Hotkey=W
+
+// Boule de feu du Demonolatre Eredar
+[ANfb]
+Tip=|cffffcc00X :|r Boule de feu
+Hotkey=X
+
+// Souffle de glace du Proph�te Drake bleu
+[ACbf]
+Tip=|cffffcc00W :|r Souffle de glace
+Hotkey=W
+
+// Inferno du Juggernaut infernal
+[ANin]
+Tip=|cffffcc00V :|r Inferno
+Hotkey=V
+
+// Voile mortel
+[ACdc]
+Tip=|cffffcc00W :|r Voile mortel
+Hotkey=W
+
+// Vague de soin
+[AChv]
+Tip=|cffffcc00X :|r Vague de soin
+Hotkey=X
+Buttonpos=1,2
+
+// Bouclier de mana
+[ACmf]
+Tip=|cffffcc00X :|r Bouclier de mana
+Untip=|cffffcc00X :|r Desactiver Bouclier de mana
+Hotkey=X
+UnHotkey=X
+
+// Pluie d'�clairs
+[ACfl]
+Tip=|cffffcc00W :|r Pluie d'éclairs
+Hotkey=W
+Buttonpos=0,2
+
+// Bouclier de foudre
+[ACls]
+Tip=|cffffcc00C :|r Bouclier de foudre
+Hotkey=C
+Buttonpos=2,2
+
+// Souffle de feu
+[ACbc]
+Tip=|cffffcc00W :|r Souffle de feu
+Hotkey=W
+Buttonpos=0,2
+
+// Boule de feu 
+[ACfb]
+Tip=|cffffcc00X :|r Boule de feu
+Hotkey=X
+Buttonpos=1,2
+
+// R�animation
+[ACad]
+Tip=|cffffcc00V :|r Réanimation
+Hotkey=V
+
+// Essaim putride
+[ACca]
+Tip=|cffffcc00W :|r Essaim putride
+Hotkey=W
+
+// Choc des t�n�bres
+[ACss]
+Tip=|cffffcc00C :|r Choc des tènébres
+Hotkey=C
+
+// R�cup�ration
+[ACrj]
+Tip=|cffffcc00X :|r Récupération
+Hotkey=X
+
+// Enfouissement
+[Abu5]
+Tip=|cffffcc00X :|r Enfouissement
+Untip=|cffffcc00X :|r Ressortir
+Hotkey=X
+Unhotkey=X
+Buttonpos=1,2
+UnButtonpos=1,2
+
+
+
+
+//////////////////////////////////////////////////////////
+//- 17 - Engager les Mercenaires et invoquer des Dragons
+//////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////
+// LORDAERON EN ETE
+//
+// Engager Grand pretre Troll des forets
+[nfsp]
+Hotkey=A
+Tip=|cffffcc00A :|r Engager un Grand Prêtre Troll des forêts
+
+// Engager Berzerker
+[nftb]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Engager un Berzerker Troll des forêts
+
+// Engager Marteleur Ogre
+[nogm]
+Hotkey=E
+Tip=|cffffcc00E :|r Engager un Marteleur Ogre
+Buttonpos=2,0
+
+// Invoquer Golem de boue
+[ngrk]
+Hotkey=R
+Tip=|cffffcc00R :|r Invoquer un Golem de boue
+Buttonpos=3,0
+
+
+/////////////////////////////////////////////////////////
+// LORDAERON EN AUTOMNE
+//
+// Engager une Brute Gnoll
+[ngnb]
+Hotkey=A
+Tip=|cffffcc00A :|r Engager une Brute Gnoll
+
+// Engager un Garde Gnoll
+[ngnw]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Engager un Garde Gnoll
+
+// Engager un Ogre Magi
+[nomg]
+Hotkey=E
+Tip=|cffffcc00E :|r Engager un Magi Ogre 
+Buttonpos=2,0
+
+
+/////////////////////////////////////////////////////////
+// LORDAERON EN HIVER
+//
+// Engager Trappeur des glaces
+[nitt]
+Hotkey=A
+Tip=|cffffcc00A :|r Engager un Trappeur Troll des glace
+
+// Engager Berzerker des glaces
+[nits]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Engager un Berzerker Troll des glaces
+
+// Engager un Roi Gnoll
+[ngnv]
+Hotkey=E
+Tip=|cffffcc00E :|r Engager un Roi Gnoll
+Buttonpos=2,0
+
+
+/////////////////////////////////////////////////////////
+// NORTHREND
+//
+// Invoquer une Guerri�re Nerubien
+[nnwa]
+Hotkey=A
+Tip=|cffffcc00A :|r Invoquer une Guerrière Nerubien
+
+// Invoquer une Tisseuse Nerubien
+[nnwl]
+Hotkey=E
+Tip=|cffffcc00E :|r Invoquer une Tisseuse Nerubien
+
+// Engager un Revenant de froid
+[nrvs]
+//[nrvi]
+Hotkey=R
+Tip=|cffffcc00R :|r Engager un Revenant de froid
+
+
+/////////////////////////////////////////////////////////
+// ASHENVALE
+//
+// Engager un Danseur de l'ombre
+[nsts]
+Hotkey=A
+Tip=|cffffcc00A :|r Engager un Danseur de l'ombre Satyre
+
+// Engager un Chaman Furbolg
+[nfrs]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Engager un Chaman Furbolg
+
+// Invoquer un L�zard fulgurant
+[nthl]
+Hotkey=E
+Tip=|cffffcc00E :|r Engager un Lézard fulgurant
+
+
+/////////////////////////////////////////////////////////
+// FELWOOD
+//
+// Engager D�voreur Murloc
+[nmfs]
+Hotkey=A
+Tip=|cffffcc00A :|r Engager un Dévoreur Murloc 
+
+// Invoquer un Fondeur Sludge
+[nslf]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Invoquer un Fondeur Sludge
+
+// Engager un Voleur d'�me
+[nstl]
+Hotkey=E
+Tip=|cffffcc00E :|r Engager un Voleur d'âme Satyre
+
+
+/////////////////////////////////////////////////////////
+// BARRENS
+//
+// Engager un Eclaireur Centaure
+[ncen]
+Hotkey=A
+Tip=|cffffcc00A :|r Engager un Eclaireur Centaure
+
+// Engager une Voleuse Harpie
+[nhrr]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Engager une Voleuse Harpie
+
+// Engager une sorci�re Harpie
+[nhrw]
+Hotkey=E
+Tip=|cffffcc00E :|r Engager une Sorcière Harpie
+
+// Invoquer un Homme-m�decine Razormane
+[nrzm]
+Hotkey=R
+Tip=|cffffcc00R :|r Engager un Homme-médecine Razormane
+
+
+/////////////////////////////////////////////////////////
+// VILLAGE
+// Le chasseur Murloc se place � la mauvaise position et perturbe les autres unit�s
+//
+// Engager un Kobold
+[nkob]
+Hotkey=A
+Tip=|cffffcc00A :|r Engager un Kobold
+
+// Engager Chasseur Murloc
+[nmrr]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Engager un Chasseur Murloc 
+//Buttonpos=3,0
+
+// Engager un Assassin
+[nass]
+Hotkey=E
+Tip=|cffffcc00E :|r Engager un Assassin
+
+// Engager un Geomancien Kobold
+[nkog]
+Hotkey=R
+Tip=|cffffcc00R :|r Engager un Géomancien Kobold
+
+
+/////////////////////////////////////////////////////////
+// DALARAN + CITE
+//
+// Engager un Voleur
+[nrog]
+Hotkey=A
+Tip=|cffffcc00A :|r Engager un Voleur
+
+// Engager Pretre Troll des forets
+[nfsh]
+Hotkey=R
+Tip=|cffffcc00R :|r Engager un Prêtre sombre Troll des forêts
+
+
+/////////////////////////////////////////////////////////
+// DONJON + SOUTERRAIN
+//
+// Invoquer un Squelette ardent
+[nskf]
+Hotkey=A
+Tip=|cffffcc00A :|r Invoquer un Squelette ardent
+
+// Invoquer Indomptable
+[nowb]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Invoquer un Indomptable
+
+
+
+/////////////////////////////////////////////////////////
+// RUINES ENGLOUTIES
+//
+// Engager une Tortue de mer g�ante
+[ntrt]
+Hotkey=A
+Tip=|cffffcc00A :|r Engager une Tortue de mer géante
+//Buttonpos=0,0
+
+// Engager un Hargneux Makrura
+[nlsn]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Engager un Hargneux Makrura
+//Buttonpos=1,0
+
+// Engager un Lanceur Mur'gul
+[nmsn]
+Hotkey=E
+Tip=|cffffcc00E :|r Engager un Lanceur Mur'gul
+//Buttonpos=2,0
+
+// Engager un Oracle Makrura
+[nlds]
+Hotkey=R
+Tip=|cffffcc00R :|r Engager un Oracle Makrura
+//Buttonpos=3,0
+
+
+/////////////////////////////////////////////////////////
+// GLACIER D'ICECROWN
+//
+// Engager un Fouineur Drake bleu
+[nbdm]
+Hotkey=A
+Tip=|cffffcc00A :|r Engager un Fouineur Drake bleu
+//Buttonpos=0,0
+
+// Engager un Chaman Furbolg polaire
+[nfps]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Engager un Chaman Furbolg polaire
+//Buttonpos=1,0
+
+// Engager une Arachnathid �pineuse
+[nanm]    
+Hotkey=E
+Tip=|cffffcc00E :|r Engager une Arachnathid épineuse
+//Buttonpos=2,0
+
+// Engager un Guerrier Magnataur
+[nmgw]
+Hotkey=R
+Tip=|cffffcc00R :|r Engager un Guerrier Magnataur
+//Buttonpos=3,0
+
+
+/////////////////////////////////////////////////////////
+// TERRES DEVASTEES + CATACOMBES
+//
+// Invoquer une b�te corrompue
+[npfl]
+Hotkey=A
+Tip=|cffffcc00A :|r Invoquer une Bête corrompue
+//Buttonpos=0,0
+
+// Engager un Disciple Draenei
+[ndrm]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Engager un Disciple Draenei
+//Buttonpos=1,0
+
+// Engager un marcheur �th�r�
+[nvdw]
+Hotkey=E
+Tip=|cffffcc00E :|r Engager un Marcheur éthéré
+//Buttonpos=2,0
+
+// Engager un Assassin Draenei
+[ndrd]
+Hotkey=R
+Tip=|cffffcc00R :|r Engager un Assassin Draenei
+//Buttonpos=3,0
+
+
+/////////////////////////////////////////////////////////
+// NIDS DE DRAGONS
+//
+// ROUGES
+//
+// Invoquer un jeune dragon rouge
+[nrdk]
+Hotkey=A
+Tip=|cffffcc00A :|r Invoquer un Jeune Dragon rouge
+
+// Invoquer un Drake rouge
+[nrdr]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Invoquer un Drake rouge
+
+// Invoquer un Dragon rouge
+[nrwm]
+Hotkey=E
+Tip=|cffffcc00E :|r Invoquer un Dragon rouge
+
+// BLEUS
+//
+// Invoquer un jeune dragon bleu
+[nadw]
+Hotkey=A
+Tip=|cffffcc00A :|r Invoquer un Jeune Dragon bleu
+
+// Invoquer un Drake bleu
+[nadk]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Invoquer un Drake bleu
+
+// Invoquer un Dragon bleu
+[nadr]
+Hotkey=E
+Tip=|cffffcc00E :|r Invoquer un Dragon bleu
+
+// VERTS
+//
+// Invoquer un jeune dragon vert
+[ngrw]
+Hotkey=A
+Tip=|cffffcc00A :|r Invoquer un Jeune Dragon vert
+
+// Invoquer un Drake vert
+[ngdk]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Invoquer un Drake vert
+
+// Invoquer un Dragon vert
+[ngrd]
+Hotkey=E
+Tip=|cffffcc00E :|r Invoquer un Dragon vert
+
+// NOIRS
+//
+// Invoquer un jeune dragon noir
+[nbdr]
+Hotkey=A
+Tip=|cffffcc00A :|r Invoquer un Jeune Dragon noir
+
+// Invoquer un Drake noir
+[nbdk]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Invoquer un Drake noir
+
+// Invoquer un Dragon noir
+[nbwm]
+Hotkey=E
+Tip=|cffffcc00E :|r Invoquer un Dragon noir
+
+// BRONZES
+//
+// Invoquer un jeune dragon bronze
+[nbzw]
+Hotkey=A
+Tip=|cffffcc00A :|r Invoquer un Jeune Dragon bronze
+
+// Invoquer un Drake bronze
+[nbzk]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Invoquer un Drake bronze
+
+// Invoquer un Dragon bronze
+[nbzd]
+Hotkey=E
+Tip=|cffffcc00E :|r Invoquer un Dragon bronze
+
+// ETHERES
+//
+// Invoquer un jeune dragon �th�r�
+[nnht]
+Hotkey=A
+Tip=|cffffcc00A :|r Invoquer un Jeune Dragon éthéré
+
+// Invoquer un Drake �th�r�
+[nndk]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Invoquer un Drake éthéré
+
+// Invoquer un Dragon �th�r�
+[nndr]
+Hotkey=E
+Tip=|cffffcc00E :|r Invoquer un Dragon éthéré
+
+
+
+
+//////////////////
+//- 18 - Les Nagas
+//////////////////
+
+// Naga harvest
+[ANha]
+Tip=|cffffcc00F :|r Récolter
+Untip=|cffffcc00F :|r Ramener Ressources
+Hotkey=F
+Unhotkey=F
+
+// Les Sorts et Competences :
+//
+// Submerge Myrmidon
+[Asb1]
+Tip=|cffffcc00V :|r Submersion
+Untip=|cffffcc00V :|r Surface
+Hotkey=V
+Unhotkey=V
+
+// Submerge Royal Guard
+[Asb2]
+Tip=|cffffcc00V :|r Submersion
+Untip=|cffffcc00V :|r Surface
+Hotkey=V
+Unhotkey=V
+
+// Submerge Snap Dragon
+[Asb3]
+Tip=|cffffcc00V :|r Submersion
+Untip=|cffffcc00V :|r Surface
+Hotkey=V
+Unhotkey=V
+
+// Filet du Myrmidon
+[ANen]
+Tip=|cffffcc00W :|r Filet
+Hotkey=W
+
+// Frost Armor de la sir�ne
+[ACfu]
+Tip=|cffffcc00X :|r Armure de glace
+Hotkey=X
+
+// Parasite de la sir�ne
+[ANpa]
+Tip=|cffffcc00W :|r Parasite
+Hotkey=W
+
+// Cyclone de la sir�ne
+[Acny]
+Tip=|cffffcc00C :|r Cyclone
+Hotkey=C
+
+// Rituel d'invocation de la sir�ne
+[Ahnl]
+Tip=|cffffcc00V :|r Rituel d'invocation
+Hotkey=V
+
+// Abolir Magie du Couatl
+[Andm]
+Tip=|cffffcc00W :|r Abolir magie
+Hotkey=W
+Unhotkey=W
+
+// Lame de fond du Garde Royal
+[ACcv]
+Tip=|cffffcc00C :|r Lame de fond
+Hotkey=C
+ButtonPos=2,2
+
+// Boule de glace du Garde Royal
+[ACcb]
+Tip=|cffffcc00W :|r Boule de glace
+Hotkey=W
+ButtonPos=0,2
+
+// El�mentaire marin du Garde Royal
+[ACwe]
+Tip=|cffffcc00X :|r Invoquer un Elémentaire marin
+Hotkey=X
+ButtonPos=1,2
+
+// Lame de fond de la Tortue Dragon niveau 10
+[ACc2]
+Tip=|cffffcc00X :|r Lame de fond 
+Hotkey=X
+
+
+// Les Unit�s :
+//
+// Ravageur Mur'gul
+[nnmg]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Entraîner un Ravageur Mur'gul
+
+// Esclave Mur'gul
+[nmpe]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner un Esclave Mur'gul
+
+// Myrmidon Naga
+[nmyr]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner un Myrmidon Naga
+
+// Dragon carnassier
+[nsnp]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Entraîner un Dragon carnassier
+
+// Tortue Dragon
+[nhyc]
+Hotkey=E
+Tip=|cffffcc00E :|r Entraîner une Tortue Dragon
+
+// Sir�ne Naga
+[nnsw]
+Hotkey=A
+Tip=|cffffcc00A :|r Entraîner une Sirène Naga
+
+// Couatl
+[nwgs]
+Hotkey=Z
+Tip=|cffffcc00Z :|r Entraîner un Couatl
+
+
+// Les Upgrades :
+//
+[Rnam]
+Tip=|cffffcc00X :|r Améliorer en Ecailles de corail,|cffffcc00X :|r Améliorer en Ecailles de chitine,|cffffcc00X :|r Améliorer en Ecailles d'aqualithe
+Hotkey=X,X,X
+
+[Rnat]
+Tip=|cffffcc00W :|r Améliorer en Sabre de corail,|cffffcc00W :|r Améliorer en Sabre de chitine,|cffffcc00W :|r Améliorer en Sabre d'aqualithe
+Hotkey=W,W,W
+
+[Rnen]
+Tip=|cffffcc00W :|r Rechercher Filet
+Hotkey=W
+
+[Rnsw]
+Tip=|cffffcc00W :|r Formation de Sirène Naga Adepte,|cffffcc00W :|r Formation de Sirène Naga Maître
+Hotkey=W,W
+
+[Rnsi]
+Tip=|cffffcc00X :|r Rechercher Abolir magie
+Hotkey=X
+
+[Rnsb]
+Tip=|cffffcc00C :|r Rechercher Submersion
+Hotkey=C
+
+// Les batiments :
+//
+[nntt]
+Tip=|cffffcc00A :|r Construire un Temple des flots
+Hotkey=A
+Buttonpos=0,0
+
+[nnsg]
+Tip=|cffffcc00Z :|r Construire des Terres de fraies
+Hotkey=Z
+Buttonpos=1,0
+
+[nnsa]
+Tip=|cffffcc00D :|r Construire un Autel d'Azshara
+Hotkey=D
+Buttonpos=2,1
+
+[nnad]
+Tip=|cffffcc00S :|r Construire un Autel des Profondeurs
+Hotkey=S
+Buttonpos=1,1
+
+[nnfm]
+Tip=|cffffcc00Q :|r Construire un Lit de corail
+Hotkey=Q
+Buttonpos=0,1
+
+[nntg]
+Tip=|cffffcc00E :|r Construire un Gardien des flots
+Hotkey=E
+Buttonpos=2,0
+
+
+
+////////////////////////////
+//- 19 - Campagne Solo
+////////////////////////////
+//
+
+// Attribution Bonus de caract�ristique (Croix Jaune)
+[Aamk]
+Researchhotkey=F
+Researchtip="|cffffcc00F :|r Apprendre Bonus de caractéristique - [|cffffcc00Niveau %d|r]"
+
+
+
+// Sorts de REXXAR
+//
+// Invoquer Bear (Beastmaster)
+[Arsg]
+Tip=|cffffcc00W :|r Invoquer Misha - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Invoquer Misha - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Invoquer Misha - [|cffffcc00Niveau 3|r],|cffffcc00W :|r Invoquer Misha - [|cffffcc00Niveau 4|r]
+Hotkey=W
+Researchtip= |cffffcc00A :|r Apprendre Invoquer un Ours - [|cffffcc00Niveau %d|r]
+Researchhotkey=A
+
+// Invoquer Quilbeast (Beastmaster)
+[Arsq]
+Tip=|cffffcc00X :|r Invoquer un Porc-épic - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Invoquer un Porc-épic - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Invoquer un Porc-épic - [|cffffcc00Niveau 3|r],|cffffcc00X :|r Invoquer un Porc-épic - [|cffffcc00Niveau 4|r]
+Hotkey=X
+Researchtip=|cffffcc00Z :|r Apprendre Invoquer un Porc-épic - [|cffffcc00Niveau %d|r]
+Researchhotkey=Z
+
+// storm bolt
+[ANsb]
+Tip=|cffffcc00C :|r Boule de foudre - [|cffffcc00Niveau 1|r],|cffffcc00C :|r Boules de foudre - [|cffffcc00Niveau 2|r],|cffffcc00 C :|r Boule de foudre - [|cffffcc00Niveau 3|r],|cffffcc00C :|r Boule de foudre - [|cffffcc00Niveau 4|r]
+Hotkey=C
+Researchtip="|cffffcc00E :|r Apprendre Boule de foudre - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Stampede (Beastmaster)
+[Arsp]
+Tip=|cffffcc00V :|r Charge - [|cffffcc00Niveau 1|r],|cffffcc00V :|r Charge - [|cffffcc00Niveau 2|r]
+Hotkey=V
+Researchtip=|cffffcc00R :|r Apprendre Charge - [|cffffcc00Niveau %d|r]"
+Researchhotkey=R
+
+
+
+//Sorts de CHEN
+//
+// Breath of Fire (Pandaren Brewmaster)
+[ANcf]
+Tip=|cffffcc00W :|r Souffle de feu - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Souffle de feu - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Souffle de feu - [|cffffcc00Niveau 3|r],|cffffcc00W :|r Souffle de feu - [|cffffcc00Niveau 4|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Souffle de feu - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Drunken Brawler (Pandaren Brewmaster)
+[Acdb]
+Tip=Homme ivre - [|cffffcc00Niveau 1|r],Homme ivre - [|cffffcc00Niveau 2|r],Homme ivre - [|cffffcc00Niveau 3|r],Homme ivre - [|cffffcc00Niveau 4|r]
+Researchtip="|cffffcc00E :|r Apprendre Homme ivre - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Drunken Haze (Pandaren Brewmaster)
+[Acdh]
+Tip=|cffffcc00X :|r Ivresse - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Ivresse - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Ivresse - [|cffffcc00Niveau 3|r],|cffffcc00X :|r Ivresse - [|cffffcc00Niveau 4|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Ivresse - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Terre, vent et feu (Pandaren Brewmaster)
+[Acef]
+Tip="|cffffcc00V :|r Terre, vent et feu - [|cffffcc00Niveau 1|r],|cffffcc00V :|r Terre, vent et feu - [|cffffcc00Niveau 2|r]"
+Hotkey=V
+Researchtip="|cffffcc00R :|r Apprendre Terre, vent et feu - [|cffffcc00Niveau %d|r]"
+Researchhotkey=R
+
+
+
+// Sorts de ROKHAN
+//
+// Healing Wave (Rokhan)
+[ANhw]
+Tip=|cffffcc00W :|r Vague de soins - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Vague de soins - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Vague de soins - [|cffffcc00Niveau 3|r],|cffffcc00W :|r Vague de soins - [|cffffcc00Niveau 4|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Vague de soins - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Serpent Ward
+[Arsw]
+Tip=|cffffcc00C :|r Protection du serpent - [|cffffcc00Niveau 1|r],|cffffcc00C :|r Protection du serpent - [|cffffcc00Niveau 2|r],|cffffcc00C :|r Protection du serpent - [|cffffcc00Niveau 3|r],|cffffcc00C :|r Protection du serpent - [|cffffcc00Niveau 4|r]
+Hotkey=C
+Researchtip="|cffffcc00E :|r Apprendre Protection du serpent - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// Hex
+[ANhx]
+Tip=|cffffcc00X :|r Hex - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Hex - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Hex - [|cffffcc00Niveau 3|r],|cffffcc00X :|r Hex - [|cffffcc00Niveau 4|r]
+Hotkey=X
+Researchtip="|cffffcc00Z :|r Apprendre Hex - [|cffffcc00Niveau %d|r]"
+Researchhotkey=Z
+
+// Voodoo Spirits
+[AOls]
+Hotkey=V
+Tip=|cffffcc00V :|r Esprits vaudou - [|cffffcc00Niveau 1|r],|cffffcc00V :|r Esprits vaudou - [|cffffcc00Niveau 2|r]
+Researchtip="|cffffcc00V :|r Apprendre Esprits vaudou - [|cffffcc00Niveau %d|r]"
+Researchhotkey=R
+
+
+// Sorts de CAIRNE
+//
+// Shockwave
+[AOs2]
+Tip=|cffffcc00W :|r Onde de choc - [|cffffcc00Niveau 1|r],|cffffcc00W :|r Onde de choc - [|cffffcc00Niveau 2|r],|cffffcc00W :|r Onde de choc - [|cffffcc00Niveau 3|r],|cffffcc00W :|r Onde de choc - [|cffffcc00Niveau 4|r]
+Hotkey=W
+Researchtip="|cffffcc00A :|r Apprendre Onde de choc - [|cffffcc00Niveau %d|r]"
+Researchhotkey=A
+
+// Endurance Aura
+[AOr2]
+Tip=Aura d'endurance - [|cffffcc00Niveau 1|r],Aura d'endurance - [|cffffcc00Niveau 2|r],Aura d'endurance - [|cffffcc00Niveau 3|r],Aura d'endurance - [|cffffcc00Niveau 4|r]
+Researchtip="|cffffcc00E :|r Apprendre Aura d'endurance - [|cffffcc00Niveau %d|r]"
+Researchhotkey=E
+
+// War Stomp (Chieftan)
+[AOw2]
+Tip=|cffffcc00X :|r Choc martial - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Choc martial - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Choc martial - [|cffffcc00Niveau 3|r],|cffffcc00X :|r Choc martial - [|cffffcc00Niveau 4|r]
+Researchtip="|cffffcc00Z :|r Apprendre Choc martial - [|cffffcc00Niveau %d|r]"
+Hotkey=X
+Researchhotkey=Z
+
+// Reincarnation
+[AOr3]
+Tip=Réincarnation - [|cffffcc00Niveau 1|r],Réincarnation - [|cffffcc00Niveau 2|r]
+Researchtip="|cffffcc00R :|r Apprendre Réincarnation - [|cffffcc00Niveau %d|r]"
+Researchhotkey=R
+
+//Battle Roar
+//[ANbr]
+//Tip=Battle |cffffcc00R|roar - [|cffffcc00Niveau 1|r],Battle |cffffcc00R|roar - [|cffffcc00Niveau 2|r],Battle |cffffcc00R|roar - [|cffffcc00Niveau 3|r],Battle |cffffcc00R|roar - [|cffffcc00Niveau 4|r]
+//Hotkey=R
+//Researchtip="Learn Battle |cffffcc00R|roar - [|cffffcc00Niveau %d|r]"
+//Researchhotkey=R
+
+
+// Sorts d'AKAMA - H�ros Draenei
+//
+// Esprit sauvage
+[ACs7]
+Tip=|cffffcc00X :|r Esprit sauvage - [|cffffcc00Niveau 1|r],|cffffcc00X :|r Esprit sauvage - [|cffffcc00Niveau 2|r],|cffffcc00X :|r Esprit sauvage - [|cffffcc00Niveau 3|r]
+Researchtip="|cffffcc00Z :|r Apprendre Esprit sauvage - [|cffffcc00Niveau %d|r]."
+Hotkey=X
+Researchhotkey=Z
+
+// R�incarnation
+[ANr2]
+Tip=Réincarnation
+Researchtip=|cffffcc00R :|r Apprendre Réincarnation
+Researchhotkey=R
+
+// Camouflage
+[Ahid]
+Tip=|cffffcc00D :|r Dissimulation
+Hotkey=D
+
+
+
+
+
+
+////////////////////////////
+//- 20 - Codage des accents
+////////////////////////////
+//
+// � = �    Alt 0195 + Alt 0160
+// � = â   Alt 0195 + Alt 0162    
+// � = é   Alt 0195 + Alt 0169
+// � = è   Alt 0195 + Alt 0168
+// � = ê   Alt 0195 + Alt 0170
+// � = î   Alt 0195 + Alt 0174
+// � = ô   Alt 0195 + Alt 0180
+// � = û   Alt 0195 + Alt 0187
+// � = ç   Alt 0195 + Alt 0167
+//
+
+

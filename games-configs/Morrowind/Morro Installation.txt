@@ -1,0 +1,115 @@
+Installer:
+
+PNO
+MOSG (v2.1.1) (dont MCP)
+Baton Daedrique
+Correctif entraineurs
+Correctifs Boucliers
+Morro Uniforme d'ordonnateur
+Sorts manquants des autels
+Jambières Indoril
+Clean Templar Pauldron Fix
+Marqueurs
+Morro toutes destinations
+Transport Solstheim
+Animal Realism
+Assassins retardes
+Chevaliere legion
+Dagoth & co
+Pillards demontables
+Strong Vampires
+Correctif Soleil Noir
+Chute d'eau
+imperial chain fix --> esp maison: esp vo camembérisé.
+Master Index amélioré --> 1 seul esp !!!
+Propylon Pillar Retexture: PPR_Glow + PPR_Index_Addon
+Vivec-Velothi Retextured V3.2
+Vurt's groundcover
+Vurt's tree textures overhaul
+Vurt's Ashlands overhaul
+Shut up
+
+
+Pour l'avant dernier: virer les 9 fichiers suivants:
+  tx_bark_01.dds
+  Tx_emperor_parasol_01.dds
+  tx_emperor_parasol_02.dds
+  tx_emperor_parasol_03.dds
+  tx_mushroom_01.dds
+  tx_mushroom_02.dds
+  tx_mushroom_03.dds
+  Tx_mushroom_04.dds
+  Tx_mushroom_05.dds
+Ou écraser les dossiers meshes et textures du dossier Emperor Parasol + AC trees
+ inclu dans "Papill6n various graphics things".
+
+Pour le dernier: virer les 10 fichiers suivants:
+Dans Meshes\x\:
+  ex_gg_fence_s_01
+  ex_gg_fence_s_02
+  ex_gg_fence_s_03
+  ex_gg_fence_s_04
+  ex_gg_fence_s_h_01
+  ex_gg_pylon_01
+
+Dans Textures:
+  tx_gg_fence_01
+  tx_gg_fence_01_g
+  tx_gg_fence_02_g
+  tx_gg_fencerail_glow
+
+Textures du MOSG à virer:
+  Tx_GG_fence_01.dds
+  Tx_GG_fence_02.dds
+  compass.dds
+  tx_sun_05.dds
+
+Remplacer la mesh Raindrop par Raindrop_2.4 du mod Better Rain, renommée en Raindrop.
+Remplacer la mesh shield de Meshes\rck\ par une mesh vide.
+Ajouter le fichier mw_logo.bik du mod No Video au dossier Data Files\Video\
+
+Virer Container Animated: supprimer:
+  Data Files\meshes\Ac
+  Data Files\sound\Fx\chest_cls
+  Data Files\sound\Textures\bar_clockfabric.dds
+  Data Files\MW Containers Animated.
+
+Virer New Blood (conflit avec Animal Realism; l'ini est modifié par ce mod):
+ 1.Virer l'esp: NewBlood_MwTbBm1.1
+
+ 2.Virer les 5 Textures:
+   CBbug_blood.tga
+   CBoil_blood.tga
+   CBstone_blood.tga
+   CByellow_blood.tga
+   Transparent_blood.tga
+
+Virer de Data Files\Music\
+  Battle\FutileRetreat_RichDouglas
+  Battle\NoFear_RichDouglas
+  Explore\OutskirtsOfMaarGan_RichDouglas
+
+Remplacer par des mp3 silencieux:
+  Data Files\Music\AM\
+    AM_music2
+    AM_music3
+  Data Files\Sound\AM\
+    AM_DrinkSound
+    AM_EatSound
+    AM_FishManSound
+    AM_PrayerF
+    AM_PrayerM
+
+Virer Atmospheric Sounds Effects (l'ini est modifié par ce mod):
+  Supprimer dans Data Files:
+  Meshes\_ase_
+  Sound\_ase_
+  Textures\_ase_pdragn.dds
+  AtmosphericSoundEffects-4.0-Bloodmoon
+  AtmosphericSoundEffects-4.0-Tribunal
+  MiNi
+
+Remplacer l'ini par la version sauvegardée.
+
+MGE: Caméra: Z=10,0.  Distant land: 6 cellules.  Grass: 12%
+

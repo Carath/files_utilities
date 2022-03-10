@@ -1,0 +1,708 @@
+"KeyBindings"
+{
+	"Name"		"ARROW"
+	"Version"		"12"
+	"AlgorithmicUpdateVersion"		"6"
+	"UseHeroBindings"		"0"
+	"LinkPlayerToSpectator"		"1"
+	"Keys"
+	{
+		"CameraUp"
+		{
+			"Key"		"UPARROW"
+		}
+		"CameraDown"
+		{
+			"Key"		"DOWNARROW"
+		}
+		"CameraLeft"
+		{
+			"Key"		"LEFTARROW"
+		}
+		"CameraRight"
+		{
+			"Key"		"RIGHTARROW"
+		}
+		"CameraGrip"
+		{
+			"Key"		"MOUSE3"
+		}
+		"RecentEvent"
+		{
+			"Key"		"TAB"
+			"Mode"		"0"
+		}
+		"ScoreboardToggle"
+		{
+			"Key"		"SUPERSCRIPT_TWO"
+			"Mode"		"0"
+		}
+		"ActivateGlyph"
+		{
+			"Key"		"M"
+			"Mode"		"0"
+		}
+		"ChatTeam"
+		{
+			"Key"		"ENTER"
+		}
+		"ChatTeam2"
+		{
+			"Key"		"KP_ENTER"
+		}
+		"HeroAttack"
+		{
+			"Key"		"C"
+			"Mode"		"0"
+		}
+		"HeroHold"
+		{
+			"Key"		"V"
+			"Mode"		"0"
+		}
+		"HeroSelect"
+		{
+			"Key"		"SPACE"
+			"Mode"		"0"
+		}
+		"CourierSelect"
+		{
+			"Key"		"F3"
+			"Mode"		"0"
+		}
+		"CourierDeliver"
+		{
+			"Key"		"F4"
+			"Mode"		"0"
+		}
+		"ControlGroup3"
+		{
+			"Key"		"3"
+		}
+		"ControlGroup4"
+		{
+			"Key"		"4"
+		}
+		"ControlGroup5"
+		{
+			"Key"		"5"
+		}
+		"ControlGroup6"
+		{
+			"Key"		"6"
+		}
+		"ControlGroup7"
+		{
+			"Key"		"7"
+		}
+		"ControlGroup8"
+		{
+			"Key"		"8"
+		}
+		"ControlGroup9"
+		{
+			"Key"		"9"
+		}
+		"ControlGroup10"
+		{
+			"Key"		"0"
+		}
+		"AbilityPrimary1"
+		{
+			"Key"		"Q"
+			"Mode"		"0"
+		}
+		"AbilityPrimary2"
+		{
+			"Key"		"S"
+			"Mode"		"0"
+		}
+		"AbilityPrimary3"
+		{
+			"Key"		"D"
+			"Mode"		"0"
+		}
+		"AbilitySecondary1"
+		{
+			"Key"		"G"
+			"Mode"		"0"
+		}
+		"AbilitySecondary2"
+		{
+			"Key"		"H"
+			"Mode"		"0"
+		}
+		"AbilityUltimate"
+		{
+			"Key"		"F"
+			"Mode"		"0"
+		}
+		"LearnAbilities"
+		{
+			"Key"		"X"
+			"Mode"		"0"
+		}
+		"LearnStats"
+		{
+			"Key"		"W"
+			"Mode"		"0"
+		}
+		"Inventory1"
+		{
+			"Key"		"A"
+			"Mode"		"0"
+		}
+		"Inventory2"
+		{
+			"Key"		"Z"
+			"Mode"		"0"
+		}
+		"Inventory3"
+		{
+			"Key"		"E"
+			"Mode"		"0"
+		}
+		"Inventory4"
+		{
+			"Key"		"R"
+			"Mode"		"0"
+		}
+		"Inventory5"
+		{
+			"Key"		"T"
+			"Mode"		"0"
+		}
+		"Inventory6"
+		{
+			"Key"		"Y"
+			"Mode"		"0"
+		}
+		"ShopToggle"
+		{
+			"Key"		"F2"
+			"Mode"		"0"
+		}
+		"Escape"
+		{
+			"Key"		"ESCAPE"
+		}
+		"SpectatorCameraUp"
+		{
+			"Key"		"UPARROW"
+			"Modifier"		"None"
+			"Mode"		"0"
+		}
+		"SpectatorCameraDown"
+		{
+			"Key"		"DOWNARROW"
+			"Modifier"		"None"
+			"Mode"		"0"
+		}
+		"SpectatorCameraLeft"
+		{
+			"Key"		"LEFTARROW"
+			"Modifier"		"None"
+			"Mode"		"0"
+		}
+		"SpectatorCameraRight"
+		{
+			"Key"		"RIGHTARROW"
+			"Modifier"		"None"
+			"Mode"		"0"
+		}
+		"SpectatorIncreaseReplaySpeed"
+		{
+			"Key"		"="
+		}
+		"SpectatorDecreaseReplaySpeed"
+		{
+			"Key"		"-"
+		}
+		"SpectatorChat"
+		{
+			"Key"		"ENTER"
+			"Modifier"		"SHIFT"
+			"Mode"		"0"
+		}
+		"SpectatorScoreboard"
+		{
+			"Key"		"SUPERSCRIPT_TWO"
+			"Modifier"		"None"
+			"Mode"		"0"
+		}
+		"SpectatorStatsHarvest"
+		{
+			"Key"		"F4"
+		}
+		"SpectatorStatsItem"
+		{
+			"Key"		"F5"
+		}
+		"SpectatorStatsGold"
+		{
+			"Key"		"F6"
+		}
+		"SpectatorStatsXP"
+		{
+			"Key"		"F7"
+		}
+		"SpectatorFOWBoth"
+		{
+			"Key"		"F1"
+		}
+		"SpectatorFOWRadient"
+		{
+			"Key"		"F2"
+		}
+		"SpectatorFOWDire"
+		{
+			"Key"		"F3"
+		}
+		"SpectatorBroadcasterMenu"
+		{
+			"Key"		"F10"
+		}
+		"SpectatorDropdown_KDA"
+		{
+			"Key"		"q"
+		}
+		"SpectatorDropdown_Lasthits_Denies"
+		{
+			"Key"		"w"
+		}
+		"SpectatorDropdown_Level"
+		{
+			"Key"		"e"
+		}
+		"SpectatorDropdown_XP_Per_Min"
+		{
+			"Key"		"r"
+		}
+		"SpectatorDropdown_Gold"
+		{
+			"Key"		"t"
+		}
+		"SpectatorDropdown_NetWorth"
+		{
+			"Key"		"y"
+		}
+		"SpectatorDropdown_Fantasy"
+		{
+			"Key"		"o"
+		}
+		"SpectatorDropdown_Gold_Per_Min"
+		{
+			"Key"		"u"
+			"PanelParent"		"page2"
+		}
+		"SpectatorDropdown_Buyback"
+		{
+			"Key"		"i"
+		}
+		"SpectatorDropdown_Sort"
+		{
+			"Key"		"s"
+		}
+		"SpectatorDropdown_Close"
+		{
+			"Key"		"a"
+		}
+		"ShopTabConsumables"
+		{
+			"Key"		"q"
+			"Mode"		"0"
+		}
+		"ShopTabAttributes"
+		{
+			"Key"		"w"
+			"Mode"		"0"
+		}
+		"ShopTabArmaments"
+		{
+			"Key"		"e"
+			"Mode"		"0"
+		}
+		"ShopTabArcane"
+		{
+			"Key"		"r"
+			"Mode"		"0"
+		}
+		"ShopTabBasics"
+		{
+			"Key"		"a"
+			"Mode"		"0"
+		}
+		"ShopTabSupport"
+		{
+			"Key"		"s"
+			"Mode"		"0"
+		}
+		"ShopTabCaster"
+		{
+			"Key"		"d"
+			"Mode"		"0"
+		}
+		"ShopTabWeapons"
+		{
+			"Key"		"g"
+			"Mode"		"0"
+		}
+		"ShopTabArmor"
+		{
+			"Key"		"f"
+			"Mode"		"0"
+		}
+		"ShopTabArtifacts"
+		{
+			"Key"		"h"
+			"Mode"		"0"
+		}
+		"ShopTabSidePage1"
+		{
+			"Key"		"z"
+			"Mode"		"0"
+		}
+		"ShopTabSidePage2"
+		{
+			"Key"		"x"
+			"Mode"		"0"
+		}
+		"ShopTabSecret"
+		{
+			"Key"		"c"
+			"Mode"		"0"
+		}
+		"ShopTabSearchBox"
+		{
+			"Key"		"v"
+			"Mode"		"0"
+		}
+		"ShopSlot1"
+		{
+			"Key"		"1"
+			"Mode"		"0"
+		}
+		"ShopSlot2"
+		{
+			"Key"		"2"
+			"Mode"		"0"
+		}
+		"ShopSlot3"
+		{
+			"Key"		"3"
+			"Mode"		"0"
+		}
+		"ShopSlot4"
+		{
+			"Key"		"4"
+			"Mode"		"0"
+		}
+		"ShopSlot5"
+		{
+			"Key"		"5"
+			"Mode"		"0"
+		}
+		"ShopSlot6"
+		{
+			"Key"		"6"
+			"Mode"		"0"
+		}
+		"ShopSlot7"
+		{
+			"Key"		"7"
+			"Mode"		"0"
+		}
+		"ShopSlot8"
+		{
+			"Key"		"8"
+			"Mode"		"0"
+		}
+		"ShopSlot9"
+		{
+			"Key"		"9"
+			"Mode"		"0"
+		}
+		"ShopSlot10"
+		{
+			"Key"		"0"
+			"Mode"		"0"
+		}
+		"ShopSlot11"
+		{
+			"Key"		"-"
+			"Mode"		"0"
+		}
+		"ShopSlot12"
+		{
+			"Key"		"="
+			"Mode"		"0"
+		}
+		"InspectHeroInWorld"
+		{
+			"Key"		"I"
+		}
+		"ChatGlobal"
+		{
+			"Key"		"ENTER"
+			"Modifier"		"SHIFT"
+			"Mode"		"0"
+		}
+		"ChatGlobal2"
+		{
+			"Key"		"KP_ENTER"
+			"Modifier"		"SHIFT"
+			"Mode"		"0"
+		}
+		"AbilityPrimary1AutoCast"
+		{
+			"Key"		"q"
+			"Modifier"		"ALT"
+			"Mode"		"0"
+		}
+		"AbilityPrimary2AutoCast"
+		{
+			"Key"		"s"
+			"Modifier"		"ALT"
+			"Mode"		"0"
+		}
+		"AbilityPrimary3AutoCast"
+		{
+			"Key"		"d"
+			"Modifier"		"ALT"
+			"Mode"		"0"
+		}
+		"AbilitySecondary1AutoCast"
+		{
+			"Key"		"g"
+			"Modifier"		"ALT"
+			"Mode"		"0"
+		}
+		"AbilitySecondary2AutoCast"
+		{
+			"Key"		"h"
+			"Modifier"		"ALT"
+			"Mode"		"0"
+		}
+		"AbilityUltimateAutoCast"
+		{
+			"Key"		"f"
+			"Modifier"		"ALT"
+			"Mode"		"0"
+		}
+		"Inventory1AutoCast"
+		{
+			"Key"		"a"
+			"Modifier"		"ALT"
+			"Mode"		"0"
+		}
+		"Inventory2AutoCast"
+		{
+			"Key"		"z"
+			"Modifier"		"ALT"
+			"Mode"		"0"
+		}
+		"Inventory3AutoCast"
+		{
+			"Key"		"e"
+			"Modifier"		"ALT"
+			"Mode"		"0"
+		}
+		"Inventory4AutoCast"
+		{
+			"Key"		"r"
+			"Modifier"		"ALT"
+			"Mode"		"0"
+		}
+		"Inventory5AutoCast"
+		{
+			"Key"		"t"
+			"Modifier"		"ALT"
+			"Mode"		"0"
+		}
+		"Inventory6AutoCast"
+		{
+			"Key"		"y"
+			"Modifier"		"ALT"
+			"Mode"		"0"
+		}
+		"SpectatorCameraGrip"
+		{
+			"Key"		"MOUSE3"
+			"Modifier"		"None"
+			"Mode"		"0"
+		}
+		"SpectatorPause"
+		{
+			"Key"		"F8"
+			"Mode"		"0"
+			"Modifier"		"None"
+		}
+		"SelectAll"
+		{
+			"Key"		"2"
+			"Mode"		"0"
+		}
+		"GrabStashItems"
+		{
+			"Key"		"F6"
+			"Mode"		"0"
+		}
+		"CourierHaste"
+		{
+			"Key"		"F5"
+			"Mode"		"0"
+		}
+		"HeroMove"
+		{
+			"Mode"		"0"
+		}
+		"HeroStop"
+		{
+			"Mode"		"0"
+		}
+		"Pause"
+		{
+			"Key"		"F8"
+			"Mode"		"0"
+		}
+		"ChatVoiceTeam"
+		{
+			"Mode"		"0"
+		}
+		"ChatWheel"
+		{
+			"Mode"		"0"
+		}
+		"ControlGroup1"
+		{
+			"Key"		"1"
+			"Mode"		"0"
+		}
+		"ControlGroup2"
+		{
+			"Key"		"2"
+			"Mode"		"0"
+		}
+		"ControlGroupCycle"
+		{
+			"Mode"		"0"
+		}
+		"ScreenshotSettings"
+		{
+			"Mode"		"0"
+		}
+		"Console"
+		{
+			"Key"		"\"
+			"Mode"		"0"
+		}
+		"PurchaseQuickbuy"
+		{
+			"Mode"		"0"
+		}
+		"PurchaseSticky"
+		{
+			"Mode"		"0"
+		}
+		"SpectatorStatsFantasy"
+		{
+			"Mode"		"0"
+		}
+		"SpectatorCoach_ViewToggle"
+		{
+			"Mode"		"0"
+		}
+		"SpectatorCameraFocusPlayer1"
+		{
+			"Key"		"1"
+			"Mode"		"0"
+		}
+		"SpectatorCameraFocusPlayer2"
+		{
+			"Key"		"2"
+			"Mode"		"0"
+		}
+		"SpectatorCameraFocusPlayer3"
+		{
+			"Key"		"3"
+			"Mode"		"0"
+		}
+		"SpectatorCameraFocusPlayer4"
+		{
+			"Key"		"4"
+			"Mode"		"0"
+		}
+		"SpectatorCameraFocusPlayer5"
+		{
+			"Key"		"5"
+			"Mode"		"0"
+		}
+		"SpectatorCameraFocusPlayer6"
+		{
+			"Key"		"6"
+			"Mode"		"0"
+		}
+		"SpectatorCameraFocusPlayer7"
+		{
+			"Key"		"7"
+			"Mode"		"0"
+		}
+		"SpectatorCameraFocusPlayer8"
+		{
+			"Key"		"8"
+			"Mode"		"0"
+		}
+		"SpectatorCameraFocusPlayer9"
+		{
+			"Key"		"9"
+			"Mode"		"0"
+		}
+		"SpectatorCameraFocusPlayer10"
+		{
+			"Key"		"0"
+			"Mode"		"0"
+		}
+		"ShopSlot13"
+		{
+			"Key"		"["
+			"Mode"		"0"
+		}
+		"ShopSlot14"
+		{
+			"Key"		"]"
+			"Mode"		"0"
+		}
+		"CameraZoomOut"
+		{
+			"Mode"		"0"
+		}
+		"CameraZoomIn"
+		{
+			"Key"		"MWHEELUP"
+			"Mode"		"0"
+		}
+		"ActivateRadar"
+		{
+			"Key"		"P"
+			"Mode"		"0"
+		}
+	}
+	"HeroBuildNagCount2"		"3"
+	"PerUnitKeybinds"		"0"
+	"HeroBuilds2"
+	{
+		"weaver"		"cloud: guides/weaver_scratch.build"
+		"zuus"		"cloud: guides/zuus_scratch.build"
+		"doom_bringer"		"cloud: guides/doom_bringer_scratch.build"
+		"sniper"		"cloud: guides/sniper_scratch.build"
+		"venomancer"		"cloud: guides/venomancer_scratch.build"
+		"phantom_lancer"		"cloud: guides/phantom_lancer_scratch.build"
+		"legion_commander"		"cloud: guides/legion_commander_scratch.build"
+		"dazzle"		"cloud: guides/dazzle_scratch.build"
+		"furion"		"cloud: guides/furion_scratch.build"
+		"phantom_assassin"		"cloud: guides/phantom_assassin_scratch.build"
+		"bloodseeker"		"cloud: guides/bloodseeker_scratch.build"
+		"pugna"		"cloud: guides/pugna_scratch.build"
+		"drow_ranger"		"cloud: guides/drow_ranger_scratch.build"
+	}
+}

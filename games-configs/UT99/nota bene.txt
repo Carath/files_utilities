@@ -1,0 +1,7 @@
+Prendre OpenGl comme renderer! (dans Options > Préférences > Vidéo)
+
+Dans la console:
+
+timedemo 1 : affiche le framerate.
+fov : changer le fov. Valeur actuelle: 110.
+

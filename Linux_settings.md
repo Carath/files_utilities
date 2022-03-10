@@ -27,6 +27,8 @@ sudo apt install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev lib
 sudo apt install bash-completion gparted screenfetch mediainfo htop glogg chntpw
 ```
 
+Alternative to mediainfo: ``` exiftool ```
+
 To check on the list of all installed packages:
 
 ``` dpkg --list ```

@@ -1,0 +1,62 @@
+Quake Live played maps:
+
+Duel:
+
+Blood Run (ztn)
+Aerowalk (hub, cpm22)
+Furious Heights (t7)
+Sinister
+Cure
+Toxicity (pukka / Evolution)
+Lost World (dm13)
+Campgrounds (dm6)
+Battleforged (phant)
+Vertical Vengeance (t4)
+House of Decay (t9)
+Hektik
+Elder
+Silence
+Dismemberment
+
+Clan Arena:
+
+Campgrounds (dm6)
+Overkill
+Hidden Fortress
+Asylum
+Almost Lost (t6)
+Thunderstruck
+Trinity
+
+TDM:
+
+Deep Inside
+Dreadful place
+Grim Dungeons (dm14)
+Hidden Fortress
+Limbus
+Purgatory
+Ragnarok
+
+Other:
+
+* All original Quake 3 maps *
+Deep Inside
+Drunken Mummy
+Eviscerated (dm4)
+The Edge (q2dm1)
+Concrete Palace
+Use and Abuse (~ cpm3a)
+Phrantic (~ cpm24)
+Dead and Gone
+Smash
+
+cpma maps:
+
+cpm22
+pukka
+cpm3a
+cpm24
+Patibuh's Lair (cpm15)
+eizdm4-b15 // unnamed
+cpm1a // Wicked

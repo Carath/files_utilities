@@ -1,0 +1,12 @@
+Install RTCW.
+Download iortcw1.51c-win-x64
+Drop the content into the RTCW folder.
+Replace the WolfSP .exe by ioWolfSP.x64.exe for full steam integration.
+(Optional) Replace the .exe shortcut icon by a fancier one.
+Paste in the /Main folder the dedicated autoexec and config files.
+
+Useful links:
+
+https://wolffiles.de/index.php?filebase&fid=5079 // iortcw1.51c
+https://pcgamingwiki.com/wiki/Return_to_Castle_Wolfenstein
+https://steamcommunity.com/sharedfiles/filedetails/?id=256261724

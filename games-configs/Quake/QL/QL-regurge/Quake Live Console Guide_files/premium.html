@@ -1,0 +1,143 @@
+
+<!-- saved from url=(0037)http://www.regurge.at/ql/premium.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script type="text/javascript" src="./tablecloth.js.téléchargement"></script>
+<link href="./tablecloth.css" rel="stylesheet" type="text/css" media="screen">
+<link href="./ql.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	margin-top: 0px;
+	background-image:url(images/background.jpg);
+}
+-->
+</style></head>
+<body><div id="WzTtDiV" style="visibility: hidden; position: absolute; overflow: hidden; padding: 0px; width: 0px; left: 0px; top: 0px;"></div>
+<script src="./wz_tooltip.js.téléchargement" type="text/javascript"></script>
+<table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+  <tbody><tr class="odd">
+    <td width="100" class="font_white_12"><div align="center"><strong>Entry</strong></div></td>
+    <td width="80" class="font_white_12"><div align="center"><strong>Level</strong></div></td>
+	<td width="300" class="font_white_12"><strong>Summary</strong></td>
+	<td width="500" class="font_white_12"><strong>Description</strong></td>
+  </tr>
+  <tr class="even">
+    <td><div align="center">players</div></td>
+    <td class="font_green_10"><div align="center">none</div></td>
+    <td>Show currently connected players    and their status.</td>
+    <td>A list of current players, and    their level, is printed to the console. The first column is the client id,used in operations on players. The second column is their status, * meaning Owner, @ for Admins, and blank for all other players.</td>
+  </tr>
+  <tr class="odd">
+    <td><div align="center">timein</div></td>
+    <td class="font_green_10"><div align="center">none</div></td>
+    <td>Call a time in, unpausing the game.</td>
+    <td>Timein will do the opposite of timeout, and resume a paused game.    It will announce who has called the time in, and after 5 seconds, the game    will unpause.</td>
+  </tr>
+  <tr class="even">
+    <td><div align="center">timeout</div></td>
+    <td class="font_green_10"><div align="center">none</div></td>
+    <td>Call a time out, temporarily pausing the game.</td>
+    <td>Issuing timeout will pause the game for 30 seconds, and    announce who has called the time out. This can be used to temporarily pause    the game if a team member lags out, is kicked, etc. The game will be    automatically unpaused after 30 seconds unless timein is manually called.</td>
+  </tr>
+  <tr class="odd">
+    <td><div align="center">abort</div></td>
+    <td class="font_yellow_10"><div align="center">admin</div></td>
+    <td>Abandon the current game and return to warmup.</td>
+    <td>If a match was accidentally started, or otherwise needs to be    reset, abort will end the    current game with no result, and go back to warmup, similar to the    map_restart console command. Games that are aborted before the scoreboard is    displayed will not be counted for stats, if applicable.</td>
+  </tr>
+  <tr class="even">
+    <td><div align="center">allready</div></td>
+    <td class="font_yellow_10"><div align="center">admin</div></td>
+    <td>Force all players to be 'ready' and start the match.</td>
+    <td>An admin issuing allready will force the game to be started as long as there is at least    one player present on each team. Use this command to quickly start the game    without waiting for people to ready up.</td>
+  </tr>
+  <tr class="odd">
+    <td><div align="center">banlist</div></td>
+    <td class="font_yellow_10"><div align="center">admin</div></td>
+    <td>Lists the accounts currently banned.</td>
+    <td>banlist displays a list of accounts that    are currently banned. The banlist clears itself at the end of every game    period (warmup/match/round).</td>
+  </tr>
+  <tr class="even">
+    <td><div align="center">kickban</div></td>
+    <td class="font_yellow_10"><div align="center">admin</div></td>
+    <td>Temporarily removes a player from the server.</td>
+    <td>kickban takes one parameter, the player ID    of the player to remove, taken from players. A kicked player will remain banned as long as they remain on    the banlist.</td>
+  </tr>
+  <tr class="odd">
+    <td><div align="center">lock</div></td>
+    <td class="font_yellow_10"><div align="center">admin</div></td>
+    <td>Stop players from joining the team.</td>
+    <td>Lock optionally takes one argument, the team to lock. If no    argument is specified, it will lock the current team you are on, or lock both    teams if you have access. This will not allow any further players to join the    team. Players on the team will still be able to go into spectator mode.</td>
+  </tr>
+  <tr class="even">
+    <td><div align="center">opsay</div></td>
+    <td class="font_yellow_10"><div align="center">admin</div></td>
+    <td>Broadcast a message to the entire server.</td>
+    <td>Using this command, followed by a message, any admin or server    owner can broadcast a message that all players on the server will be able to    see.</td>
+  </tr>
+  <tr class="odd">
+    <td><div align="center">pause</div></td>
+    <td class="font_yellow_10"><div align="center">admin</div></td>
+    <td>Pause the current match indefinitely.</td>
+    <td>This command works similarly to timeout, except only an admin is able to call it, and there is no    delay until it is unpaused.Admins are also able to call pause while spectating.</td>
+  </tr>
+  <tr class="even">
+    <td><div align="center">put</div></td>
+    <td class="font_yellow_10"><div align="center">admin</div></td>
+    <td>Move a player to team.</td>
+    <td>put takes two parameters, the player's ID    from players and the    team to switch to, either 'r', 'b', or 's', standing for Red, Blue, and    Spectator. It will force the selected player to join that team.</td>
+  </tr>
+  <tr class="odd">
+    <td><div align="center">unban</div></td>
+    <td class="font_yellow_10"><div align="center">admin</div></td>
+    <td>Removes a player from the banlist.</td>
+    <td>unban takes one parameter, the account    name of the player to remove, taken from banlist. A player removed from the banlist can connect to the server.</td>
+  </tr>
+  <tr class="even">
+    <td><div align="center">unlock</div></td>
+    <td class="font_yellow_10"><div align="center">admin</div></td>
+    <td>Allow players to join teams.</td>
+    <td>Unlock works similarly to lock, except in reverse. It can lock a team specified as it's    parameter, otherwise it will unlock both teams if the player has admin, and    only their team if the player does not</td>
+  </tr>
+  <tr class="odd">
+    <td><div align="center">unpause</div></td>
+    <td class="font_yellow_10"><div align="center">admin</div></td>
+    <td>Unpause the current match.</td>
+    <td>Similar to timein,    this will cause the match to continue after a 5 second countdown. This    command can also be used to force the match to continue even if timeout was initiated by a player.</td>
+  </tr>
+    <tr class="even">
+    <td><div align="center">mute</div></td>
+    <td class="font_yellow_10"><div align="center">admin</div></td>
+    <td>Stops a players chat messages from being seen.</td>
+    <td>
+    		Mutes a player whose player ID is given as a parameter. Only the muted player and the admins will see "&lt;playername&gt; : (muted)" whenever they've typed in a message.</td>
+  </tr>
+    <tr class="odd">
+    <td><div align="center">unmute</div></td>
+    <td class="font_yellow_10"><div align="center">admin</div></td>
+    <td>
+    		Removes muted status.</td>
+    <td>
+    		Removes the muted status of the player whose ID is given as a parameter.</td>
+  </tr>
+  <tr class="even">
+    <td><div align="center">deop</div></td>
+    <td class="font_red_10"><div align="center">owner</div></td>
+    <td>Remove a players administrative privileges.</td>
+    <td>deop takes one parameter, the player ID of    the player to remove privileges from, taken from players. Deoped players will revert to access level NONE.</td>
+  </tr>
+  <tr class="odd">
+    <td><div align="center">op</div></td>
+    <td class="font_red_10"><div align="center">owner</div></td>
+    <td>Grant administrative privileges to a player.</td>
+    <td>op takes one parameter, the player ID of    the player to grant privileges to, taken from players. An admin will have access to all commands, except for the    ability to give other players admin.</td>
+  </tr>
+  <tr class="even">
+    <td><div align="center">stopserver</div></td>
+    <td class="font_red_10"><div align="center">owner</div></td>
+    <td>Shuts the game server down.</td>
+    <td>stopserver immediately shuts down the    server, without warning. Server owners should notify connected players that    the server will be shutting down prior to use of this command.</td>
+  </tr>
+</tbody></table>
+
+</body></html>

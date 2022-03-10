@@ -1,0 +1,64 @@
+--------------------------------------------------------------
+Logiciels utiles:
+
+µTorrent
+7-Zip
+Aegisub
+Audacity
+AutoHotkey
+CCleaner
+Chess 2012
+Classic Shell (windows 8)
+Discord
+f.lux
+Geogebra 5
+Google Chrome
+K-Lite Codec Pack (mega + updates) (* thumbnails for .webm *)
+Kitsune
+MKVToolNix (32bits, 64 bug; optionnel: + MKVExtractGUI-2)
+Mozilla Firefox
+Notepad++
+OpenOffice
+PDFill basic version
+PhotoFiltre 6
+SpeedFan
+Steam
+Sumatra PDF
+TeXstudio
+VLC media player x64
+WinCaml
+WinCDEmu (* CD emulator *)
+
+Remplacés:
+
+Adobe Reader (* par Sumatra PDF *)
+PDFCreator (* par PDFill basic version *)
+Skype (* par Discord *)
+Texmaker (* par TeXstudio *)
+WinDjView (* par Sumatra PDF *)
+
+--------------------------------------------------------------
+Réglages:
+
+LaTeX - installation:
+1) MiKTeX
+2) Ghostscript
+3) Texmaker ou TeXstudio
+
+VLC:
+- Encodage: Défaut (Windows-1252)
+- Cache fichier (Paramètres: Tous, dans Lecture /Codecs): 1500 ms
+- Cache d'acquisition (idem): 1000 ms
+- Cache disque (idem): 1000 ms
+- Préférences -> Vidéo -> Sortie -> OpenGL
+
+Désactiver l'aide Windows (F1):
+- S'approprier C:\Windows\HelpPane.exe
+    * dans Propriétés\Sécurité: clic:avancé, clic:modifier
+    * mettre Utilisateurs en propriétaire, Appliquer.
+    * s'octroyer le contrôle total.
+- Le renommer.
+
+Désactiver les touches rémanentes.
+
+--------------------------------------------------------------

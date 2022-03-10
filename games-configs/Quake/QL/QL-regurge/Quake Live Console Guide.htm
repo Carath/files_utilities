@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0025)http://www.regurge.at/ql/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Quake Live Console Guide</title>
+<meta name="description" content="Quake Live Consol Guide">
+<meta name="keywords" content="Quake Live, Quake, Console Guide">
+<link href="./Quake Live Console Guide_files/ql.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" type="image/x-icon" href="http://www.regurge.at/ql/favicon.ico">
+<script type="text/javascript" defer="" async="" src="./Quake Live Console Guide_files/piwik.js.téléchargement"></script><script type="text/javascript" src="./Quake Live Console Guide_files/frame.js.téléchargement"></script>
+</head>
+<body><div id="WzTtDiV" style="visibility: hidden; position: absolute; overflow: hidden; padding: 0px; width: 0px; left: 0px; top: 0px;"></div>
+<script src="./Quake Live Console Guide_files/wz_tooltip.js.téléchargement" type="text/javascript"></script>
+<br>
+<br>
+<br>
+<br>
+<a name="top" id="top"></a> <br>
+<div align="center"><img src="./Quake Live Console Guide_files/header.jpg" alt="ql-header" width="1000" height="103" align="top"></div>
+
+<table width="1000" border="0" align="center" cellpadding="10" cellspacing="0" background="./Quake Live Console Guide_files/grad2.jpg" bgcolor="#9d210b" style="background-repeat:repeat-x">
+  <tbody><tr>
+    <td align="right" class="font_white_12"><div align="left">Searching? Don't forget about <strong>CTRL+F </strong><span class="font_white">(1079 cvars, 205 commands)</span><br>
+      <a href="https://docs.google.com/spreadsheet/ccc?key=0Aney5SMakxfVdGJ6TmVndHI2VHY3OS1qdW1STkx6OGc" target="_blank" class="linksmall2">You can improve this guide by yourself by using this Google Doc file </a></div></td>
+    <td align="right" class="font_white_12"><div align="right">04th July 2014<br>
+    </div></td>
+  </tr>
+</tbody></table>
+
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" class="linkred">
+  <tbody><tr>
+  
+    <td width="250" height="100" background="./Quake Live Console Guide_files/butt1.jpg"><div align="center"><a href="http://www.regurge.at/ql/#int" class="linkred">01 <br>
+      Introduction<br>
+    </a></div></td>
+    <td width="250" background="./Quake Live Console Guide_files/butt1.jpg"><div align="center"><a href="http://www.regurge.at/ql/#var" class="linkred">02 <br>
+    Console Variables </a></div></td>
+    <td width="250" background="./Quake Live Console Guide_files/butt1.jpg"><div align="center"><a href="http://www.regurge.at/ql/#comm" class="linkred">03 <br>
+    Console Commands </a></div></td>
+    <td width="250" background="./Quake Live Console Guide_files/butt2.jpg"><div align="center"><a href="http://www.regurge.at/ql/#button" class="linkred">04 <br>
+    Button Commands </a></div></td>
+  </tr>
+  <tr>
+    <td height="100" background="./Quake Live Console Guide_files/butt1.jpg"><div align="center"><a href="http://www.regurge.at/ql/#premium" class="linkred">05 <br>
+    Premium Server Commands </a></div></td>
+    <td background="./Quake Live Console Guide_files/butt1.jpg"><div align="center"><a href="http://www.regurge.at/ql/#appendix" class="linkred">06 <br>
+    Appendix  </a></div></td>
+    <td background="./Quake Live Console Guide_files/butt1.jpg"><div align="center"><a href="http://www.regurge.at/ql/#notes" class="linkred">07 <br>
+    Credits/Notes </a></div></td>
+    <td background="./Quake Live Console Guide_files/butt2.jpg">&nbsp;</td>
+  </tr>
+</tbody></table>
+
+<table width="1000" border="0" align="center" cellpadding="10" cellspacing="0">
+  <tbody><tr>
+    <td background="./Quake Live Console Guide_files/grad1.jpg" bgcolor="#FFFFFF" style="background-repeat:repeat-x"><a name="int" class="font_red_big" id="int">Introduction<br>
+    </a><span class="font_red">Welcome to the worlds most up-to-date and detailed console variables and commands listing for QUAKE LIVE!  </span></td>
+  </tr>
+</tbody></table>
+
+<table width="1000" border="0" align="center" cellpadding="10" cellspacing="0">
+  <tbody><tr>
+    <td bgcolor="#484848" class="font_white"><p class="font_grey"><br>
+      To use commands and variables, you need to either add them to suitable configuration files (i.e: autoexec.cfg) or enter them into the    in-game console.<br>
+      <br>
+      <br>
+      <span class="font_white"><strong>How configuration files    work:</strong></span><strong><br>
+      </strong>Quake Live uses the following configuration files:</p>
+      <ol>
+        <li class="font_grey">-&nbsp;&nbsp;repconfig.cfg: this auto-generated file contains all of your key    bindings and preference settings (never manually edit this file!)</li>
+        <li class="font_grey">-&nbsp;&nbsp;qzconfig.cfg: this auto-generated file contains other settings    not listed in the repconfig (never manually edit this file!)</li>
+        <li class="font_grey">-&nbsp;&nbsp;autoexec.cfg: a user-generated file. When this exists, the game    automatically applies all the settings contained in it to your repconfig when    the game loads.</li>
+      </ol>
+      <p class="font_grey">Any other configuration files will need to be loaded in-game    using the ‘exec &lt;config name&gt;’ command in the console, unless the    config file is already loaded by the autoexec.</p>
+      <p class="font_grey">Configuration files use the ‘.cfg’ file extension and are essentially    basic text files which can be edited with a program such as WordPad. Never    use Notepad for editing as it may format the file incorrectly and the game    will not be able to read it.<br>
+        <span class="font_white"><strong><br>
+        <br>
+        How to reset your game    settings:</strong></span><strong><br>
+        </strong>Delete your repconfig.cfg and qzconfig.cfg (autoexec.cfg too if    it exists), reset your settings from the site, and reload the game. You will    have brand new configurations generated.<br>
+        <span class="font_white"><strong><br>
+        <br>
+        “The game won’t save my    settings, what do I do?”</strong></span><strong><br>
+        </strong>This is a common issue with the game in recent times. To solve    this problem, you should load the game and change your settings as you wish,    then type <strong>writeconfig autoexec</strong> in    the console to save your settings. If you do this every time you change any    settings then your settings will be saved. Alternatively, you could manually    edit your autoexec.cfg in WordPad.<br>
+        <span class="font_white"><strong><br>
+        <br>
+        How to access your    in-game console:</strong></span><strong><br>
+        </strong>While you’re in-game, press Ctrl+Alt+~ to bring down the console    screen. Type <strong>com_allowConsole “1”</strong> in the console, this will alow you to access the console by simply pressing    the tilde (~) key in future.<br>
+        <span class="font_white"><strong><br>
+        <br>
+        Auto-complete feature:</strong></span><strong><br>
+        </strong>To save time typing out commands and variables in the console,    press <strong>Tab</strong> while typing to    auto-complete it. If there are multiple options, a list of these options will    be printed to the console. This feature also works for map names.<br>
+        <span class="font_white"><strong><br>
+        <br>
+        Scrolling through the    console entries:</strong></span><strong><br>
+        </strong>Press <strong>PgUp</strong> to scroll    up and <strong>PgDn</strong> to scroll down when    you’re searching for entries through many other entries.<br>
+        <br>
+        <br>
+      <strong class="font_white">The console is your friend – USE IT!</strong></p>
+    </td>
+  </tr>
+</tbody></table>
+
+<br>
+<table width="1000" border="0" align="center" cellpadding="10" cellspacing="0" ;"="">
+  <tbody><tr>
+    <td background="./Quake Live Console Guide_files/grad1.jpg" bgcolor="#FFFFFF" style=" background-repeat:repeat-x"><a name="var" class="font_red_big" id="var">Console Variables [A-Z]<br>
+    </a></td>
+  </tr>
+</tbody></table>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+<tbody><tr><td>
+<iframe src="./Quake Live Console Guide_files/var1.html" style="width: 1000px; height: 16736px; border: none; padding-top: 0px;" frameborder="0" scrolling="no" framespacing="0"></iframe>
+</td></tr>
+<tr><td>
+<iframe src="./Quake Live Console Guide_files/var2.html" style="width: 1000px; height: 15390px; border: none; margin: 0px; padding: 0px;" frameborder="0" scrolling="no" framespacing="0"></iframe>
+</td></tr>
+<tr><td>
+<iframe src="./Quake Live Console Guide_files/var3.html" style="width: 1000px; height: 10166px; border: none; margin: 0px; padding: 0px;" frameborder="0" scrolling="no" framespacing="0"></iframe>
+</td></tr>
+<tr><td>
+<iframe src="./Quake Live Console Guide_files/var4.html" style="width: 1000px; height: 5883px; border: none; margin: 0px; padding: 0px;" frameborder="0" scrolling="no" framespacing="0"></iframe>
+</td></tr></tbody></table>
+<br>
+<table width="1000" border="0" align="center" cellpadding="10" cellspacing="0">
+  <tbody><tr>
+    <td background="./Quake Live Console Guide_files/grad1.jpg" bgcolor="#FFFFFF" style=" background-repeat:repeat-x"><a name="comm" class="font_red_big" id="comm">Console Commands [A-Z]<br>
+    </a></td>
+  </tr>
+</tbody></table>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+<tbody><tr><td>
+<iframe src="./Quake Live Console Guide_files/comm1.html" style="width: 1000px; height: 9014px; border: none; margin: 0px; padding: 0px;" frameborder="0" scrolling="no" framespacing="0"></iframe>
+</td></tr>
+</tbody></table>
+<br>
+<table width="1000" border="0" align="center" cellpadding="10" cellspacing="0">
+  <tbody><tr>
+    <td background="./Quake Live Console Guide_files/grad1.jpg" bgcolor="#FFFFFF" style="background-repeat:repeat-x"><a name="button" class="font_red_big" id="button">Button Commands [+/-]</a></td>
+  </tr>
+</tbody></table>
+
+<table width="1000" border="0" align="center" cellpadding="10" cellspacing="0" bgcolor="#B0240B">
+  <tbody><tr>
+    <td class="font_white">NOTE: These commands are listed in their positive states. Each one has a negative twin which disables the respective action. Any of these actions solely binded to a key will automatically deactivate when the key is released. If there are other elements to the bind then you will have to manually insert the corresponding negative command after the positive command in order to stop the action from repeating.</td>
+  </tr>
+</tbody></table>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+<tbody><tr><td>
+<iframe src="./Quake Live Console Guide_files/button1.html" style="width: 1000px; height: 1142px; border: none; margin: 0px; padding: 0px;" frameborder="0" scrolling="no" framespacing="0"></iframe>
+</td></tr>
+</tbody></table>
+<br>
+<table width="1000" border="0" align="center" cellpadding="10" cellspacing="0">
+  <tbody><tr>
+    <td background="./Quake Live Console Guide_files/grad1.jpg" bgcolor="#FFFFFF" style="background-repeat:repeat-x"><a name="premium" class="font_red_big" id="premium">Premium Server Commands<br>
+      <span class="font_red">Simply typing ? into the console will show all commands that you currently have access to, along with a short description if applicable.</span></a></td>
+  </tr>
+</tbody></table>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+<tbody><tr><td>
+<iframe src="./Quake Live Console Guide_files/premium.html" style="width: 1000px; height: 1049px; border: none; margin: 0px; padding: 0px;" frameborder="0" scrolling="no" framespacing="0"></iframe>
+</td></tr>
+</tbody></table>
+<br>
+
+<table width="1000" border="0" align="center" cellpadding="10" cellspacing="0">
+  <tbody><tr>
+    <td background="./Quake Live Console Guide_files/grad1.jpg" bgcolor="#FFFFFF" style="background-repeat:repeat-x"><a name="appendix" class="font_red_big" id="appendix">Appendix</a></td>
+  </tr>
+</tbody></table>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+<tbody><tr><td>
+<iframe src="./Quake Live Console Guide_files/appendix.html" style="width: 1000px; height: 1178px; border: none; margin: 0px; padding: 0px;" frameborder="0" scrolling="no" framespacing="0"></iframe>
+</td></tr>
+</tbody></table>
+<br>
+<table width="1000" border="0" align="center" cellpadding="10" cellspacing="0">
+  <tbody><tr>
+    <td background="./Quake Live Console Guide_files/grad1.jpg" bgcolor="#FFFFFF" style="background-repeat:repeat-x"><a name="notes" class="font_red_big" id="notes">Credits and Notes</a></td>
+  </tr>
+</tbody></table>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+<tbody><tr><td>
+<iframe src="./Quake Live Console Guide_files/notes.html" style="width: 1000px; height: 862px; border: none; margin: 0px; padding: 0px;" frameborder="0" scrolling="no" framespacing="0"></iframe>
+</td></tr>
+</tbody></table>
+<br>
+<br>
+<div class="position" align="center">
+<table height="20" border="0" align="center" cellpadding="10" cellspacing="0" class="Navi">
+  <tbody><tr>
+    <td><div align="center"><a href="http://www.regurge.at/ql/#int" class="linkred">Introduction</a></div></td>
+    <td><div align="center"><a href="http://www.regurge.at/ql/#var" class="linkred">Console Variables</a></div></td>
+    <td><div align="center"><a href="http://www.regurge.at/ql/#comm" class="linkred">Console Commands</a></div></td>
+    <td><div align="center"><a href="http://www.regurge.at/ql/#button" class="linkred">Button Commands</a></div></td>
+    <td><div align="center"><a href="http://www.regurge.at/ql/#premium" class="linkred">Premium Server Commands</a></div></td>
+    <td><div align="center"><a href="http://www.regurge.at/ql/#appendix" class="linkred">Appendix</a></div></td>
+    <td><div align="center"><a href="http://www.regurge.at/ql/#notes" class="linkred">Credits/Notes</a></div></td>
+    <td><div align="center"><a href="http://www.regurge.at/ql/#top" class="linkred">Top</a></div></td>
+  </tr>
+  
+</tbody></table>
+
+<table height="10" border="1" align="center" cellpadding="10" cellspacing="0" class="Navi2">
+    <tbody><tr>
+    <td width="200" class="font_white"><div align="left"><strong class="font_white_12">Entry
+    </strong></div></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><div align="left"><strong class="font_white_12">Usage
+    </strong></div></td>
+    <td><div align="left"><strong class="font_white_12">Description
+    </strong></div></td>
+  </tr>
+  </tbody></table>
+</div>
+
+
+</body></html>

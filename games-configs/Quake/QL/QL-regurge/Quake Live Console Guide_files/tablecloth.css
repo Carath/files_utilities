@@ -1,0 +1,29 @@
+/* 
+
+	TableCloth	
+	by Alen Grakalic, brought to you by cssglobe.com
+	
+*/
+
+/* general styles */
+
+th{text-align:left;padding:10px;border:1px solid #808080; font-size:18px}
+td{text-align:left;padding:10px;border:1px solid #808080;}
+th{background:#b0240b repeat-x;color:#fff;}
+td{background:#b0240b;}
+
+/* tablecloth styles */
+
+tr.even td{background:#212121;}
+tr.odd td{background:#212121;}
+
+th.over, tr.even th.over, tr.odd th.over{background:#b0240b;}
+th.down, tr.even th.down, tr.odd th.down{background:#b0240b;}
+th.selected, tr.even th.selected, tr.odd th.selected{}
+
+td.over, tr.even td.over, tr.odd td.over{background:#141414;}
+td.down, tr.even td.down, tr.odd td.down{background:#b0240b;color:#fff;}
+td.selected, tr.even td.selected, tr.odd td.selected{background:#b0240b;color:#fff;}
+
+/* use this if you want to apply different styleing to empty table cells*/
+td.empty, tr.odd td.empty, tr.even td.empty{background:#fff;}

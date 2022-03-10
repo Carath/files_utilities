@@ -1,0 +1,1630 @@
+
+<!-- saved from url=(0035)http://www.regurge.at/ql/comm1.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script type="text/javascript" src="./tablecloth.js.téléchargement"></script>
+<link href="./tablecloth.css" rel="stylesheet" type="text/css" media="screen">
+<link href="./ql.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	margin-top: 0px;
+	
+}
+-->
+</style></head>
+<body><div id="WzTtDiV" style="visibility: hidden; position: absolute; overflow: hidden; padding: 0px; width: 0px; left: 0px; top: 0px;"></div>
+<script src="./wz_tooltip.js.téléchargement" type="text/javascript"></script>
+<table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>A</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+      <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12">
+      <div align="center"><strong>Default Value
+      </strong></div>
+    </div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>addbot</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>addbot &lt;botname&gt; [skill    1-5] [team] [msec delay] [altname]</td>
+    <td>Adds a computer opponent.</td>
+  </tr>
+  <tr class="odd">
+    <td>advert_done</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>advert_done</td>
+    <td>Exucutes after the standard pre-game advertisement has been shown.</td>
+  </tr>
+  <tr class="even">
+    <td>alias</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>alias &lt;aliasname&gt; [command]</td>
+    <td>Sets an alias function for a given command.</td>
+  </tr>
+  <tr class="odd">
+    <td>arena</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>arena    &lt;file&gt;.sp_arena<br>
+      Example: /arena nightmare</td>
+    <td>Load arena and bots from scripts/&lt;file&gt;.sp_arena.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>B</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+         <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+    <tr class="even"><td>bind</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>bind &lt;key&gt; [command]</td>
+    <td>Assign an action to a key.</td>
+  </tr>
+  <tr class="odd">
+    <td>bindlist</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>bindlist</td>
+    <td>Displays a list of the current binds as per repconfig.cfg.</td>
+  </tr>
+  <tr class="even">
+    <td>block</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>block [playername]</td>
+    <td>Blocks the specified player’s    in-game and website chat.</td>
+  </tr>
+  <tr class="odd">
+    <td>blocklist</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>blocklist</td>
+    <td>Lists currently blocked players.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>C</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12">
+      <div align="center"><strong>Default Value
+      </strong></div>
+    </div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>callvote</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>Restart map:<br>
+    		callvote map_restart<br>
+    		<br>
+    		Next Map:<br>
+    		callvote nextmap<br>
+    		<br>
+    		Map Change:<br>
+    		callvote map &lt;mapname&gt;<br>
+    		<br>
+    		Gametype Change:<br>
+    		callvote g_gametype &lt;n&gt;<br>
+    		<br>
+    		Kick a Player:<br>
+    		callvote kick &lt;player&gt;<br>
+    		<br>
+    		Kick Client:<br>
+    		callvote clientkick &lt;clientnum&gt;<br>
+    		<br>
+    		Timelimit Change:<br>
+    		callvote timelimit &lt;time&gt;<br>
+    		<br>
+    		Fraglimit Change:<br>
+    		callvote fraglimit &lt;frags&gt;<br>
+    		<br>
+    		Shuffle Teams:<br>
+    		callvote shuffle<br>
+    		<br>
+    		Team Size:<br>
+    		callvote teamsize &lt;number&gt;<br>
+    		<br>
+    		Cointoss:<br>
+    		callvote cointoss &lt;heads/tails/(blank)&gt;</td>
+    <td>Call a vote.</td>
+  </tr>
+  <tr class="odd">
+    <td>centerview</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>centerview</td>
+    <td>Snaps your view to the horizontal plane.</td>
+  </tr>
+  <tr class="even">
+    <td>changeVectors</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>changeVectors</td>
+    <td>Supposedly "change to vector defined by    FIND_NEW_CHANGE_VECTORS as in vector graphics." Either used internally    by the rendering system, or is just legacy and no longer effectual. Either    way it produces absolutely no effect.</td>
+  </tr>
+  <tr class="odd">
+    <td>cinematic</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>cinematic &lt;file name&gt;</td>
+    <td>Plays the specified ROQ cinematic file. Cinematics are    currently disabled in Quake Live.</td>
+  </tr>
+  <tr class="even">
+    <td>clear</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>clear</td>
+    <td>Clears all entries in the console.</td>
+  </tr>
+  <tr class="odd">
+    <td>clearcvar</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>clearcvar</td>
+    <td>Clears specified CVAR, if none set, then clears all.</td>
+  </tr>
+  <tr class="even">
+    <td>clientinfo</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>clientinfo</td>
+    <td>Displays information about clients.</td>
+  </tr>
+  <tr class="odd">
+    <td>clientkick</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>clientkick &lt;slot number&gt;</td>
+    <td>Kicks a client by slot number.</td>
+  </tr>
+  <tr class="even">
+    <td>cmd</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>cmd &lt;command&gt;</td>
+    <td>Executes a given command.</td>
+  </tr>
+  <tr class="odd">
+    <td>cmdlist</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>cmdlist &lt;query&gt;</td>
+    <td>Displays queried commands, if none specified, lists all    available commands.</td>
+  </tr>
+  <tr class="even">
+    <td>condump</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>condump &lt;filename&gt;.txt</td>
+    <td>Write the contents of the console to a file.</td>
+  </tr>
+  <tr class="odd">
+    <td>configstrings</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>configstrings</td>
+    <td>Lists the current config strings in effect.</td>
+  </tr>
+  <tr class="even">
+    <td>confirmOrder</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>confirmOrder</td>
+    <td>Team Arena legacy – confirm team order received.</td>
+  </tr>
+  <tr class="odd">
+    <td>connect</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>connect &lt;serveraddress&gt;</td>
+    <td>Connects to a server by server IP address.</td>
+  </tr>
+  <tr class="even">
+    <td>cvar_restart</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>cvar_restart</td>
+    <td>Restarts CVAR system.</td>
+  </tr>
+  <tr class="odd">
+    <td>cvarlist</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>cvarlist &lt;query&gt;</td>
+    <td>Shows a list of current CVARs starting with specified query    string. If none set, displays all CVARs.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>D</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+       <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12">
+      <div align="center"><strong>Default Value
+      </strong></div>
+    </div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>demo</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>demo &lt;demoname&gt;</td>
+    <td>Plays a demo file.</td>
+  </tr>
+  <tr class="odd">
+    <td>denyOrder</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>denyOrder</td>
+    <td>Denies orders given to you by the team leader in team-based    game types. (Team Arena)</td>
+  </tr>
+  <tr class="even">
+    <td>devmap</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>devmap &lt;mapname&gt;<br>
+      Example: /devmap campgrounds</td>
+    <td>Opens a map in developer mode (all cheat CVARs enabled)</td>
+  </tr>
+  <tr class="odd">
+    <td>dir</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>dir    [directory]/[extension]<br>
+      Example:<br>
+      /dir “maps/*.bsp”<br>
+      …to show all listed maps</td>
+    <td>Shows the files contained in a specific directory.</td>
+  </tr>
+  <tr class="even">
+    <td>disconnect</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>disconnect</td>
+    <td>Leave/disconnect from the current server.</td>
+  </tr>
+  <tr class="odd">
+    <td>dropflag</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>dropflag</td>
+    <td>Allows the flag carrier to drop the flag in CTF.</td>
+  </tr>
+  <tr class="even">
+    <td>droppowerup</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>droppowerup</td>
+    <td>Drops a power-up item.</td>
+  </tr>
+  <tr class="odd">
+    <td>dropweapon</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>dropweapon</td>
+    <td>Drops current weapon</td>
+  </tr>
+  <tr class="even">
+    <td>dumpuser</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>dumpuser &lt;userid&gt;</td>
+    <td>Displays information about a specific client.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>E</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>echo</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>echo &lt;string&gt;</td>
+    <td>Prints a client-side message.</td>
+  </tr>
+  <tr class="odd">
+    <td>exec</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>exec &lt;filename&gt;</td>
+    <td>Executes a specific file or command.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>F</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>fdir</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>fdir &lt;filter&gt;<br>
+      Usable meta characters:<br>
+? = any single character<br>
+* = any group of characters</td>
+    <td>Search game directory for certain file types.</td>
+  </tr>
+  <tr class="odd">
+    <td>find</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>find &lt;substring&gt;</td>
+    <td>A case-sensitive search of the console entry database. Maximum    number of entries set by con_matchlimit.</td>
+  </tr>
+  <tr class="even">
+    <td>follow</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>follow &lt;variable&gt;<br>
+      <br>
+    &lt;position&gt; = follow    player by place on scoreboard (eg: ‘follow 1’ to follow leader, ‘follow 2’ to    follow the player in 2nd place, etc)<br>
+    <br>
+    &lt;name&gt; = follow    player with the specific name.</td>
+    <td>Switch to follow mode when in spectator mode.</td>
+  </tr>
+  <tr class="odd">
+    <td class=" empty">&nbsp;</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>forfeit</td>
+    <td>Forfeits the game.</td>
+  </tr>
+  <tr class="even">
+    <td>fs_openedList</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>fs_openedList</td>
+    <td>List of opened PK3 files.</td>
+  </tr>
+  <tr class="odd">
+    <td>fs_referencedList</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>fs_referencedList</td>
+    <td>List of referenced PK3 files, from sv_referencedPakNames.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>G</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>gfxinfo</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>gfxinfo</td>
+    <td>Lists extensive information about your graphics settings.</td>
+  </tr>
+  <tr class="odd">
+    <td>give</td>
+    <td><div align="center"><a href="http://www.regurge.at/ql/comm1.html#" class="linkflag" onmouseover="Tip(&#39;&lt;b&gt;Cheat-Protected&lt;/b&gt;&lt;br&gt;only usable in cheat-enabled servers or localhosts&#39;)" onmouseout="UnTip()">C</a></div></td>
+    <td><div align="center">-</div></td>
+    <td>give [item]<br>
+      Example: /give all<br>
+      …gives all weapons.</td>
+    <td>Gives a specific item/weapon to the player</td>
+  </tr>
+  <tr class="even">
+    <td>globalservers</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>globalservers &lt;master #1 0-1&gt; &lt;protocol&gt;    [keywords]</td>
+    <td>???</td>
+  </tr>
+  <tr class="odd">
+    <td>god</td>
+    <td><div align="center"><a href="http://www.regurge.at/ql/comm1.html#" class="linkflag" onmouseover="Tip(&#39;&lt;b&gt;Cheat-Protected&lt;/b&gt;&lt;br&gt;only usable in cheat-enabled servers or localhosts&#39;)" onmouseout="UnTip()">C</a></div></td>
+    <td><div align="center">-</div></td>
+    <td>god</td>
+    <td>Toggles player invincibility.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>I</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>imagelist</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>Imagelist</td>
+    <td>Lists textures used by current map and memory used up by these    textures.</td>
+  </tr>
+  <tr class="odd">
+    <td>in_restart</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>in_restart</td>
+    <td>Restarts all input device drivers.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>K</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>kick</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>kick &lt;playername&gt;</td>
+    <td>Server command to kick a client.</td>
+  </tr>
+  <tr class="odd">
+    <td>kill</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>kill</td>
+    <td>Kills your player (only if g_allowKill is set to 1 on the    specific server).</td>
+  </tr>
+  <tr class="even">
+    <td>killserver</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>killserver</td>
+    <td>Ends your current server.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>L</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>levelshot</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>levelshot</td>
+    <td>Shows the level intermission camera view and writes a 128x128    tga levelshot to levelshots/&lt;mapname&gt;.tga.</td>
+  </tr>
+  <tr class="odd">
+    <td>listcmds</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>listcmds</td>
+    <td>Lists current commands.</td>
+  </tr>
+  <tr class="even">
+    <td>listcvars</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>listcvars</td>
+    <td>Lists current console variables.</td>
+  </tr>
+  <tr class="odd">
+    <td>ListInputDevices</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>ListInputDevices</td>
+    <td>Lists input devices.</td>
+  </tr>
+  <tr class="even">
+    <td>loaddeferred</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>loaddeferred</td>
+    <td>Loads deferred player models manually. This is done    automatically by using cg_deferplayers 1. For example you are in pre-game on    a clan arena server, and someone enters and joins your team. You have    forceteammodel set to bitterman, but for some reason their model is showing    up as the one they have set for themselves, say klesk. Issuing a    'loaddeferred' in the console will reset their model as you see it back to    bitterman.</td>
+  </tr>
+  <tr class="odd">
+    <td>loadhud</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>loadhud</td>
+    <td>Refreshes HUD file source as per cg_hudFiles. Useful when    wanting to load a different HUD.</td>
+  </tr>
+  <tr class="even">
+    <td>localservers</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>localservers</td>
+    <td>Searches for local servers.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>M</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>map</td>
+    <td>
+<div align="center">
+<a href="http://www.regurge.at/ql/comm1.html#" class="linkflag" onmouseover="Tip(&#39;&lt;b&gt;Server Info&lt;/b&gt;&lt;br&gt;Server broadcasts to client&#39;)" onmouseout="UnTip()">S</a>
+<a href="http://www.regurge.at/ql/comm1.html#" class="linkflag" onmouseover="Tip(&#39;&lt;b&gt;Read-Only&lt;/b&gt;&lt;br&gt;display only, cannot be set by user at all&#39;)" onmouseout="UnTip()">R</a>
+<a href="http://www.regurge.at/ql/comm1.html#" class="linkflag" onmouseover="Tip(&#39;&lt;b&gt;Archive&lt;/b&gt;&lt;br&gt;saved to vars.rc&#39;)" onmouseout="UnTip()">A</a>
+</div></td>
+    <td><div align="center">-</div></td>
+    <td>map &lt;mapname&gt;<br>
+    Example: /map campgrounds</td>
+    <td>Loads the specified map.</td>
+  </tr>
+  <tr class="odd">
+    <td>map_restart</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>map_restart</td>
+    <td>Resets the game on the current map in localhost.</td>
+  </tr>
+  <tr class="even">
+    <td>meminfo</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>meminfo</td>
+    <td>Displays some registers, how many bits high/low, the total    bits and memory statistics of the Z-buffer in the game.</td>
+  </tr>
+  <tr class="odd">
+    <td>messagemode</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>messagemode</td>
+    <td>Public chat.</td>
+  </tr>
+  <tr class="even">
+    <td>messagemode2</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>messagemode2</td>
+    <td>Team chat.</td>
+  </tr>
+  <tr class="odd">
+    <td>messagemode3</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>messagemode3</td>
+    <td>Send a message to your target.</td>
+  </tr>
+  <tr class="even">
+    <td>messagemode4</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>messagemode4</td>
+    <td>Send a message to your attacker.</td>
+  </tr>
+  <tr class="odd">
+    <td>messagemode5</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>messagemode5</td>
+    <td>Send a reply to an online buddy (Quake Live’s buddy chat    system).</td>
+  </tr>
+  <tr class="even">
+    <td>midiinfo</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>midiinfo</td>
+    <td>Displays MIDI system information.</td>
+  </tr>
+  <tr class="odd">
+    <td>model</td>
+    <td>
+<div align="center">
+<a href="http://www.regurge.at/ql/comm1.html#" class="linkflag" onmouseover="Tip(&#39;&lt;b&gt;User Info&lt;/b&gt;&lt;br&gt;client broadcasts to server on connect or change&#39;)" onmouseout="UnTip()">U</a>
+<a href="http://www.regurge.at/ql/comm1.html#" class="linkflag" onmouseover="Tip(&#39;&lt;b&gt;Archive&lt;/b&gt;&lt;br&gt;saved to vars.rc&#39;)" onmouseout="UnTip()">A</a>
+<a href="http://www.regurge.at/ql/comm1.html#" class="linkflag" onmouseover="Tip(&#39;&lt;b&gt;saved to QL database&lt;/b&gt;&#39;)" onmouseout="UnTip()">T</a>
+</div></td>
+    <td><div align="center">sarge</div></td>
+    <td>model &lt;model&gt;<br>
+    Example: /model “keel/bright”</td>
+    <td>Sets your player model.</td>
+  </tr>
+  <tr class="even">
+    <td>Modelist</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>Modelist</td>
+    <td>Displays a list of available screen resolution modes, options    listed in appendix.</td>
+  </tr>
+  <tr class="odd">
+    <td>modellist</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>modellist</td>
+    <td>Displays a list of models currently loaded by the game.</td>
+  </tr>
+  <tr class="even">
+    <td>music</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>music &lt;soundfile&gt;<br>
+      Example: /music “music/sonic1.ogg”</td>
+    <td>Loops a specified sound file as background music.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>N</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>net_restart</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>net_restart</td>
+    <td>Restarts the networking subsystem.</td>
+  </tr>
+  <tr class="odd">
+    <td>nextOrder</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>nextOrder</td>
+    <td>Team Arena legacy for issuing the ‘next team order’.    Ineffectual in Quake Live</td>
+  </tr>
+  <tr class="even">
+    <td>nextTeamMember</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>nextTeamMember</td>
+    <td>Used in Team Arena to view information on HUD about next team    mate in player cycle.</td>
+  </tr>
+  <tr class="odd">
+    <td>noclip</td>
+    <td><div align="center"><a href="http://www.regurge.at/ql/comm1.html#" class="linkflag" onmouseover="Tip(&#39;&lt;b&gt;Cheat-Protected&lt;/b&gt;&lt;br&gt;only usable in cheat-enabled servers or localhosts&#39;)" onmouseout="UnTip()">C</a></div></td>
+    <td><div align="center">-</div></td>
+    <td>noclip</td>
+    <td>Enables no clip mode.</td>
+  </tr>
+  <tr class="even">
+    <td>notarget</td>
+    <td><div align="center"><a href="http://www.regurge.at/ql/comm1.html#" class="linkflag" onmouseover="Tip(&#39;&lt;b&gt;Cheat-Protected&lt;/b&gt;&lt;br&gt;only usable in cheat-enabled servers or localhosts&#39;)" onmouseout="UnTip()">C</a></div></td>
+    <td><div align="center">-</div></td>
+    <td>notarget</td>
+    <td>Forces artificial intelligence to ignore you.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>P</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>path</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>path</td>
+    <td>Lists current search paths.</td>
+  </tr>
+  <tr class="odd">
+    <td>ping</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>ping [server]</td>
+    <td>Pings a specific server.</td>
+  </tr>
+  <tr class="even">
+    <td>play</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>play &lt;soundfile&gt;</td>
+    <td>Plays a specific sound file.</td>
+  </tr>
+  <tr class="odd">
+    <td>players</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>players</td>
+    <td>Lists current players in server.</td>
+  </tr>
+  <tr class="even">
+    <td>postprocess_restart</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>postprocess_restart</td>
+    <td>Restarts the post process subsystem.</td>
+  </tr>
+  <tr class="odd">
+    <td>prevTeamMember</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>prevTeamMember</td>
+    <td>Used in Team Arena to view information on HUD about previous    team mate in player cycle.</td>
+  </tr>
+  <tr class="even">
+    <td>print</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>print [message]</td>
+    <td>Displays a local message in the console and on the heads-up    display.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>Q</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>quit</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>quit</td>
+    <td>Exit the game.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>R</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>ragequit</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>ragequit</td>
+    <td>Quit the game and display ‘&lt;yourname&gt; ragequits’.</td>
+  </tr>
+  <tr class="odd">
+    <td>readyup</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>readyup</td>
+    <td>Toggles your ready-up status in warm up rounds. Once the    amount of ‘ready’ players meets or exceeds the server’s    sv_warmupReadyPercentage, the game will begin.</td>
+  </tr>
+  <tr class="even">
+    <td>reconnect</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>reconnect</td>
+    <td>Reconnects to the last server you connected to.</td>
+  </tr>
+  <tr class="odd">
+    <td>record</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>record &lt;demoname&gt;</td>
+    <td>Start recording a demo.</td>
+  </tr>
+  <tr class="even">
+    <td>reply</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>reply &lt;message&gt;</td>
+    <td>Reply to chat messages you received from an online buddy.</td>
+  </tr>
+  <tr class="odd">
+    <td>reset</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>reset [cvar]</td>
+    <td>Resets a CVAR.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>S</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>s_info</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>s_info</td>
+    <td>Displays sound information.</td>
+  </tr>
+  <tr class="odd">
+    <td>s_list</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>s_list</td>
+    <td>Lists all currently loaded sound files.</td>
+  </tr>
+  <tr class="even">
+    <td>s_stop</td>
+    <td><div align="center"><a href="http://www.regurge.at/ql/comm1.html#" class="linkflag" onmouseover="Tip(&#39;&lt;b&gt;Cheat-Protected&lt;/b&gt;&lt;br&gt;only usable in cheat-enabled servers or localhosts&#39;)" onmouseout="UnTip()">C</a></div></td>
+    <td><div align="center">-</div></td>
+    <td>s_stop</td>
+    <td>Stops currents sounds from being played.</td>
+  </tr>
+  <tr class="odd">
+    <td>say</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>say &lt;message&gt;</td>
+    <td>Ordinary in-game message command.</td>
+  </tr>
+  <tr class="even">
+    <td>say_team</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>say_team &lt;message&gt;<br>
+      Available chat tokens:<br>
+      #h - Current health value<br>
+      #a - Current armor value<br>
+      #w - Current weapon &amp; ammo count<br>
+      ## - To print the character '#'</td>
+    <td>In-game team message command.</td>
+  </tr>
+  <tr class="odd">
+    <td>screenshot</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>screenshot &lt;file name&gt;</td>
+    <td>Takes a screenshot in TGA file format. If no file name is set,    screenshots will be named automatically.</td>
+  </tr>
+  <tr class="even">
+    <td>screenshotSocial</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>screenshotSocial</td>
+    <td>Takes a screenshot and uploads it to your social media pages.</td>
+  </tr>
+  <tr class="odd">
+    <td>screenshotJPEG</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>screenshotJPEG &lt;filename&gt;</td>
+    <td>Takes a screenshot in JPG file format. If no file name is set,    screenshots will be named automatically.</td>
+  </tr>
+  <tr class="even">
+    <td>sectorlist</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>sectorlist</td>
+    <td>Displays a list of the number of entities in the different    sectors of the map with regards to the current position.</td>
+  </tr>
+  <tr class="odd">
+    <td>serverinfo</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>serverinfo</td>
+    <td>Prints out server information list to the console.</td>
+  </tr>
+  <tr class="even">
+    <td>set</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>set &lt;variable&gt; &lt;value&gt;</td>
+    <td>Set Variable:<br>
+      Assigns a value to an existing CVAR or assigns or creates a new VSTR for    your current session.</td>
+  </tr>
+  <tr class="odd">
+    <td>seta</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>seta &lt;variable&gt; &lt;value&gt;</td>
+    <td>Set Variable to Archive:<br>
+      Assigns a value to an existing CVAR or assigns or creates a new VSTR for    your current session. Also writes the setting to your configuration so that    it is applied every time you run the game.</td>
+  </tr>
+  <tr class="even">
+    <td>setenemycolor</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>???</td>
+    <td>???</td>
+  </tr>
+  <tr class="odd">
+    <td>setenv</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>???</td>
+    <td>???</td>
+  </tr>
+  <tr class="even">
+    <td>setteamcolor</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>???</td>
+    <td>???</td>
+  </tr>
+  <tr class="odd">
+    <td>setviewpos</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>setviewpos &lt;x&gt; &lt;y&gt; &lt;z&gt; &lt;yaw&gt;</td>
+    <td>Sets view at specified point, in relation to map coordinates.</td>
+  </tr>
+  <tr class="even">
+    <td>shaderlist</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>shaderlist</td>
+    <td>Displays a list of currently loaded shaders.</td>
+  </tr>
+  <tr class="odd">
+    <td>showip</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>showip [0|1]<br>
+      0 = Hide<br>
+      1 = Show</td>
+    <td>Shows your IP address. This will be the same as what appears    in your network settings. If you are connecting through a router it will show    the IP your router has assigned to you.</td>
+  </tr>
+  <tr class="even">
+    <td>sizedown</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>sizedown</td>
+    <td>Decreases the size of the in-game display area.</td>
+  </tr>
+  <tr class="odd">
+    <td>sizeup</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>sizeup</td>
+    <td>Increases the size of the in-game display area.</td>
+  </tr>
+  <tr class="even">
+    <td>skinlist</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>skinlist</td>
+    <td>Displays a list of skin files that are currently loaded with    the corresponding model surfaces.</td>
+  </tr>
+  <tr class="odd">
+    <td>snd_restart</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>snd_restart</td>
+    <td>Restarts the sound system.</td>
+  </tr>
+  <tr class="even">
+    <td>spdevmap</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>spdevmap &lt;mapname&gt;</td>
+    <td>Selects a map to open in single player developer mode (cheats    enabled).</td>
+  </tr>
+  <tr class="odd">
+    <td>spec</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>spec [element]<br>
+      FC = follow a flag carrier<br>
+      RED = follow a red team player<br>
+      BLUE = follow a blue team player<br>
+      PU = follow a player who has a power-up</td>
+    <td>Cycle through players in spectator mode.</td>
+  </tr>
+  <tr class="even">
+    <td>spmap</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>spmap &lt;mapname&gt;<br>
+      Example: /spmap campgrounds</td>
+    <td>Runs a specific map along with the applicable arena file    settings, i.e: single-player match with bots, if included in an arena file.</td>
+  </tr>
+  <tr class="odd">
+    <td>startOrbit</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>startOrbit</td>
+    <td>A 3rd person orbital view of your player.</td>
+  </tr>
+  <tr class="even">
+    <td>status</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>status</td>
+    <td>Status of currently connected server.</td>
+  </tr>
+  <tr class="odd">
+    <td>stoprecord</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>stoprecord</td>
+    <td>Stops the current demo recording.</td>
+  </tr>
+  <tr class="even">
+    <td>systeminfo</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>systeminfo</td>
+    <td>Lists the server configuration.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>T</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>taskCamp</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>taskCamp</td>
+    <td>Voice message your target team mate that you are camping.    (Team Arena)</td>
+  </tr>
+  <tr class="odd">
+    <td>taskDefense</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>taskDefense</td>
+    <td>Voice message your target team mate that you are defending.    (Team Arena)</td>
+  </tr>
+  <tr class="even">
+    <td>taskEscort</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>tastEscort</td>
+    <td>Voice message your target team mate that you are escorting the    flag carrier. (Team Arena)</td>
+  </tr>
+  <tr class="odd">
+    <td>taskFollow</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>taskFollow</td>
+    <td>Voice message your target team mate that you are following.    (Team Arena)</td>
+  </tr>
+  <tr class="even">
+    <td>taskOffense</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>taskOffense</td>
+    <td>Voice message your target team mate that you are attacking.    (Team Arena)</td>
+  </tr>
+  <tr class="odd">
+    <td>taskOwnFlag</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>taskOwnFlag</td>
+    <td>Voice message your target team mate that you have the flag.    (Team Arena)</td>
+  </tr>
+  <tr class="even">
+    <td>taskPatrol</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>taskPatrol</td>
+    <td>Voice message your target team mate that you are patrolling.    (Team Arena)</td>
+  </tr>
+  <tr class="odd">
+    <td>taskRetrieve</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>taskRetrieve</td>
+    <td>Voice message your target team mate that you are retrieving    the flag. (Team Arena)</td>
+  </tr>
+  <tr class="even">
+    <td>taskSuicide</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>taskSuicide</td>
+    <td>Voice message your target (bot) team mate to commit suicide.    (Team Arena)</td>
+  </tr>
+  <tr class="odd">
+    <td>tauntDeathInsult</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>tauntDeathInsult</td>
+    <td>Random voice insult when you die. (Team Arena)</td>
+  </tr>
+  <tr class="even">
+    <td>tauntGauntlet</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>tauntGauntlet</td>
+    <td>Random voice insult when you die by gauntlet. (Team Arena)</td>
+  </tr>
+  <tr class="odd">
+    <td>tauntKillInsult</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>tauntKillInsult</td>
+    <td>Random voice insult when you frag your opponent. (Team Arena)</td>
+  </tr>
+  <tr class="even">
+    <td>tauntPraise</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>tauntPraise</td>
+    <td>Random voice praise to your opponent. (Team Arena)</td>
+  </tr>
+  <tr class="odd">
+    <td>tauntTaunt</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>tauntTaunt</td>
+    <td>Voice taunt. (Team Arena)</td>
+  </tr>
+  <tr class="even">
+    <td>tcmd</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>tcmd</td>
+    <td>Displays the current target commands or code address.</td>
+  </tr>
+  <tr class="odd">
+    <td>team</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>team &lt;team&gt;<br>
+      A = random team<br>
+      B = blue team<br>
+      F = free <br>
+      R = red team<br>
+      S = spectate</td>
+    <td>Join a team (team change limited to a 5 second delay between    changes)</td>
+  </tr>
+  <tr class="even">
+    <td>teamtask</td>
+    <td>
+<div align="center">
+<a href="http://www.regurge.at/ql/comm1.html#" class="linkflag" onmouseover="Tip(&#39;&lt;b&gt;User Info&lt;/b&gt;&lt;br&gt;client broadcasts to server on connect or change&#39;)" onmouseout="UnTip()">U</a>
+<a href="http://www.regurge.at/ql/comm1.html#" class="linkflag" onmouseover="Tip(&#39;&lt;b&gt;saved to QL database&lt;/b&gt;&#39;)" onmouseout="UnTip()">T</a>
+</div></td>
+    <td><div align="center">0</div></td>
+    <td>teamtask [0-7]<br>
+      0 = default (offense)<br>
+      1 = offense<br>
+      2 = defense<br>
+      3 = patrol<br>
+      4 = following<br>
+      5 = retrieving<br>
+      6 = escorting<br>
+      7 = camping</td>
+    <td>Displays the current task you have been assigned. (Team Arena)</td>
+  </tr>
+  <tr class="odd">
+    <td>tell_attacker</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>tell_attacker &lt;message&gt;</td>
+    <td>Sends a message to your attacker.</td>
+  </tr>
+  <tr class="even">
+    <td>tell_buddy</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>tell_buddy &lt;playername&gt; &lt;message&gt;</td>
+    <td>Sends a message to a specific online buddy.</td>
+  </tr>
+  <tr class="odd">
+    <td>tell_target</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>tell_target &lt;message&gt;</td>
+    <td>Sends a message to a targeted player.</td>
+  </tr>
+  <tr class="even">
+    <td>toggle</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>toggle &lt;cvar&gt;</td>
+    <td>Toggles a variable (if applicable). May be able to toggle    certain write protected CVARs, too.</td>
+  </tr>
+  <tr class="odd">
+    <td>togglechathistory</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>togglechathistory</td>
+    <td>Toggles displaying of chat history screen.</td>
+  </tr>
+  <tr class="even">
+    <td>toggleconsole</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>toggleconsole</td>
+    <td>Toggles displaying of console.</td>
+  </tr>
+  <tr class="odd">
+    <td>touchFile</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>touchFile &lt;file&gt;</td>
+    <td>Makes a file a zero-byte file.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>U</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>unalias</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>unalias &lt;alias&gt;</td>
+    <td>Clears a specific alias.</td>
+  </tr>
+  <tr class="odd">
+    <td>unaliasall</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>unaliasall</td>
+    <td>Clears all aliases.</td>
+  </tr>
+  <tr class="even">
+    <td>unbind</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>unbind &lt;key&gt;</td>
+    <td>Unbind a binded key.</td>
+  </tr>
+  <tr class="odd">
+    <td>unbindall</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>unbindall</td>
+    <td>Unbinds all key binds.</td>
+  </tr>
+  <tr class="even">
+    <td>unblock</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>unblock [playername]</td>
+    <td>Unblocks a blocked player.</td>
+  </tr>
+  <tr class="odd">
+    <td>userinfo</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>userinfo</td>
+    <td>Lists user information.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>V</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>vid_restart</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>vid_restart</td>
+    <td>Restarts video system.</td>
+  </tr>
+  <tr class="odd">
+    <td>viewpos</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>viewpos</td>
+    <td>Displays player coordinates in map, in the form of: (X Y Z) :    XY-Angle</td>
+  </tr>
+  <tr class="even">
+    <td>vosay</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>vosay &lt;voice script&gt;</td>
+    <td>General voice communication.</td>
+  </tr>
+  <tr class="odd">
+    <td>vosay_team</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>vosay_team &lt;voice script&gt;</td>
+    <td>Team voice communication.</td>
+  </tr>
+  <tr class="even">
+    <td>vote</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>vote &lt;y/n&gt;<br>
+      yes = yes vote<br>
+      no = no vote</td>
+    <td>Sets your vote for the current vote calling.</td>
+  </tr>
+  <tr class="odd">
+    <td>votell</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>votell [message]</td>
+    <td>Voice chat to a player.</td>
+  </tr>
+  <tr class="even">
+    <td>vsay</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>vosay [message]</td>
+    <td>Voice chat to all players.</td>
+  </tr>
+  <tr class="odd">
+    <td>vsay_team</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>vsay_team [message]</td>
+    <td>Voice chat to team.</td>
+  </tr>
+  <tr class="even">
+    <td>vstr</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>vstr [name]</td>
+    <td>Execute a specific VSTR.</td>
+  </tr>
+  <tr class="odd">
+    <td>vtaunt</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>vtaunt [message]</td>
+    <td>Voice taunt to all players.</td>
+  </tr>
+  <tr class="even">
+    <td>vtell</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>vtell [message]</td>
+    <td>Voice chat to a specific player.</td>
+  </tr>
+  <tr class="odd">
+    <td>vtell_attacker</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>vtell_attacker [message]</td>
+    <td>Voice chat to attacker.</td>
+  </tr>
+  <tr class="even">
+    <td>vtell_target</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>vtell_target [message]</td>
+    <td>Voice chat to target player.</td>
+  </tr>
+</tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+<tbody><tr class="odd"><th>W</th>
+</tr></tbody></table>
+  <table border="1" align="center" cellpadding="10" cellspacing="0" class="table">
+        <tbody><tr class="odd">
+    <td width="200" class="font_white"><strong class="font_white_12">Entry
+    </strong></td>
+    <td width="60"><div align="center"><strong class="font_white_12">Flags</strong>
+    </div></td>
+    <td width="100"><div align="center" class="font_white_12"><strong>Default Value
+    </strong></div></td>
+    <td width="200"><strong class="font_white_12">Usage
+    </strong></td>
+    <td><strong class="font_white_12">Description
+    </strong></td>
+  </tr>
+  <tr class="even">
+    <td>wait</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>wait &lt;delay&gt;<br>
+      (if none set, delay = 1)</td>
+    <td>Frame delay for remaining buffered commands.</td>
+  </tr>
+  <tr class="odd">
+    <td>weapnext</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>weapnext</td>
+    <td>Selects next weapon in weapon cycle (by default, no weapons    without ammo are selected, including gauntlet).</td>
+  </tr>
+  <tr class="even">
+    <td>weapon</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>weapon [1-13]<br>
+      1 = gauntlet<br>
+      2 = machine gun<br>
+      3 = shotgun<br>
+      4 = grenade launcher<br>
+      5 = rocket launcher<br>
+      6 = lightning gun<br>
+      7 = railgun<br>
+      8 = plasmagun<br>
+      9 = BFG10K<br>
+      10 = grappling hook<br>
+      11 = nailgun<br>
+      12 = proximity mine launcher<br>
+      13 = chaingun</td>
+    <td>Selects a specific weapon.</td>
+  </tr>
+  <tr class="odd">
+    <td>weapprev</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>weapprev</td>
+    <td>Selects previous weapon in weapon cycle (by default, no    weapons without ammo are selected, including gauntlet).</td>
+  </tr>
+  <tr class="even">
+    <td>writeconfig</td>
+    <td><div align="center">-</div></td>
+    <td><div align="center">-</div></td>
+    <td>writeconfig [&lt;configname&gt;.cfg]</td>
+    <td>Writes settings to a configuration file.</td>
+  </tr>
+</tbody></table>
+
+</body></html>
