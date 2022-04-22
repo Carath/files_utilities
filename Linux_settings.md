@@ -15,16 +15,16 @@ Go to System Settings > Font Selection > Text scaling factor := 1.4
 
 ```sh
 # Compilers and various dev things:
-sudo apt install libc6-dev git gitk cmake clang g++ gfortran
+sudo apt-get install libc6-dev git gitk cmake clang g++ gfortran
 
 # Doc and debugging:
-sudo apt install gdb valgrind manpages-dev glibc-doc cppman
+sudo apt-get install gdb valgrind manpages-dev glibc-doc cppman
 
 # Graphic libraries:
-sudo apt install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
+sudo apt-get install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
 
 # Other utilities:
-sudo apt install bash-completion gparted screenfetch mediainfo htop glogg chntpw
+sudo apt-get install bash-completion gparted screenfetch mediainfo htop glogg chntpw
 ```
 
 Alternative to mediainfo: ``` exiftool ```
@@ -111,11 +111,11 @@ In wired network settings:
 
 Install latest Nvidia graphic drivers.
 
-Getting rid of Num Lock crap: [BUGGED?]
-sudo apt install numlockx // Allows to have Num Lock On on startup, after turning on the option in Login Window.
-// create 2 startup commands with the following lines:
+<!-- Getting rid of Num Lock crap: [BUGGED?]
+sudo apt-get install numlockx # Allows to have Num Lock On on startup, after turning on the option in Login Window.
+create 2 startup commands with the following lines:
 xmodmap -e 'keycode 77='
-numlockx on
+numlockx on -->
 
 
 ## Hardware/OS data

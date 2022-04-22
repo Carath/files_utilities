@@ -1,0 +1,13 @@
+[
+	{ "keys": ["f1"], "command": "toggle_side_bar" },
+	{ "keys": ["ctrl+space"], "command": "toggle_comment" },
+	{ "keys": ["ctrl+tab"], "command": "next_view" },
+	{ "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+	{ "keys": ["ctrl+t"], "command": "new_file"},
+	{ "keys": ["ctrl+q"], "command": "unbound"},
+	{ "keys": ["ctrl+g"], "command": "unbound" },
+	{ "keys": ["ctrl++"], "command": "unbound" },
+	{ "keys": ["ctrl+="], "command": "unbound" },
+	{ "keys": ["ctrl+-"], "command": "unbound" }
+]
+// N.B: ctrl+t mirrors ctrl+n. Also, use ctrl+shift+t to reopen the last closed tabs.
