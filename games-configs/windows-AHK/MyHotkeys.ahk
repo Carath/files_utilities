@@ -1,4 +1,5 @@
-﻿
+﻿; Version 3.6
+
 ; Startup folder:  C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
 ; Y foutre le fichier (.ahk) contenant ce qui suit, en lui donnant comme
 ; programme par défaut AutoHotkey.
@@ -9,6 +10,7 @@
 ; + , Lshift -> shift key
 ; ! , Lalt -> alt key
 ; <^>! , Ralt -> alt gr key
+
 ;---------------------------------------------------------------------------
 ; Zône à variables: ne pas y placer de hotkey.
 
@@ -247,8 +249,9 @@ ClassNNClick(command) ; command: ClassNN found using Window Spy.
     WinMinimize, A
     Return
 
-
 #IfWinActive, ahk_class UnrealTournamentUnrealWWindowsViewportWindow
+  Lwin::Return ; Revenir au bureau avec alt+tab. Plein écran: alt+enter.
+
   !Tab::Return
 
   !Space::Send Space
@@ -261,6 +264,9 @@ ClassNNClick(command) ; command: ClassNN found using Window Spy.
     Return
 
 #IfWinActive, ahk_class SDL_app ; pour Return To Castle Wolfenstein.
+  Lwin::Return ; Revenir au bureau avec alt+tab. Plein écran: alt+enter.
+
+#IfWinActive, ahk_class KillingFloorUnrealWWindowsViewportWindow
   Lwin::Return ; Revenir au bureau avec alt+tab. Plein écran: alt+enter.
 
 #IfWinActive
