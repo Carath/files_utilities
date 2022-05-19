@@ -30,5 +30,6 @@
         }
     },
     "window.zoomLevel": 1,
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "python.terminal.executeInFileDir": true
 }

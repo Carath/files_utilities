@@ -1,3 +1,3 @@
 Config files to be placed in:
 
-C:\Users\username\AppData\Roaming\Code\User [windows]
+- (Windows) C:\Users\username\AppData\Roaming\Code\User
