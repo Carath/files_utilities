@@ -52,7 +52,7 @@ f12::Return
 
 #f::Send ^+n ; crée un nouveau dossier.
 #s::Run Notepad.exe
-^Esc::DllCall("LockWorkStation")
+;^Esc::DllCall("LockWorkStation")
 ^!f1::Reload
 ^!f2::Suspend
 ^!f3::KeyHistory

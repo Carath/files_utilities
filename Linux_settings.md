@@ -27,7 +27,9 @@ sudo apt-get install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev
 sudo apt-get install bash-completion gparted screenfetch mediainfo htop glogg chntpw
 ```
 
-Alternative to mediainfo: ``` exiftool ```
+Also, [Git LFS](https://git-lfs.github.com/) can be useful.
+
+An alternative to mediainfo: ``` exiftool ```
 
 To check on the list of all installed packages:
 
@@ -38,6 +40,13 @@ User selected ones:
 ```sh
 comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
 ```
+
+To check packages waiting to be upgraded (ignoring those in hold with apt-mark):
+
+```sh
+apt list --upgradeable
+```
+
 
 ## Startup
 
