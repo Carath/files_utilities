@@ -139,7 +139,11 @@ To get CPU data:
 
 ## Kerner management
 
-Print installed kernels:
+Show the currently used kernel:
+
+``` uname -r ```
+
+Print all installed kernels:
 
 ``` dpkg -l | grep linux-image | awk '{print$2}' ```
 
@@ -162,3 +166,8 @@ sudo ufw disable
 ## youtube-dl
 
 See the youtube-dl/ directory.
+
+
+## Qalculate
+
+See the qalculate/ directory.

@@ -18,7 +18,6 @@ sudo apt-mark hold sublime-text
 ```
 
 Potential replacements:
-
-- Atom
-- VSCodium
+- ~~Atom~~
+- ~~VSCodium~~
 - CudaText

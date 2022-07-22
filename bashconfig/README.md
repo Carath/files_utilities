@@ -1,3 +1,34 @@
-The 'bashrc' file is to be renamed '.bashrc', and placed in ```~/```
+# Bash config
 
-The 'myconfig.sh' one needs to be placed in ``` /etc/profile.d/ ```, and sourced for it to take effect immediately.
+## Setup
+
+The ``` bashrc ``` file is to be renamed ``` .bashrc ```, and placed in ``` ~/ ```
+
+The ``` myconfig.sh ``` one needs to be placed in ``` /etc/profile.d/ ```
+
+For the changes to take effect, those files need to be sourced, e.g with:
+
+```sh
+source ~/.bashrc
+```
+
+To prevent an error message from appearing, do this once:
+
+```sh
+sudo mkdir -p /var/lib/samba/usershares/
+```
+
+
+## Useful things
+
+To list all defined aliases, run:
+
+```sh
+alias
+```
+
+To list all exported variables, run:
+
+```sh
+export -p
+```
