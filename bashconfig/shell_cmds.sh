@@ -33,7 +33,6 @@ echo -n "content" >> filename
 
 sudo service network-manager restart
 
-find <dirname> -iname <filename>
 >
 >>
 whereis
@@ -64,3 +63,11 @@ sudo docker rmi -f $(sudo docker images -aq --filter "dangling=true" --no-trunc)
 
 # Prevent a package from getting updated:
 sudo apt-mark hold openjdk-11-jre
+
+# Find all files in a directory whose filename contains a string. Case isensitive.
+# To search for an exact match, use -name and do not put * inside the quotes.
+find <directory> -iname "*string*"
+
+# Changing permissions of files and directories from the current directory, to default ones:
+find . -type d -exec chmod 0755 {} \;
+find . -type f -exec chmod 0644 {} \;
