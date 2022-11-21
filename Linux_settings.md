@@ -24,7 +24,7 @@ sudo apt-get install gdb valgrind manpages-dev glibc-doc cppman
 sudo apt-get install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
 
 # Other utilities:
-sudo apt-get install bash-completion gparted screenfetch mediainfo htop glogg chntpw
+sudo apt-get install bash-completion zip unzip gparted screenfetch mediainfo htop glogg chntpw
 ```
 
 Also, [Git LFS](https://git-lfs.github.com/) can be useful.
@@ -104,8 +104,8 @@ See in the vlc/ directory.
 
 ## Steam install location
 
-/home/arthur/.steam/resource/styles
-/home/arthur/.steam/steam
+``` /home/arthur/.steam/resource/styles ```
+``` /home/arthur/.steam/steam ```
 
 
 ## Other things:
@@ -129,19 +129,13 @@ numlockx on -->
 
 ## Hardware/OS data
 
-To know OS version, kernel number, ...
+To know OS version, kernel number, etc: ``` hostnamectl ``` or ``` cat etc/os-release ```
 
-``` hostnamectl ```
+To get CPU data: ``` vim /proc/cpuinfo ```
 
-To get CPU data:
+## Kernel management
 
-``` vim /proc/cpuinfo ```
-
-## Kerner management
-
-Show the currently used kernel:
-
-``` uname -r ```
+Show the currently used kernel: ``` uname -r ```
 
 Print all installed kernels:
 

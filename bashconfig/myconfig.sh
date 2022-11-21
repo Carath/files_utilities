@@ -60,10 +60,13 @@ alias calculate='qalculate'
 # Docker:
 alias dc='sudo docker-compose'
 alias composeup='sudo docker-compose up -d'
+alias dockershow='sudo docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}"'
 alias dockerrestart='sudo systemctl restart docker'
 alias cleancontainers='sudo docker rm -f $(sudo docker ps -aq)'
 alias cleanimages='sudo docker rmi -f $(sudo docker images -aq --filter "dangling=true" --no-trunc)'
-alias dockershow='sudo docker ps --format "table {{.Names}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}"'
+alias dockercleanup='sudo docker system prune'
+alias wslcleanup='find . -name "*Zone.Identifier" -type f -delete'
+alias resetFilesPerm='find . -type d -exec chmod 0755 {} \; && find . -type f -exec chmod 0644 {} \;'
 
 # Specific to my system:
 alias cheat='cd ~/git/files_utilities/'
@@ -87,4 +90,8 @@ open() {
 	for arg in $@; do
 		_open $arg
 	done
+}
+
+rmwindowscarriagereturn () {
+	sed -i 's/^M//g' $1
 }

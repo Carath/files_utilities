@@ -1,5 +1,7 @@
 // Firefox - User settings.
 
+// Tested with version 106.0.1 (64-bit) for Linux Mint
+
 // File to be placed in: /etc/firefox/syspref.js
 // Complete settings list: $HOME/.mozilla/firefox/*.default/prefs.js
 
@@ -29,6 +31,7 @@ pref("browser.newtabpage.storageVersion", 1);
 pref("browser.search.hiddenOneOffs", DuckDuckGo, Google);
 pref("browser.search.region", FR);
 pref("browser.startup.homepage", about:blank);
+pref("browser.homepage_welcome_url", about:blank);
 pref("browser.tabs.allowTabDetach", false);
 pref("browser.tabs.drawInTitlebar", true);
 pref("browser.urlbar.placeholderName", DuckDuckGo);
@@ -52,3 +55,4 @@ pref("lightweightThemes.usedThemes", []);
 pref("media.videocontrols.picture-in-picture.video-toggle.enabled", false);
 pref("pref.downloads.disable_button.edit_actions", false);
 pref("services.sync.tabs.lastSync", 0);
+pref("browser.tabs.firefox-view", false)
