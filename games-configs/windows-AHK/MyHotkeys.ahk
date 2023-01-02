@@ -30,6 +30,15 @@ GroupAdd, ToSpare, ahk_class AutoHotkey
 GroupAdd, Browser, ahk_class MozillaWindowClass
 GroupAdd, Browser, ahk_class Chrome_WidgetWin_1
 
+GroupAdd, Game, ahk_class Warcraft III
+GroupAdd, Game, ahk_class Quake 3: Arena
+GroupAdd, Game, ahk_class CNQ3 ; cpma
+GroupAdd, Game, ahk_class Quake Live
+GroupAdd, Game, ahk_class SDL_app ; pour Return To Castle Wolfenstein
+GroupAdd, Game, ahk_class UnrealTournamentUnrealWWindowsViewportWindow ; UT99
+GroupAdd, Game, ahk_class KillingFloorUnrealWWindowsViewportWindow ; Killing Floor
+GroupAdd, Game, ahk_class Valve001 ; Left 4 Dead 2
+
 ahkclass(s)
 {
   If (s="Firefox")
@@ -56,6 +65,10 @@ f12::Return
 ^!f1::Reload
 ^!f2::Suspend
 ^!f3::KeyHistory
+^!f4:: ; Affiche la classe de la fenêtre active.
+  WinGetClass, class, A
+  MsgBox, The active window's class is "%class%".
+  Return
 +Capslock::SetCapsLockState, % GetKeyState("CapsLock", "T") ? "AlwaysOff" : "AlwaysOn"
 #z::Run, %A_AppData%
 ;~NumpadEnter & NumpadAdd::Send ^{NumpadAdd}
@@ -235,39 +248,22 @@ ClassNNClick(command) ; command: ClassNN found using Window Spy.
 
   Right::Send n
 
-#IfWinActive, ahk_class Quake 3: Arena
-  Lwin::Return ; Revenir au bureau avec alt+tab. Plein écran: alt+enter.
+#IfWinActive, ahk_group Game
+  Lwin::Return ; Revenir au bureau avec alt+tab
 
   f12::WinMinimize, A
     WinMinimize, A
     Return
 
-#IfWinActive, ahk_class CNQ3 ; pour cpma
-  Lwin::Return ; Revenir au bureau avec alt+tab. Plein écran: alt+enter.
-
-  f12::WinMinimize, A
-    WinMinimize, A
-    Return
+  ; f8::Send #{PrintScreen}
 
 #IfWinActive, ahk_class UnrealTournamentUnrealWWindowsViewportWindow
-  Lwin::Return ; Revenir au bureau avec alt+tab. Plein écran: alt+enter.
-
   !Tab::Return
 
   !Space::Send Space
 
-#IfWinActive, ahk_class Quake Live
-  Lwin::Return ; Revenir au bureau avec alt+tab. Plein écran: alt+enter.
-
-  f12::WinMinimize, A
-    WinMinimize, A
-    Return
-
-#IfWinActive, ahk_class SDL_app ; pour Return To Castle Wolfenstein.
-  Lwin::Return ; Revenir au bureau avec alt+tab. Plein écran: alt+enter.
-
 #IfWinActive, ahk_class KillingFloorUnrealWWindowsViewportWindow
-  Lwin::Return ; Revenir au bureau avec alt+tab. Plein écran: alt+enter.
+  f8::Send #{PrintScreen}
 
 #IfWinActive
 
