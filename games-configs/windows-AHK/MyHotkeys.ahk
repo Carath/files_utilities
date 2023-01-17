@@ -1,4 +1,4 @@
-﻿; Version 3.6
+﻿; Version 3.8
 
 ; Startup folder:  C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
 ; Y foutre le fichier (.ahk) contenant ce qui suit, en lui donnant comme
@@ -97,6 +97,8 @@ F22::Return
 +Lalt::Return ; idem.
 #Tab::Return ; empêche le lancement de la webcam.
 <^>!Space::Send {Space} ; AltGr + space
+Lalt & Lwin::Return ; empêche des retours bureau intempestifs en jouant.
+Lctrl & Lwin::Return ; idem.
 
 !f4::
   IfWinActive, ahk_group ToSpare
