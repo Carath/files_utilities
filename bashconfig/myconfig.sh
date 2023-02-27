@@ -26,19 +26,23 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 PATH=
-PATH=$PATH:/usr/bin
-PATH=$PATH:/usr/sbin
-PATH=$PATH:/usr/local/bin
-PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/bin
 PATH=$PATH:/sbin
 PATH=$PATH:/snap/bin
+PATH=$PATH:/usr/bin
+PATH=$PATH:/usr/sbin
+PATH=$PATH:/usr/games
+PATH=$PATH:/usr/local/bin
+PATH=$PATH:/usr/local/sbin
+PATH=$PATH:/usr/local/games
 PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/.local/bin
-PATH=$PATH:/usr/games
-PATH=$PATH:/usr/local/games
+# Custom:
+PATH=$PATH:/usr/local/go/bin
 PATH=$PATH:$JAVA_HOME
 PATH=$PATH:$M2
+PATH=$PATH:$HOME/.cargo/bin
+PATH=$PATH:$HOME/.nimble/bin
 export PATH
 
 alias l='ls -CF --color=auto'
@@ -70,6 +74,7 @@ alias resetFilesPerm='find . -type d -exec chmod 0755 {} \; && find . -type f -e
 
 # Specific to my system:
 alias cheat='cd ~/git/files_utilities/'
+alias mdview="open ~/git/markdown-editor/index.html"
 alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
 alias classify='hwrt serve'
 alias texx='cd ~/git/TeXdrawer/'

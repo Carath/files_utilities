@@ -1,0 +1,7 @@
+// Use Rust syntax highlighting for .v files:
+{
+	"extensions":
+	[
+		"v"
+	]
+}

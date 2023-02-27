@@ -2,7 +2,9 @@
 
 *Better calculator than the default one.*
 
-Install ``` qalculate ``` (or ``` qalc ``` to only get the terminal tool, included in ``` qalculate ```). Preferably the GTK variant, version ``` 4.0.0 ```.
+## Softwares and configs
+
+Install ``` qalculate ``` (preferably the GTK variant), or the CLI version ``` qalc ``` (included in ``` qalculate ```).
 
 Furthermore, 2 config files are stored in ``` ~/.config/qalculate/ ```, use the ones provided here:
 - ``` qalc.cfg ```
@@ -10,7 +12,21 @@ Furthermore, 2 config files are stored in ``` ~/.config/qalculate/ ```, use the 
 
 To run in a GUI (or terminal), just type ``` qalculate ``` (or ``` qalc ```).
 
-Links:
+
+## Building libqalculate from source
+
+This will only install ``` qalc ```, and may take ~ 10 minutes. It is advised to choose a specific version (here ``` v4.5.1 ```):
+
+```sh
+sudo apt-get install -y git make automake curl libcurl4-openssl-dev libc6-dev libxml2-dev \
+  libicu-dev libreadline-dev libmpfr-dev gettext gnuplot doxygen autoconf intltool libtool
+git clone -b v4.5.1 --depth 1 https://github.com/Qalculate/libqalculate.git
+cd libqalculate && ./autogen.sh && ./configure && make && sudo make install && sudo ldconfig
+```
+
+
+## Links
+
 - [Official site](http://qalculate.github.io/index.html)
 - [qalc manual](https://qalculate.github.io/manual/qalc.html)
 - [qalculate manual](https://qalculate.github.io/manual/index.html)
