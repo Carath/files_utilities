@@ -15,12 +15,12 @@ To run in a GUI (or terminal), just type ``` qalculate ``` (or ``` qalc ```).
 
 ## Building libqalculate from source
 
-This will only install ``` qalc ```, and may take ~ 10 minutes. It is advised to choose a specific version (here ``` v4.5.1 ```):
+This will only install ``` qalc ```, and may take ~ 10 minutes. It is advised to choose a specific version (here ``` v4.6.0 ```):
 
 ```sh
 sudo apt-get install -y git make automake curl libcurl4-openssl-dev libc6-dev libxml2-dev \
   libicu-dev libreadline-dev libmpfr-dev gettext gnuplot doxygen autoconf intltool libtool
-git clone -b v4.5.1 --depth 1 https://github.com/Qalculate/libqalculate.git
+git clone -b v4.6.0 --depth 1 https://github.com/Qalculate/libqalculate.git
 cd libqalculate && ./autogen.sh && ./configure && make && sudo make install && sudo ldconfig
 ```
 
