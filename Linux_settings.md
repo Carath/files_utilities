@@ -66,18 +66,18 @@ pactl set-sink-mute 0 toggle
 > Volume+
 
 ```sh
-sh -c "pactl set-sink-mute 0 false; pactl set-sink-volume 0 +2%"
+sh -c "pactl set-sink-mute 0 false; pactl set-sink-volume 0 +3%"
 ```
 
 > Volume-
 
 ```sh
-sh -c "pactl set-sink-mute 0 false; pactl set-sink-volume 0 -2%"
+sh -c "pactl set-sink-mute 0 false; pactl set-sink-volume 0 -3%"
 ```
 
-Those have no balance issue anymore. Still, the 100% bug remains.
+Note: the last two commands need increments/decrements of at least 3%, since pactl (version 13.99.1) is bugged and prevents volumes of 98%, 99%, 101% and 102% to be ever reached, resulting in the volume being stuck to 100% !
 
-Note: on a laptop, one can use fn + S to take a screenshot.
+N.B: on a laptop, one can use fn + S to take a screenshot.
 
 
 ## Console transparency

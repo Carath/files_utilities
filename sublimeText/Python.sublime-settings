@@ -1,0 +1,7 @@
+// Use Python syntax highlighting for .nim files:
+{
+	"extensions":
+	[
+		"nim"
+	]
+}

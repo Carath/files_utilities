@@ -56,10 +56,14 @@ alias egrep='egrep --color=auto'
 
 alias vi='vim'
 alias cl='clear'
+alias rm='gio trash' # moving files to the trash.
 alias py='python3'
 
 alias calc='qalc'
 alias calculate='qalculate'
+
+alias wslcleanup='find . -name "*Zone.Identifier" -type f -delete'
+alias resetFilesPerm='find . -type d -exec chmod 0755 {} \; && find . -type f -exec chmod 0644 {} \;'
 
 # Docker:
 alias dc='sudo docker-compose'
@@ -69,8 +73,6 @@ alias dockerrestart='sudo systemctl restart docker'
 alias cleancontainers='sudo docker rm -f $(sudo docker ps -aq)'
 alias cleanimages='sudo docker rmi -f $(sudo docker images -aq --filter "dangling=true" --no-trunc)'
 alias dockercleanup='sudo docker system prune'
-alias wslcleanup='find . -name "*Zone.Identifier" -type f -delete'
-alias resetFilesPerm='find . -type d -exec chmod 0755 {} \; && find . -type f -exec chmod 0644 {} \;'
 
 # Specific to my system:
 alias cheat='cd ~/git/files_utilities/'
