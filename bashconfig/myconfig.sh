@@ -22,8 +22,8 @@ export M2=$M2_HOME/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/OpenBLAS/lib/
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 PATH=
 PATH=$PATH:/bin
@@ -56,8 +56,9 @@ alias egrep='egrep --color=auto'
 
 alias vi='vim'
 alias cl='clear'
-alias rm='gio trash' # moving files to the trash.
 alias py='python3'
+
+alias trash-list='gio list trash://'
 
 alias calc='qalc'
 alias calculate='qalculate'
@@ -81,7 +82,41 @@ alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
 alias classify='hwrt serve'
 alias texx='cd ~/git/TeXdrawer/'
 
-_open () {
+# Asking yes/no confirmation:
+_confirm() {
+	read -p "Continue (y/n)? " answer
+	firstChar=$(expr substr $answer 1 1)
+	firstChar=$(echo "$firstChar" | sed -e 's/\(.*\)/\L\1/') # to lowercase
+	if [ "$firstChar" = "y" ]; then
+		return "1"
+	fi
+	return "0"
+}
+
+# Emptying the trash:
+trash-empty() {
+	_confirm
+	retval=$?
+	if [ "$retval" -eq 1 ]; then
+		gio trash --empty
+		echo "Trash emptied."
+	fi
+}
+
+# Moving files to the trash.
+rm() {
+	for arg in $@; do
+		firstChar=$(expr substr $arg 1 1)
+		if [ "$firstChar" != "-" ]; then
+			if [ ! -e $arg ]; then
+				echo "Cannot remove '$arg': No such file or directory"
+			fi;
+			gio trash -f $arg
+		fi;
+	done
+}
+
+_open() {
 	if [ -e $1 ]; then
 		gio open $1 >/dev/null 2>&1
 	else
@@ -99,6 +134,8 @@ open() {
 	done
 }
 
-rmwindowscarriagereturn () {
-	sed -i 's/^M//g' $1
+rmwindowscarriagereturn() {
+	for arg in $@; do
+		sed -i 's/^M//g' $arg
+	done
 }
