@@ -80,3 +80,9 @@ youtube-dl https://www.youtube.com/watch?v=DM_OWuIvPeo --external-downloader ffm
 ```
 yt-dlp https://www.youtube.com/watch?v=LmS9vcVNr5A
 ```
+
+- If the video name is too long (not the case here), use:
+
+```
+yt-dlp -o "%(id)s.%(ext)s" https://www.youtube.com/watch?v=DM_OWuIvPeo
+```

@@ -59,11 +59,6 @@ alias cl='clear'
 alias py='python3'
 
 alias trash-list='gio list trash://'
-
-alias calc='qalc'
-alias calculate='qalculate'
-
-alias wslcleanup='find . -name "*Zone.Identifier" -type f -delete'
 alias resetFilesPerm='find . -type d -exec chmod 0755 {} \; && find . -type f -exec chmod 0644 {} \;'
 
 # Docker:
@@ -75,12 +70,21 @@ alias cleancontainers='sudo docker rm -f $(sudo docker ps -aq)'
 alias cleanimages='sudo docker rmi -f $(sudo docker images -aq --filter "dangling=true" --no-trunc)'
 alias dockercleanup='sudo docker system prune'
 
+# WSL:
+alias wslcleanup='find . -name "*Zone.Identifier" -type f -delete'
+
+# User packages:
+alias calc='qalc'
+alias calculate='qalculate'
+alias bat='batcat -p'
+
 # Specific to my system:
 alias cheat='cd ~/git/files_utilities/'
 alias mdview="open ~/git/markdown-editor/index.html"
 alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
 alias classify='hwrt serve'
 alias texx='cd ~/git/TeXdrawer/'
+alias vect='cd ~/tests/pq/vect_comparison/'
 
 # Asking yes/no confirmation:
 _confirm() {
@@ -136,6 +140,6 @@ open() {
 
 rmwindowscarriagereturn() {
 	for arg in $@; do
-		sed -i 's/^M//g' $arg
+		sed -i 's/\r$//g' $arg
 	done
 }

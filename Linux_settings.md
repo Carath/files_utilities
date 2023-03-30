@@ -24,7 +24,7 @@ sudo apt-get install gdb valgrind manpages-dev glibc-doc cppman
 sudo apt-get install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
 
 # Other utilities:
-sudo apt-get install bash-completion zip unzip gparted screenfetch mediainfo htop glogg chntpw
+sudo apt-get install bash-completion zip unzip gparted screenfetch mediainfo htop glogg chntpw tree bat
 ```
 
 Also, [Git LFS](https://git-lfs.github.com/) can be useful.
