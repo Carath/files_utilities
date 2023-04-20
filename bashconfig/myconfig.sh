@@ -84,7 +84,7 @@ alias mdview="open ~/git/markdown-editor/index.html"
 alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
 alias classify='hwrt serve'
 alias texx='cd ~/git/TeXdrawer/'
-alias vect='cd ~/tests/pq/vect_comparison/'
+alias vect='cd ~/git/vect_bench/'
 
 # Asking yes/no confirmation:
 _confirm() {
@@ -114,9 +114,9 @@ rm() {
 		if [ "$firstChar" != "-" ]; then
 			if [ ! -e $arg ]; then
 				echo "Cannot remove '$arg': No such file or directory"
-			fi;
+			fi
 			gio trash -f $arg
-		fi;
+		fi
 	done
 }
 
@@ -140,6 +140,24 @@ open() {
 
 rmwindowscarriagereturn() {
 	for arg in $@; do
-		sed -i 's/\r$//g' $arg
+		sed -i "s/\r$//g" $arg
+	done
+}
+
+# Removes Windows carriage returns and non utf-8 symbols.
+# This also resets files permission to default values.
+cleanfile() {
+	for arg in $@; do
+		if [ -e $arg ]; then
+			if [ -d $arg ]; then
+				echo "Cannot process the input '$arg': Is a directory"
+			else
+				sed -i "s/\r$//g" $arg
+				iconv -f utf-8 -t utf-8 -c $arg > "$arg"_temp
+				mv "$arg"_temp $arg
+			fi
+		else
+			echo "'$arg': No such file"
+		fi
 	done
 }
