@@ -161,3 +161,12 @@ cleanfile() {
 		fi
 	done
 }
+
+# Printing a json file with color, using jq:
+jsonprint() {
+	if [ ! -e $1 ]; then
+		echo "'$1': No such file or directory"
+	elif [ ! -z "$1" ]; then
+		jq -C "." $1 | less -R
+	fi
+}
