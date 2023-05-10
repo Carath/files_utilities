@@ -24,11 +24,13 @@ sudo apt-get install atomicparsley
 sudo -H pip3 install --upgrade youtube-dl
 ```
 
-- For installing the ``` yt-dlp ``` fork which enables to download age-restricted content:
+- For installing the ``` yt-dlp ``` fork which enables to download age-restricted content, and isn't slow on youtube:
 
 ```
 python3 -m pip install -U yt-dlp
 ```
+
+To update it, simply run: ``` yt-dlp -U ```
 
 
 ## Usage

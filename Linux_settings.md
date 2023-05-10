@@ -152,9 +152,11 @@ sudo reboot
 
 ## Checking firewall status, and enabling/disabling
 
+```sh
 sudo ufw status verbose
 sudo ufw enable
 sudo ufw disable
+```
 
 
 ## youtube-dl

@@ -85,6 +85,7 @@ alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
 alias classify='hwrt serve'
 alias texx='cd ~/git/TeXdrawer/'
 alias vect='cd ~/git/vect_bench/'
+alias bench='sh ~/git/vect_bench/benchmark.sh'
 
 # Asking yes/no confirmation:
 _confirm() {
