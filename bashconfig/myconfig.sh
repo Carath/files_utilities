@@ -16,6 +16,10 @@ fi
 
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
+# Set vi as the default editor for all apps that check this.
+# N.B: do not use set -o vi, it breaks the console hotkeys!
+export EDITOR=vi
+
 export JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64'
 export M2_HOME='/opt/apache-maven-3.6.3'
 export M2=$M2_HOME/bin
