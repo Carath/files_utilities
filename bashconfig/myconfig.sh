@@ -49,10 +49,10 @@ PATH=$PATH:$HOME/.cargo/bin
 PATH=$PATH:$HOME/.nimble/bin
 export PATH
 
-alias l='ls -CF --color=auto'
+alias l='ls -CF --color=auto --group-directories-first'
 alias ls='ls --color=auto'
 alias ll='ls -lh --color=auto'
-alias la='ls -Alh --color=auto'
+alias la='ls -Alh --color=auto --group-directories-first'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -84,12 +84,13 @@ alias bat='batcat -p'
 
 # Specific to my system:
 alias cheat='cd ~/git/files_utilities/'
-alias mdview="open ~/git/markdown-editor/index.html"
-alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
-alias classify='hwrt serve'
 alias texx='cd ~/git/TeXdrawer/'
 alias vect='cd ~/git/vect_bench/'
 alias bench='sh ~/git/vect_bench/benchmark.sh'
+alias mdview="open ~/git/markdown-editor/index.html"
+alias updateConfig='sudo cp ~/git/files_utilities/bashconfig/myconfig.sh /etc/profile.d/'
+alias classify='hwrt serve'
+# alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
 
 # Asking yes/no confirmation:
 _confirm() {
