@@ -20,7 +20,7 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 # N.B: do not use set -o vi, it breaks the console hotkeys!
 export EDITOR=vi
 
-export JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64'
+export JAVA_HOME='/usr/lib/jvm/java-17-openjdk-amd64'
 export M2_HOME='/opt/apache-maven-3.6.3'
 export M2=$M2_HOME/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/OpenBLAS/lib/
@@ -61,6 +61,7 @@ alias egrep='egrep --color=auto'
 alias vi='vim'
 alias cl='clear'
 alias py='python3'
+alias smallhash='md5sum'
 
 alias trash-list='gio list trash://'
 alias resetFilesPerm='find . -type d -exec chmod 0755 {} \; && find . -type f -exec chmod 0644 {} \;'
