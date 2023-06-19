@@ -82,6 +82,7 @@ alias wslcleanup='find . -name "*Zone.Identifier" -type f -delete'
 alias calc='qalc'
 alias calculate='qalculate'
 alias bat='batcat -p'
+alias yt-mp3='yt-dlp -x --embed-thumbnail --audio-format mp3'
 
 # Specific to my system:
 alias cheat='cd ~/git/files_utilities/'
