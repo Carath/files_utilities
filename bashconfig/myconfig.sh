@@ -178,3 +178,17 @@ jsonprint() {
 		jq -C "." $1 | less -R
 	fi
 }
+
+# Prints the size of a remote file without downloading it:
+checksize() {
+	foundSizes=$(curl -s -L -I $1 | grep -i "Content-Length" | cut -d ' ' -f2 | tr -d '\r')
+	if [ -z "$foundSizes" ]; then
+		echo "Remote file not found."
+		return
+	fi
+	for bytesize in $foundSizes; do
+		if [ "$bytesize" -ne 0 ]; then
+			echo "$bytesize" | numfmt --to="iec" --suffix="iB" --format="Size: %.1f"
+		fi
+	done
+}

@@ -24,7 +24,7 @@ sudo apt-get install gdb valgrind manpages-dev glibc-doc cppman
 sudo apt-get install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
 
 # Other utilities:
-sudo apt-get install bash-completion zip unzip unrar gparted screenfetch neofetch mediainfo htop glogg chntpw tree bat jq
+sudo apt-get install bash-completion zip unzip unrar gparted screenfetch neofetch mediainfo htop glogg chntpw tree meld bat jq
 ```
 
 Also, [Git LFS](https://git-lfs.github.com/) can be useful.
@@ -45,6 +45,18 @@ To check packages waiting to be upgraded (ignoring those in hold with apt-mark):
 
 ```sh
 apt list --upgradeable
+```
+
+To check all available versions for a given package, e.g. here Firefox:
+
+```sh
+apt-cache madison firefox
+```
+
+To install a specific package version:
+
+```sh
+sudo apt-get install firefox=115.0+build2-0ubuntu0.20.04.3
 ```
 
 
@@ -132,6 +144,7 @@ numlockx on -->
 To know OS version, kernel number, etc: ``` hostnamectl ``` or ``` cat etc/os-release ```
 
 To get CPU data: ``` vim /proc/cpuinfo ```
+
 
 ## Kernel management
 
