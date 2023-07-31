@@ -15,7 +15,7 @@ Go to System Settings > Font Selection > Text scaling factor := 1.4
 
 ```sh
 # Compilers and various dev things:
-sudo apt-get install libc6-dev git gitk cmake clang g++ gfortran
+sudo apt-get install curl wget libc6-dev git gitk make cmake gcc clang g++ gfortran
 
 # Doc and debugging:
 sudo apt-get install gdb valgrind manpages-dev glibc-doc cppman
@@ -24,7 +24,7 @@ sudo apt-get install gdb valgrind manpages-dev glibc-doc cppman
 sudo apt-get install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
 
 # Other utilities:
-sudo apt-get install bash-completion zip unzip unrar gparted screenfetch neofetch mediainfo htop glogg chntpw tree meld bat jq
+sudo apt-get install bash-completion zip unzip unrar gparted screenfetch neofetch mediainfo htop glogg chntpw tree meld bc bat jq
 ```
 
 Also, [Git LFS](https://git-lfs.github.com/) can be useful.
@@ -89,7 +89,7 @@ sh -c "pactl set-sink-mute 0 false; pactl set-sink-volume 0 -3%"
 
 Note: the last two commands need increments/decrements of at least 3%, since pactl (version 13.99.1) is bugged and prevents volumes of 98%, 99%, 101% and 102% to be ever reached, resulting in the volume being stuck to 100% !
 
-N.B: on a laptop, one can use fn + S to take a screenshot.
+N.B: on some laptops, one can use fn + S to take a screenshot.
 
 
 ## Console transparency
@@ -116,8 +116,7 @@ See in the vlc/ directory.
 
 ## Steam install location
 
-``` /home/arthur/.steam/resource/styles ```
-``` /home/arthur/.steam/steam ```
+``` /home/arthur/.steam/resource/styles ``` and ``` /home/arthur/.steam/steam ```
 
 
 ## Other things:
@@ -141,7 +140,7 @@ numlockx on -->
 
 ## Hardware/OS data
 
-To know OS version, kernel number, etc: ``` hostnamectl ``` or ``` cat etc/os-release ```
+To know the OS version, kernel number, etc: ``` hostnamectl ``` or ``` cat /etc/os-release ```
 
 To get CPU data: ``` vim /proc/cpuinfo ```
 
@@ -169,6 +168,13 @@ sudo reboot
 sudo ufw status verbose
 sudo ufw enable
 sudo ufw disable
+```
+
+
+## Finding the public IP address
+
+```sh
+curl ifconfig.me
 ```
 
 

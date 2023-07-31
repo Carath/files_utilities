@@ -1,9 +1,10 @@
-﻿; Version 3.8
+﻿; Script version 3.9
+; AutoHotkey version 1.1
 
-; Startup folder:  C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup
-; Y foutre le fichier (.ahk) contenant ce qui suit, en lui donnant comme
-; programme par défaut AutoHotkey.
-; Ce fichier .ahk a été enregistré en encodage UTF-8 (Unicode fonctionne aussi).
+; Place this .ahk file in the startup folder with default program AutoHotkey, in:
+; %ProgramData%\Microsoft\Windows\Start Menu\Programs\StartUp
+; or in %AppData%\Microsoft\Windows\Start Menu\Programs\Startup
+; This file is UTF-8 encoded.
 
 ; # , Lwin -> windows key
 ; ^ , Lctrl -> ctrl key
@@ -12,9 +13,9 @@
 ; <^>! , Ralt -> alt gr key
 
 ;---------------------------------------------------------------------------
-; Zône à variables: ne pas y placer de hotkey.
+; Variables area, do _not_ define hotkeys here !
 
-SetWorkingDir, %A_Desktop% ; enregistrera les fichiers produits sur le bureau.
+SetWorkingDir, %A_Desktop% ; to save files on the desktop by default.
 SetNumLockState, AlwaysOn
 SetCapsLockState, AlwaysOff
 
@@ -34,7 +35,7 @@ GroupAdd, Game, ahk_class Warcraft III
 GroupAdd, Game, ahk_class Quake 3: Arena
 GroupAdd, Game, ahk_class CNQ3 ; cpma
 GroupAdd, Game, ahk_class Quake Live
-GroupAdd, Game, ahk_class SDL_app ; pour Return To Castle Wolfenstein
+GroupAdd, Game, ahk_class SDL_app ; for Return To Castle Wolfenstein
 GroupAdd, Game, ahk_class UnrealTournamentUnrealWWindowsViewportWindow ; UT99
 GroupAdd, Game, ahk_class KillingFloorUnrealWWindowsViewportWindow ; Killing Floor
 GroupAdd, Game, ahk_class Valve001 ; Left 4 Dead 2
@@ -49,23 +50,24 @@ ahkclass(s)
     Return ""
 }
 
-default_browser := "Chrome"
+default_browser := "Firefox"
 default_browser_class := ahkclass(default_browser)
 
 ;---------------------------------------------------------------------------
+; Hotkeys area:
 
 f9::Send {Volume_Mute}
 f10::Send {Volume_Down}
 f11::Send {Volume_Up}
 f12::Return
 
-#f::Send ^+n ; crée un nouveau dossier.
+#f::Send ^+n ; creates a new folder.
 #s::Run Notepad.exe
 ;^Esc::DllCall("LockWorkStation")
 ^!f1::Reload
 ^!f2::Suspend
 ^!f3::KeyHistory
-^!f4:: ; Affiche la classe de la fenêtre active.
+^!f4:: ; prints the active window class.
   WinGetClass, class, A
   MsgBox, The active window's class is "%class%".
   Return
@@ -74,7 +76,7 @@ f12::Return
 ;~NumpadEnter & NumpadAdd::Send ^{NumpadAdd}
 ;~NumpadEnter & NumpadSub::Send ^{NumpadSub}
 ~Ralt & Rctrl::Run Taskmgr.exe
-~NumpadAdd & NumpadDiv::Send #{PrintScreen} ; ~ pour ne pas bloquer NumpadAdd.
+~NumpadAdd & NumpadDiv::Send #{PrintScreen} ; ~ to not block NumpadAdd.
 ~NumpadAdd & Up::Send {PgUp}
 ~NumpadAdd & Down::Send {PgDn}
 ~NumpadAdd & Left::Send {Home}
@@ -83,7 +85,7 @@ f12::Return
 ^WheelUp::Send {WheelUp}
 ^WheelDown::Send {WheelDown}
 ~Lctrl & Backspace::Send {Backspace}
-^!Left::Send {Left} ; ça et 3 suivants: empêche les rotations d'écran.
+^!Left::Send {Left} ; this and the 3 following: to prevent screens rotations.
 ^!Right::Send {Right}
 ^!Down::Send {Down}
 ^!Up::Send {Up}
@@ -91,14 +93,14 @@ f12::Return
 ^Up::Send {Up}
 AppsKey::Return
 F22::Return
-#Enter::Send {Enter} ; empêche l'ouverture du narrateur windows.
-#Space::Return ; empêche le changement de langue du clavier.
-!Lshift::Return ; idem.
-+Lalt::Return ; idem.
-#Tab::Return ; empêche le lancement de la webcam.
+#Enter::Send {Enter} ; to prevent opening the Windows Narrator.
+#Space::Return ; to prevent keyboard language changes.
+!Lshift::Return ; same.
++Lalt::Return ; same.
+#Tab::Return ; to prevent launching the webcam.
 <^>!Space::Send {Space} ; AltGr + space
-Lalt & Lwin::Return ; empêche des retours bureau intempestifs en jouant.
-Lctrl & Lwin::Return ; idem.
+Lalt & Lwin::Return ; preventing switches to desktop.
+Lctrl & Lwin::Return ; same.
 
 !f4::
   IfWinActive, ahk_group ToSpare
@@ -131,7 +133,7 @@ Lctrl & Lwin::Return ; idem.
   Clipboard:=x
   Return
 
-ouvre(s)
+openLink(s)
 {
   x:=ClipboardAll
   Clipboard =
@@ -144,10 +146,12 @@ ouvre(s)
   Return
 }
 
-#a::ouvre("https://www.google.fr/#q=")
-#q::ouvre("https://translate.google.fr/#en/fr/")
+#a::Return
+#q::Return
+;#a::openLink("https://www.google.fr/#q=")
+;#q::openLink("https://translate.google.fr/#en/fr/")
 
-chiffre(s,i)
+digit(s,i)
 {
   k:=Asc(SubStr(s,i,1))
   Return 48<=k and k<=57 ? 1 : 0
@@ -163,10 +167,10 @@ next(e)
   s:=Clipboard
   n:=StrLen(s)
   j:=n
-  while (j>0 and not chiffre(s,j))
-    j:=j-1 ; pas besoin de brackets si une seule instruction.
+  while (j>0 and not digit(s,j))
+    j:=j-1
   i:=j-1
-  while (i>0 and chiffre(s,i))
+  while (i>0 and digit(s,i))
     i:=i-1
   Clipboard:= j=0 ? s : SubStr(s,1,i) e+SubStr(s,i+1,j-i) SubStr(s,j+1,n)
   Send ^v
@@ -185,17 +189,17 @@ ClassNNClick(command) ; command: ClassNN found using Window Spy.
 
 ;---------------------------------------------------------------------------
 
-#IfWinActive, ahk_class Progman ; windows desktop.
-  ^z::Return ; pas de suppression définitive directe.
+#IfWinActive, ahk_class Progman ; Windows Desktop.
+  ^z::Return ; no permanent deletion
 
-#IfWinActive, ahk_class CabinetWClass ; windows explorer.
-  ^z::Return ; idem.
+#IfWinActive, ahk_class CabinetWClass ; Windows Explorer.
+  ^z::Return ; same.
 
   ^Capslock::Send {Left}
 
   ^Tab::Send {Right}
 
-  ~Tab & a::Send !{Left} ; ~ sert à ne pas bloquer Tab.
+  ~Tab & a::Send !{Left} ; ~ to not block tab
 
   ~Tab & z::Send !{Right}
 
@@ -220,7 +224,7 @@ ClassNNClick(command) ; command: ClassNN found using Window Spy.
 #IfWinActive, ahk_class Chrome_WidgetWin_1
   ^Lshift::Send ^+o
 
-#IfWinActive, ahk_class Photo_Lightweight_Viewer ; Visionneuse windows.
+#IfWinActive, ahk_class Photo_Lightweight_Viewer ; Windows Viewer.
   Down::Return
 
   Up::Return
@@ -231,11 +235,11 @@ ClassNNClick(command) ; command: ClassNN found using Window Spy.
 
   ^Capslock::ClassNNClick("Photos_ButtonEx12") ; left
 
-  f::ClassNNClick("Photos_ButtonEx13") ; mode diaporama. Retour avec F de même.
+  f::ClassNNClick("Photos_ButtonEx13") ; slideshow mode. Toggle back with F again.
 
   ^Tab::ClassNNClick("Photos_ButtonEx14") ; right
 
-#IfWinActive, ahk_class Photo_Slideshow_FrameWindow ; diaporama de la Visionneuse windows.
+#IfWinActive, ahk_class Photo_Slideshow_FrameWindow ; Windows Viewer slideshow.
   ^Capslock::Send {Left}
 
   ^Tab::Send {Right}
@@ -251,13 +255,13 @@ ClassNNClick(command) ; command: ClassNN found using Window Spy.
   Right::Send n
 
 #IfWinActive, ahk_group Game
-  Lwin::Return ; Revenir au bureau avec alt+tab
+  Lwin::Return ; switch back to desktop with alt + tab
 
   f12::WinMinimize, A
     WinMinimize, A
     Return
 
-  ; f8::Send #{PrintScreen}
+  ;f8::Send #{PrintScreen} ; issues in QL
 
 #IfWinActive, ahk_class UnrealTournamentUnrealWWindowsViewportWindow
   !Tab::Return

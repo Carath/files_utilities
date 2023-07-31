@@ -2,7 +2,7 @@
 
 ## Setup
 
-The ``` bashrc ``` file is to be renamed ``` .bashrc ```, and placed in ``` ~/ ```
+The ``` .bashrc ``` file is to be placed in ``` ~/ ```
 
 The ``` myconfig.sh ``` one needs to be placed in ``` /etc/profile.d/ ```
 

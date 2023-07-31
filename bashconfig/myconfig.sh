@@ -82,14 +82,14 @@ alias wslcleanup='find . -name "*Zone.Identifier" -type f -delete'
 alias calc='qalc'
 alias calculate='qalculate'
 alias bat='batcat -p'
-alias yt-mp3='yt-dlp -x --embed-thumbnail --audio-format mp3'
+alias yt-dlp-mp3='yt-dlp -x --embed-thumbnail --audio-format mp3'
 
 # Specific to my system:
 alias cheat='cd ~/git/files_utilities/'
 alias texx='cd ~/git/TeXdrawer/'
 alias vect='cd ~/git/vect_bench/'
 alias bench='sh ~/git/vect_bench/benchmark.sh'
-alias mdview="open ~/git/markdown-editor/index.html"
+alias markd='open ~/git/markdown-editor/index.html'
 alias updateConfig='sudo cp ~/git/files_utilities/bashconfig/myconfig.sh /etc/profile.d/'
 alias classify='hwrt serve'
 # alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
