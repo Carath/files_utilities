@@ -192,3 +192,8 @@ checksize() {
 		fi
 	done
 }
+
+# Useful to convert an image format to another, supporting jpg, png, bmp, webp...
+convertimage() {
+	ffmpeg -loglevel error -y -i $1 $2
+}

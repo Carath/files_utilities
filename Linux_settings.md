@@ -1,9 +1,26 @@
 # Linux settings list
 
+## Beforehand
 
-## Needed
+- Activate AHCI in BIOS/UEFI menu to install Linux on an SSD.
+- Disable Windows Safe Boot (dual boot)
+- Disable Windows Fast Boot (dual boot)
 
-Activate AHCI in BIOS/UEFI menu to install Linux on an SSD.
+
+## Proxy setup
+
+Add the following lines into the ``` ~/.bashrc ``` file:
+
+```sh
+export http_proxy="http://companyname:port"
+export https_proxy="https://companyname:port"
+```
+
+Also, create a ``` /etc/apt/apt.conf ``` file, containing the following:
+
+```
+Acquire::http:Proxy "http://companyname:port";
+```
 
 
 ## System font size
@@ -15,19 +32,33 @@ Go to System Settings > Font Selection > Text scaling factor := 1.4
 
 ```sh
 # Compilers and various dev things:
-sudo apt-get install curl wget libc6-dev git gitk make cmake gcc clang g++ gfortran
+sudo apt-get install -y curl wget git gitk python3-pip libc6-dev make cmake gcc clang g++ gfortran
+
+# Basic editors:
+sudo apt-get install -y vi vim vim-tiny nano
 
 # Doc and debugging:
-sudo apt-get install gdb valgrind manpages-dev glibc-doc cppman
+sudo apt-get install -y gdb valgrind manpages-dev glibc-doc cppman
 
 # Graphic libraries:
-sudo apt-get install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
+sudo apt-get install -y freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
 
 # Other utilities:
-sudo apt-get install bash-completion zip unzip unrar gparted screenfetch neofetch mediainfo htop glogg chntpw tree meld bc bat jq
+sudo apt-get install -y bash-completion zip unzip unrar gparted screenfetch neofetch mediainfo htop glogg chntpw tree meld bc bat jq
+
+# Video editing:
+sudo apt-get install -y ffmpeg libavcodec-dev libavformat-dev
 ```
 
-Also, [Git LFS](https://git-lfs.github.com/) can be useful.
+To install some preselected python3 packages, run:
+
+```sh
+pip3 install -r requirements.txt
+```
+
+Also grab a basic text editor like gedit, pluma, xed, or Leafpad.
+
+Furthermore, [Git LFS](https://git-lfs.github.com/) can be useful.
 
 An alternative to mediainfo: ``` exiftool ```
 
@@ -56,7 +87,7 @@ apt-cache madison firefox
 To install a specific package version:
 
 ```sh
-sudo apt-get install firefox=115.0+build2-0ubuntu0.20.04.3
+sudo apt-get install -y firefox=115.0+build2-0ubuntu0.20.04.3
 ```
 
 

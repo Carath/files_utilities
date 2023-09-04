@@ -1,7 +1,7 @@
 # OBS
 
 
-## Capturing Quake live with OBS
+## Capturing Quake Live with OBS
 
 Beforehand, in the NVIDIA control panel:
 

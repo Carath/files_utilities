@@ -1,0 +1,16 @@
+# Python 3 packages:
+numpy
+pandas
+matplotlib
+seaborn
+Pillow
+beautifulsoup4
+Flask
+Flask-Cors
+requests
+pipdeptree
+pipgrip
+tqdm
+tabulate
+youtube-dl
+yt-dlp
