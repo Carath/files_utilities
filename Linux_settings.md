@@ -4,7 +4,7 @@
 
 - Activate AHCI in BIOS/UEFI menu to install Linux on an SSD.
 - Disable Windows Safe Boot (dual boot)
-- Disable Windows Fast Boot (dual boot)
+- Disable Windows Fast Startup (dual boot)
 
 
 ## Proxy setup
@@ -22,6 +22,8 @@ Also, create a ``` /etc/apt/apt.conf ``` file, containing the following:
 Acquire::http:Proxy "http://companyname:port";
 ```
 
+Also, the ``` sudo ``` command may need to be used with the ``` -E ``` option to take the proxy into account.
+
 
 ## System font size
 
@@ -31,23 +33,24 @@ Go to System Settings > Font Selection > Text scaling factor := 1.4
 ## Packages to install
 
 ```sh
-# Compilers and various dev things:
-sudo apt-get install -y curl wget git gitk python3-pip libc6-dev make cmake gcc clang g++ gfortran
+# Necessary packages:
+sudo apt-get -y install curl wget git make cmake libc6-dev python3-pip
 
 # Basic editors:
-sudo apt-get install -y vi vim vim-tiny nano
+sudo apt-get -y install vim vim-tiny nano
 
-# Doc and debugging:
-sudo apt-get install -y gdb valgrind manpages-dev glibc-doc cppman
+# Compilers, debugging and documentation:
+sudo apt-get -y install gcc clang g++ gfortran gdb valgrind manpages-dev glibc-doc cppman
 
 # Graphic libraries:
-sudo apt-get install -y freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
+sudo apt-get -y install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
 
 # Other utilities:
-sudo apt-get install -y bash-completion zip unzip unrar gparted screenfetch neofetch mediainfo htop glogg chntpw tree meld bc bat jq
+sudo apt-get -y install bash-completion gitk zip unzip unrar gparted \
+  screenfetch neofetch mediainfo htop glogg chntpw tree meld bc bat jq
 
 # Video editing:
-sudo apt-get install -y ffmpeg libavcodec-dev libavformat-dev
+sudo apt-get -y install ffmpeg libavcodec-dev libavformat-dev atomicparsley
 ```
 
 To install some preselected python3 packages, run:
@@ -64,7 +67,9 @@ An alternative to mediainfo: ``` exiftool ```
 
 To check on the list of all installed packages:
 
-``` dpkg --list ```
+```sh
+dpkg --list
+```
 
 User selected ones:
 
@@ -87,7 +92,7 @@ apt-cache madison firefox
 To install a specific package version:
 
 ```sh
-sudo apt-get install -y firefox=115.0+build2-0ubuntu0.20.04.3
+sudo apt-get -y install firefox=115.0+build2-0ubuntu0.20.04.3
 ```
 
 
@@ -173,16 +178,22 @@ numlockx on -->
 
 To know the OS version, kernel number, etc: ``` hostnamectl ``` or ``` cat /etc/os-release ```
 
-To get CPU data: ``` vim /proc/cpuinfo ```
+To get CPU data: ``` cat /proc/cpuinfo ```
 
 
 ## Kernel management
 
-Show the currently used kernel: ``` uname -r ```
+Show the currently used kernel:
+
+```sh
+uname -r
+```
 
 Print all installed kernels:
 
-``` dpkg -l | grep linux-image | awk '{print$2}' ```
+```sh
+dpkg -l | grep linux-image | awk '{print$2}'
+```
 
 Purging an old kernel:
 
@@ -211,9 +222,9 @@ curl ifconfig.me
 
 ## youtube-dl
 
-See the youtube-dl/ directory.
+See the ``` youtube-dl/ ``` directory.
 
 
 ## Qalculate
 
-See the qalculate/ directory.
+See the ``` qalculate/ ``` directory.
