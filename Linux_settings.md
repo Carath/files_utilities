@@ -1,5 +1,6 @@
 # Linux settings list
 
+
 ## Beforehand
 
 - Activate AHCI in BIOS/UEFI menu to install Linux on an SSD.
@@ -27,30 +28,33 @@ Also, the ``` sudo ``` command may need to be used with the ``` -E ``` option to
 
 ## System font size
 
-Go to System Settings > Font Selection > Text scaling factor := 1.4
+[Linux Mint only] Go to System Settings > Font Selection > Text scaling factor := 1.4
 
 
 ## Packages to install
 
 ```sh
+# Updating the packages list:
+sudo -E apt-get update
+
 # Necessary packages:
-sudo apt-get -y install curl wget git make cmake libc6-dev python3-pip
+sudo -E apt-get -y install curl wget git make cmake libc6-dev python3-pip
 
 # Basic editors:
-sudo apt-get -y install vim vim-tiny nano
+sudo -E apt-get -y install vim vim-tiny nano
 
 # Compilers, debugging and documentation:
-sudo apt-get -y install gcc clang g++ gfortran gdb valgrind manpages-dev glibc-doc cppman
+sudo -E apt-get -y install gcc clang g++ gfortran gdb valgrind manpages-dev glibc-doc cppman
 
 # Graphic libraries:
-sudo apt-get -y install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
+sudo -E apt-get -y install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
 
 # Other utilities:
-sudo apt-get -y install bash-completion gitk zip unzip unrar gparted \
+sudo -E apt-get -y install bash-completion gitk zip unzip unrar gparted \
   screenfetch neofetch mediainfo htop glogg chntpw tree meld bc bat jq
 
 # Video editing:
-sudo apt-get -y install ffmpeg libavcodec-dev libavformat-dev atomicparsley
+sudo -E apt-get -y install ffmpeg libavcodec-dev libavformat-dev atomicparsley
 ```
 
 To install some preselected python3 packages, run:
