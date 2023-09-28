@@ -6,6 +6,9 @@
 # To clear all previously defined aliases:
 unalias -a
 
+# To clear a previously defined function:
+# unset -f broken_function
+
 if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
 fi
@@ -93,6 +96,15 @@ alias markd='open ~/git/markdown-editor/index.html'
 alias updateConfig='sudo cp ~/git/files_utilities/bashconfig/myconfig.sh /etc/profile.d/'
 alias classify='hwrt serve'
 # alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
+
+# Forcing 'du' to sort its outputs in a readable fashion:
+du() {
+	if [ $# -eq 0 ]; then
+		command du -h . | sort -h
+	else
+		command du -h $1 | sort -h
+	fi
+}
 
 # Asking yes/no confirmation:
 _confirm() {

@@ -15,12 +15,16 @@ Add the following lines into the ``` ~/.bashrc ``` file:
 ```sh
 export http_proxy="http://companyname:port"
 export https_proxy="https://companyname:port"
+export ftp_proxy="ftp://companyname:port"
 ```
 
 Also, create a ``` /etc/apt/apt.conf ``` file, containing the following:
 
 ```
+// Proxy settings:
 Acquire::http:Proxy "http://companyname:port";
+Acquire::https:Proxy "https://companyname:port";
+Acquire::ftp::proxy "ftp://companyname:port";
 ```
 
 Also, the ``` sudo ``` command may need to be used with the ``` -E ``` option to take the proxy into account.
@@ -34,8 +38,10 @@ Also, the ``` sudo ``` command may need to be used with the ``` -E ``` option to
 ## Packages to install
 
 ```sh
-# Updating the packages list:
+# Updating the packages list, and upgrading:
 sudo -E apt-get update
+sudo -E apt-get install --fix-broken # sometimes needed
+sudo -E apt-get upgrade
 
 # Necessary packages:
 sudo -E apt-get -y install curl wget git make cmake libc6-dev python3-pip
@@ -151,7 +157,17 @@ See the sublimeText/ directory.
 
 ## VLC
 
-See in the vlc/ directory.
+See the vlc/ directory.
+
+
+## youtube-dl
+
+See the ``` youtube-dl/ ``` directory.
+
+
+## Qalculate
+
+See the ``` qalculate/ ``` directory.
 
 
 ## Steam install location
@@ -171,14 +187,8 @@ In wired network settings:
 
 Install latest Nvidia graphic drivers.
 
-<!-- Getting rid of Num Lock crap: [BUGGED?]
-sudo apt-get install numlockx # Allows to have Num Lock On on startup, after turning on the option in Login Window.
-create 2 startup commands with the following lines:
-xmodmap -e 'keycode 77='
-numlockx on -->
 
-
-## Hardware/OS data
+## Hardware / OS data
 
 To know the OS version, kernel number, etc: ``` hostnamectl ``` or ``` cat /etc/os-release ```
 
@@ -224,11 +234,29 @@ curl ifconfig.me
 ```
 
 
-## youtube-dl
+## Monitoring the CPU frequency
 
-See the ``` youtube-dl/ ``` directory.
+```sh
+cat /proc/cpuinfo | grep MHz
+# or:
+sudo inxi -C
+```
 
 
-## Qalculate
+## Printing the power options
 
-See the ``` qalculate/ ``` directory.
+```sh
+grep . /sys/devices/system/cpu/cpu0/cpufreq/*
+```
+
+
+## Easy way to change the power options using cpupower
+
+See <https://wiki.archlinux.org/title/CPU_frequency_scaling#Scaling_governors>
+Options: *performance, powersave, userspace, ondemand, conservative, schedutil*
+N.B: *intel_pstate* and *amd_pstate* scaling driver may only provide the *powersave* and *performance* options, use *acpi_cpufreq* to have more.
+
+```sh
+sudo -E apt-get install linux-tools-common linux-tools-generic
+sudo cpupower frequency-set --governor performance # or another setting
+```
