@@ -1,6 +1,12 @@
 ## Installation
 
-Download the .deb file from https://www.sublimetext.com/3, then run:
+Download manually the *.deb* file from <https://www.sublimetext.com/3>, or simply run:
+
+```sh
+wget https://download.sublimetext.com/sublime-text_build-3211_amd64.deb
+```
+
+Then run:
 
 ```sh
 sudo dpkg -i sublime-text_build-3211_amd64.deb

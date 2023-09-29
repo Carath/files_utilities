@@ -44,7 +44,7 @@ sudo -E apt-get install --fix-broken # sometimes needed
 sudo -E apt-get upgrade
 
 # Necessary packages:
-sudo -E apt-get -y install curl wget git make cmake libc6-dev python3-pip
+sudo -E apt-get -y install curl wget git make cmake automake libc6-dev python3-pip
 
 # Basic editors:
 sudo -E apt-get -y install vim vim-tiny nano
@@ -252,9 +252,9 @@ grep . /sys/devices/system/cpu/cpu0/cpufreq/*
 
 ## Easy way to change the power options using cpupower
 
-See <https://wiki.archlinux.org/title/CPU_frequency_scaling#Scaling_governors>
-Options: *performance, powersave, userspace, ondemand, conservative, schedutil*
-N.B: *intel_pstate* and *amd_pstate* scaling driver may only provide the *powersave* and *performance* options, use *acpi_cpufreq* to have more.
+See [this link](https://wiki.archlinux.org/title/CPU_frequency_scaling#Scaling_governors) for more informations. Power options: *performance, powersave, userspace, ondemand, conservative, schedutil*.
+
+N.B: *intel_pstate* and *amd_pstate* scaling driver may only provide the *powersave* and *performance* options, use *acpi_cpufreq* to have more choices.
 
 ```sh
 sudo -E apt-get install linux-tools-common linux-tools-generic
