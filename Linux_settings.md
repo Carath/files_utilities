@@ -57,7 +57,8 @@ sudo -E apt-get -y install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-t
 
 # Other utilities:
 sudo -E apt-get -y install bash-completion gitk zip unzip unrar gparted \
-  screenfetch neofetch mediainfo htop glogg chntpw tree meld bc bat jq
+  screenfetch neofetch mediainfo htop glogg chntpw tree meld bc bat jq \
+  linux-tools-common linux-tools-generic
 
 # Video editing:
 sudo -E apt-get -y install ffmpeg libavcodec-dev libavformat-dev atomicparsley
@@ -108,34 +109,36 @@ sudo apt-get -y install firefox=115.0+build2-0ubuntu0.20.04.3
 
 ## Startup
 
-Enable redshift. See the redshift/ directory for a config file.
+Enable redshift. See the ``` redshift/ ``` directory for a config file.
 
 
 ## Custom shortcuts
 
-> Reassign System > Lock screen to Super + L
+[Linux Mint] In ``` Keyboard > Shortcuts > System ```, reassign the *Lock screen* binding to *Super + L*
+
+Additionally, in *Custom Shortcuts* add the following:
 
 > VolumeMute
 
 ```sh
-pactl set-sink-mute 0 toggle
-```
-
-> Volume+
-
-```sh
-sh -c "pactl set-sink-mute 0 false; pactl set-sink-volume 0 +3%"
+pactl set-sink-mute @DEFAULT_SINK@ toggle
 ```
 
 > Volume-
 
 ```sh
-sh -c "pactl set-sink-mute 0 false; pactl set-sink-volume 0 -3%"
+sh -c "pactl set-sink-mute @DEFAULT_SINK@ false; pactl set-sink-volume @DEFAULT_SINK@ -3%"
+```
+
+> Volume+
+
+```sh
+sh -c "pactl set-sink-mute @DEFAULT_SINK@ false; pactl set-sink-volume @DEFAULT_SINK@ +3%"
 ```
 
 Note: the last two commands need increments/decrements of at least 3%, since pactl (version 13.99.1) is bugged and prevents volumes of 98%, 99%, 101% and 102% to be ever reached, resulting in the volume being stuck to 100% !
 
-N.B: on some laptops, one can use fn + S to take a screenshot.
+N.B: on some laptops, one can use *fn + S* to take a screenshot.
 
 
 ## Console transparency
@@ -147,17 +150,17 @@ Rows: 115, cols: 35
 
 ## Firefox:
 
-See the firefox/ directory.
+See the ``` firefox/ ``` directory.
 
 
 ## Sublime Text
 
-See the sublimeText/ directory.
+See the ``` sublimeText/ ``` directory.
 
 
 ## VLC
 
-See the vlc/ directory.
+See the ``` vlc/ ``` directory.
 
 
 ## youtube-dl
@@ -172,7 +175,7 @@ See the ``` qalculate/ ``` directory.
 
 ## Steam install location
 
-``` /home/arthur/.steam/resource/styles ``` and ``` /home/arthur/.steam/steam ```
+``` $HOME/.steam/resource/styles ``` and ``` $HOME/.steam/steam ```
 
 
 ## Other things:

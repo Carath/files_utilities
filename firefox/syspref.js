@@ -57,3 +57,4 @@ pref("pref.downloads.disable_button.edit_actions", false);
 pref("services.sync.tabs.lastSync", 0);
 pref("browser.tabs.firefox-view", false);
 pref("browser.tabs.inTitlebar", 1);
+pref("pdfjs.defaultZoomValue", 100);

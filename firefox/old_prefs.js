@@ -28,7 +28,7 @@ user_pref("browser.cache.disk.capacity", 1048576);
 user_pref("browser.cache.disk.filesystem_reported", 1);
 user_pref("browser.cache.disk.smart_size.first_run", false);
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
-user_pref("browser.download.lastDir", "/home/arthur/Downloads");
+user_pref("browser.download.lastDir", "/home/user/Downloads");
 user_pref("browser.download.panel.shown", true);
 user_pref("browser.migration.version", 76);
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
