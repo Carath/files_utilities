@@ -4,6 +4,7 @@ pandas
 matplotlib
 seaborn
 Pillow
+scikit-learn
 beautifulsoup4
 Flask
 Flask-Cors

@@ -16,6 +16,7 @@ full-screen-api.warning.timeout -> 300
 dom.webnotifications.enabled -> false
 media.videocontrols.picture-in-picture.video-toggle.enabled -> false
 browser.tabs.inTitlebar -> 1
+browser.toolbars.bookmarks.visibility -> always
 ```
 
 ## Addons to install

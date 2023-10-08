@@ -23,10 +23,10 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 # N.B: do not use set -o vi, it breaks the console hotkeys!
 export EDITOR=vi
 
-export JAVA_HOME='/usr/lib/jvm/java-17-openjdk-amd64'
-export M2_HOME='/opt/apache-maven-3.6.3'
-export M2=$M2_HOME/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/OpenBLAS/lib/
+#export JAVA_HOME='/usr/lib/jvm/java-17-openjdk-amd64'
+#export M2_HOME='/opt/apache-maven-3.6.3'
+#export M2=$M2_HOME/bin
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/OpenBLAS/lib/
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -45,11 +45,11 @@ PATH=$PATH:/usr/local/games
 PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/.local/bin
 # Custom:
-PATH=$PATH:/usr/local/go/bin
-PATH=$PATH:$JAVA_HOME
-PATH=$PATH:$M2
-PATH=$PATH:$HOME/.cargo/bin
-PATH=$PATH:$HOME/.nimble/bin
+#PATH=$PATH:/usr/local/go/bin
+#PATH=$PATH:$JAVA_HOME
+#PATH=$PATH:$M2
+#PATH=$PATH:$HOME/.cargo/bin
+#PATH=$PATH:$HOME/.nimble/bin
 export PATH
 
 alias l='ls -CF --color=auto --group-directories-first'

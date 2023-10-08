@@ -58,3 +58,4 @@ pref("services.sync.tabs.lastSync", 0);
 pref("browser.tabs.firefox-view", false);
 pref("browser.tabs.inTitlebar", 1);
 pref("pdfjs.defaultZoomValue", 100);
+pref("browser.toolbars.bookmarks.visibility", always);

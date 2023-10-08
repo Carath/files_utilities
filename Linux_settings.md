@@ -50,7 +50,7 @@ sudo -E apt-get -y install curl wget git make cmake automake libc6-dev python3-p
 sudo -E apt-get -y install vim vim-tiny nano
 
 # Compilers, debugging and documentation:
-sudo -E apt-get -y install gcc clang g++ gfortran gdb valgrind manpages-dev glibc-doc cppman
+sudo -E apt-get -y install gcc clang g++-12 gfortran gdb valgrind manpages-dev glibc-doc cppman
 
 # Graphic libraries:
 sudo -E apt-get -y install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
@@ -193,7 +193,7 @@ Install latest Nvidia graphic drivers.
 
 ## Hardware / OS data
 
-To know the OS version, kernel number, etc: ``` hostnamectl ``` or ``` cat /etc/os-release ```
+To know the OS version, kernel number, etc: ``` hostnamectl ```, ``` lsb_release -a ``` or ``` cat /etc/os-release ```
 
 To get CPU data: ``` cat /proc/cpuinfo ```
 
