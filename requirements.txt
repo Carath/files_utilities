@@ -1,17 +1,23 @@
 # Python 3 packages:
+virtualenv
+typing
+mypy
+pipdeptree
+pipgrip
 numpy
 pandas
 matplotlib
 seaborn
 Pillow
 scikit-learn
+scipy
 beautifulsoup4
 Flask
 Flask-Cors
 requests
-pipdeptree
-pipgrip
 tqdm
 tabulate
 youtube-dl
 yt-dlp
+# tensorflow
+# tensorflow-datasets

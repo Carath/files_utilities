@@ -18,6 +18,8 @@ export https_proxy="https://companyname:port"
 export ftp_proxy="ftp://companyname:port"
 ```
 
+Then source that file. Check the result with ``` env | grep -i proxy ```.
+
 Also, create a ``` /etc/apt/apt.conf ``` file, containing the following:
 
 ```
@@ -148,6 +150,15 @@ Cursor shape: I-beam
 Rows: 115, cols: 35
 
 
+## Cinnamon grouped windows
+
+Cinnamon config - Grouped window list (missing in version 5.8.4):
+
+- Right click on some grouped windows in the task bar ;
+- Applet preferences > configure ;
+- Reduce apps display duration to 200 ms.
+
+
 ## Firefox:
 
 See the ``` firefox/ ``` directory.
@@ -194,6 +205,8 @@ Install latest Nvidia graphic drivers.
 ## Hardware / OS data
 
 To know the OS version, kernel number, etc: ``` hostnamectl ```, ``` lsb_release -a ``` or ``` cat /etc/os-release ```
+
+To get additional informations, use the installed ``` screenfetch ``` or ``` neofetch ``` commands.
 
 To get CPU data: ``` cat /proc/cpuinfo ```
 
