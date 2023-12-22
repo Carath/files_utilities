@@ -24,8 +24,8 @@ Also, create a ``` /etc/apt/apt.conf ``` file, containing the following:
 
 ```
 // Proxy settings:
-Acquire::http:Proxy "http://companyname:port";
-Acquire::https:Proxy "https://companyname:port";
+Acquire::http::Proxy "http://companyname:port";
+Acquire::https::Proxy "https://companyname:port";
 Acquire::ftp::proxy "ftp://companyname:port";
 ```
 
@@ -60,7 +60,7 @@ sudo -E apt-get -y install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-t
 # Other utilities:
 sudo -E apt-get -y install bash-completion gitk zip unzip unrar gparted \
   screenfetch neofetch mediainfo htop glogg chntpw tree meld bc bat jq \
-  linux-tools-common linux-tools-generic
+  linux-tools-common linux-tools-generic ntfs-3g
 
 # Video editing:
 sudo -E apt-get -y install ffmpeg libavcodec-dev libavformat-dev atomicparsley
@@ -276,3 +276,16 @@ N.B: *intel_pstate* and *amd_pstate* scaling driver may only provide the *powers
 sudo -E apt-get install linux-tools-common linux-tools-generic
 sudo cpupower frequency-set --governor performance # or another setting
 ```
+
+
+## Fixing the "Read-only file system" bug
+
+For NTFS partitions (here ``` /dev/sda2 ```):
+
+```sh
+sudo -E apt-get install ntfs-3g
+sudo umount /dev/sda2
+sudo ntfsfix /dev/sda2
+```
+
+Then remount it again from the file explorer.
