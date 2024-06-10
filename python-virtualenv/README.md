@@ -45,4 +45,8 @@ pip install pipgrip
 pipgrip --lock -r requirements.txt
 ```
 
-The generated ``` pipgrip.lock ``` file contains the completed list of packages.
+The generated ``` pipgrip.lock ``` file contains the completed list of packages, install them with:
+
+```sh
+pip install -r pipgrip.lock
+```

@@ -60,7 +60,7 @@ sudo -E apt-get -y install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-t
 # Other utilities:
 sudo -E apt-get -y install bash-completion gitk zip unzip unrar gparted \
   screenfetch neofetch mediainfo htop glogg chntpw tree meld bc bat jq \
-  linux-tools-common linux-tools-generic ntfs-3g
+  linux-tools-common linux-tools-generic ntfs-3g dconf-editor
 
 # Video editing:
 sudo -E apt-get -y install ffmpeg libavcodec-dev libavformat-dev atomicparsley
@@ -141,6 +141,25 @@ sh -c "pactl set-sink-mute @DEFAULT_SINK@ false; pactl set-sink-volume @DEFAULT_
 Note: the last two commands need increments/decrements of at least 3%, since pactl (version 13.99.1) is bugged and prevents volumes of 98%, 99%, 101% and 102% to be ever reached, resulting in the volume being stuck to 100% !
 
 N.B: on some laptops, one can use *fn + S* to take a screenshot.
+
+
+## Desktop config export / import
+
+This uses the ``` dconf-editor ``` package, and will work on Gnome based desktop environments (e.g Cinnamon).
+
+To export a config, use:
+
+```sh
+dconf dump /org/cinnamon/ > desktop.dconf
+```
+
+To import a config, use:
+
+```sh
+dconf load /org/cinnamon/ < desktop.dconf
+```
+
+Example config files are present in the ``` cinnamon/ ``` directory for Cinnamon.
 
 
 ## Console transparency
