@@ -162,11 +162,12 @@ dconf load /org/cinnamon/ < desktop.dconf
 Example config files are present in the ``` cinnamon/ ``` directory for Cinnamon.
 
 
-## Console transparency
+## Console settings
 
-Disable console transparency: right click in console, preferences, colors.
-Cursor shape: I-beam
-Rows: 115, cols: 35
+- Disable console transparency: right click in console, preferences, colors.
+- Cursor shape: I-beam
+- Rows: 115, cols: 35
+- Add the CTRL+SHIFT+A shortcut to select all the console text.
 
 
 ## Cinnamon grouped windows
