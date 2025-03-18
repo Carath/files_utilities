@@ -68,6 +68,7 @@ alias smallhash='md5sum'
 
 alias trash-list='gio list trash://'
 alias resetFilesPerm='find . -type d -exec chmod 0755 {} \; && find . -type f -exec chmod 0644 {} \;'
+alias clear_history="cat /dev/null > ~/.bash_history && history -c && exit"
 
 # Docker:
 alias dc='sudo docker-compose'

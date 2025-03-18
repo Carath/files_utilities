@@ -6,85 +6,102 @@
 
 ## Installation (Ubuntu)
 
-- For youtube-dl to mix the best quality possible:
+For youtube-dl to mix the best quality possible:
 
-```
+```sh
 sudo apt-get install ffmpeg
 ```
 
-- For youtube-dl to be able to change mpeg4 metadata, e.g thumbnails:
+For youtube-dl to be able to change mpeg4 metadata, e.g thumbnails:
 
-```
+```sh
 sudo apt-get install atomicparsley
 ```
 
-- The program:
+The program:
 
-```
+```sh
 sudo -H pip3 install --upgrade youtube-dl
 ```
 
-- For installing the ``` yt-dlp ``` fork which enables to download age-restricted content, and isn't slow on youtube:
+For installing the ``` yt-dlp ``` fork which enables to download age-restricted content, and isn't slow on youtube:
 
+```sh
+python3 -m virtualenv .venv
+pip install curl_cffi
+pip install "yt-dlp[default,curl-cffi]"
 ```
-python3 -m pip install -U yt-dlp
+
+And to update it:
+
+```sh
+pip install -U yt-dlp
 ```
 
-To update it, simply run: ``` yt-dlp -U ```
+To impersonate a given browser:
 
-
-## Usage
-
-- List all available versions:
-
+```sh
+. .venv/bin/activate
+yt-dlp --list-impersonate-targets
+yt-dlp --impersonate Chrome $TARGET
+deactivate
+clear_history
 ```
+
+
+## youtube-dl usage
+
+List all available versions:
+
+```sh
 youtube-dl -F https://www.youtube.com/watch?v=DM_OWuIvPeo
 ```
 
-- Download the best found version:
+Download the best found version:
 
-```
+```sh
 youtube-dl https://www.youtube.com/watch?v=DM_OWuIvPeo
 ```
 
-- Download the best version for a specific format (e.g mp4):
+Download the best version for a specific format (e.g mp4):
 
-```
+```sh
 youtube-dl -f mp4 https://www.youtube.com/watch?v=DM_OWuIvPeo
 ```
 
-- Get only the audio part:
+Get only the audio part:
 
-```
+```sh
 youtube-dl -x https://www.youtube.com/watch?v=DM_OWuIvPeo
 ```
 
-- Same, by choosing the format:
+Same, by choosing the format:
 
-```
+```sh
 youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=DM_OWuIvPeo
 ```
 
-- Audio only, with a thumbnail. This often requires to get the mp3 format:
+Audio only, with a thumbnail. This often requires to get the mp3 format:
 
-```
+```sh
 youtube-dl -x --embed-thumbnail --audio-format mp3 https://www.youtube.com/watch?v=DM_OWuIvPeo
 ```
 
-- Getting 3 minutes of a video, starting from the first minute:
+Getting 3 minutes of a video, starting from the first minute:
 
-```
-youtube-dl https://www.youtube.com/watch?v=DM_OWuIvPeo --external-downloader ffmpeg --external-downloader-args "-ss 00:01:00.00 -t 00:03:00.00"
+```sh
+youtube-dl https://www.youtube.com/watch?v=DM_OWuIvPeo \
+  --external-downloader ffmpeg --external-downloader-args "-ss 00:01:00.00 -t 00:03:00.00"
 ```
 
-- Dowloading age-restricted videos, using ``` yt-dlp ```:
+Dowloading age-restricted videos, using ``` yt-dlp ```:
 
-```
+```sh
 yt-dlp https://www.youtube.com/watch?v=LmS9vcVNr5A
 ```
 
-- If the video name is too long (not the case here), use:
+If the video name is too long (not the case here), use:
 
-```
+```sh
 yt-dlp -o "%(id)s.%(ext)s" https://www.youtube.com/watch?v=DM_OWuIvPeo
 ```
