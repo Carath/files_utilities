@@ -59,7 +59,7 @@ sudo -E apt-get -y install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-t
 
 # Other utilities:
 sudo -E apt-get -y install bash-completion gitk zip unzip unrar gparted \
-  screenfetch neofetch mediainfo htop glogg chntpw tree meld bc bat jq \
+  screenfetch neofetch mediainfo htop btop glogg chntpw tree meld bc bat jq \
   linux-tools-common linux-tools-generic ntfs-3g dconf-editor
 
 # Video editing:

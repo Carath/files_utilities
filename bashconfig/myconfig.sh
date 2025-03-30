@@ -94,7 +94,7 @@ alias texx='cd ~/git/TeXdrawer/'
 alias vect='cd ~/git/vect_bench/'
 alias bench='sh ~/git/vect_bench/benchmark.sh'
 alias markd='open ~/git/markdown-editor/index.html'
-alias updateConfig='sudo cp ~/git/files_utilities/bashconfig/myconfig.sh /etc/profile.d/'
+alias updateConfig='sudo cp ~/git/files_utilities/bashconfig/myconfig.sh /etc/profile.d/ && . ~/.bashrc'
 alias classify='hwrt serve'
 # alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
 
@@ -210,3 +210,10 @@ checksize() {
 convertimage() {
 	ffmpeg -loglevel error -y -i $1 $2
 }
+
+# Creates a directory and goes inside:
+mkdin() {
+	mkdir $1 && cd $1
+}
+
+# Note to unset a function, use: unset -f functioname
