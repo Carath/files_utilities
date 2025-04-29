@@ -94,8 +94,8 @@ alias texx='cd ~/git/TeXdrawer/'
 alias vect='cd ~/git/vect_bench/'
 alias bench='sh ~/git/vect_bench/benchmark.sh'
 alias markd='open ~/git/markdown-editor/index.html'
-alias updateConfig='sudo cp ~/git/files_utilities/bashconfig/myconfig.sh /etc/profile.d/ && . ~/.bashrc'
 alias classify='hwrt serve'
+alias updateConfig='sudo cp ~/git/files_utilities/bashconfig/myconfig.sh /etc/profile.d/ && . ~/.bashrc'
 # alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
 
 # Forcing 'du' to sort its outputs in a readable fashion:
@@ -214,6 +214,27 @@ convertimage() {
 # Creates a directory and goes inside:
 mkdin() {
 	mkdir $1 && cd $1
+}
+
+resetSublimePref()
+{
+	prefFile=~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+	if [ ! -e "$prefFile"_backup ]; then
+		cp "$prefFile" "$prefFile"_backup
+	else
+		cp "$prefFile"_backup "$prefFile"
+	fi
+}
+
+subl()
+{
+	sublTarget=$(which subl)
+	lastChar=$(echo -n $1 | tail -c 1)
+	if [ $# -ne 0 ] && [ "$lastChar" == "." ]; then
+		echo "Please provide a valid file extension."
+	else
+		$sublTarget $1
+	fi
 }
 
 # Note to unset a function, use: unset -f functioname
