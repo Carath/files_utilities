@@ -233,7 +233,7 @@ subl()
 	if [ $# -ne 0 ] && [ "$lastChar" == "." ]; then
 		echo "Please provide a valid file extension."
 	else
-		$sublTarget $1
+		$sublTarget $@
 	fi
 }
 
