@@ -1,5 +1,10 @@
 [
 	// Disable changing the font size with ctrl+scroll wheel:
 	{ "button": "scroll_down", "modifiers": ["ctrl"], "command": "null" },
-	{ "button": "scroll_up", "modifiers": ["ctrl"], "command": "null" }
+	{ "button": "scroll_up", "modifiers": ["ctrl"], "command": "null" },
+	{
+		"button": "button1", "count": 1, "modifiers": ["ctrl"],
+		"press_command": "drag_select",
+		"args": {"additive": false}
+	}, // disables the Ctrl + Left Click action creating multiple selections.
 ]

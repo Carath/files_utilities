@@ -59,3 +59,4 @@ pref("browser.tabs.firefox-view", false);
 pref("browser.tabs.inTitlebar", 1);
 pref("pdfjs.defaultZoomValue", 100);
 pref("browser.toolbars.bookmarks.visibility", always);
+pref("browser.tabs.groups.enabled", false);
