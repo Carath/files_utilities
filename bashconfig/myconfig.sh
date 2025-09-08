@@ -237,4 +237,17 @@ subl()
 	fi
 }
 
+# Handling Youtube's pesky short videos:
+fixYoutube() {
+	domain=$(echo "$1" | cut -d "/" -f 3)
+	shortStr=$(echo "$1" | cut -d "/" -f 4)
+	videoId=$(echo "$1" | cut -d "/" -f 5)
+	if [ "$domain" = "www.youtube.com" ] && [ "$shortStr" = "shorts" ]; then
+		echo "Opening: https://www.youtube.com/watch?v=$videoId"
+		firefox --new-tab --url "https://www.youtube.com/watch?v=$videoId"
+	else
+		echo "Invalid link: not a youtube short video."
+	fi
+}
+
 # Note to unset a function, use: unset -f functioname
