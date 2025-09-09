@@ -19,6 +19,9 @@ fi
 
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
+# Setting the locale. This sorts better (e.g. w/ ls) than LC_ALL=C:
+export LC_ALL=en_GB.utf8
+
 # Set vi as the default editor for all apps that check this.
 # N.B: do not use set -o vi, it breaks the console hotkeys!
 export EDITOR=vi
