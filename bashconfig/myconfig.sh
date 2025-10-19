@@ -246,10 +246,12 @@ fixYoutube() {
 	shortStr=$(echo "$1" | cut -d "/" -f 4)
 	videoId=$(echo "$1" | cut -d "/" -f 5)
 	if [ "$domain" = "www.youtube.com" ] && [ "$shortStr" = "shorts" ]; then
-		echo "Opening: https://www.youtube.com/watch?v=$videoId"
-		firefox --new-tab --url "https://www.youtube.com/watch?v=$videoId"
+		if [ "$2" = "" ]; then opt=""; else opt="--private-window"; fi
+		link="https://www.youtube.com/watch?v=$videoId"
+		echo "Opening: $link"
+		firefox --new-tab "$opt" "$link"
 	else
-		echo "Invalid link: not a youtube short video."
+		echo "Invalid link: '$1' not a youtube short video."
 	fi
 }
 
