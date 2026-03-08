@@ -46,7 +46,8 @@ sudo -E apt-get install --fix-broken # sometimes needed
 sudo -E apt-get upgrade
 
 # Necessary packages:
-sudo -E apt-get -y install curl wget git make cmake automake libc6-dev python3-pip
+sudo -E apt-get -y install curl wget git make cmake automake libc6-dev \
+  python3-pip python3-virtualenv software-properties-common # python3-venv
 
 # Basic editors:
 sudo -E apt-get -y install vim vim-tiny nano
@@ -57,10 +58,10 @@ sudo -E apt-get -y install gcc clang g++-12 gfortran gdb valgrind manpages-dev g
 # Graphic libraries:
 sudo -E apt-get -y install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
 
-# Other utilities:
+# Other utilities (bat package name is batcat on some systems):
 sudo -E apt-get -y install bash-completion gitk zip unzip unrar gparted \
-  screenfetch neofetch mediainfo htop btop glogg chntpw tree meld bc bat jq \
-  linux-tools-common linux-tools-generic ntfs-3g dconf-editor
+  screenfetch neofetch mediainfo htop btop glogg chntpw tree meld bc jq bat colordiff \
+  linux-tools-common linux-tools-generic ntfs-3g dconf-editor pdfgrep
 
 # Video editing:
 sudo -E apt-get -y install ffmpeg libavcodec-dev libavformat-dev atomicparsley

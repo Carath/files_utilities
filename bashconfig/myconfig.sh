@@ -110,6 +110,17 @@ du() {
 	fi
 }
 
+realpath() {
+	command realpath -e $@
+	# for arg in $@; do
+	# 	if [ ! -e $arg ]; then
+	# 		echo "'$1': No such file or directory"
+	# 	else
+	# 		command realpath $arg
+	# 	fi
+	# done
+}
+
 # Asking yes/no confirmation:
 _confirm() {
 	read -p "Continue (y/n)? " answer
@@ -123,8 +134,7 @@ _confirm() {
 
 # Emptying the trash:
 trash-empty() {
-	_confirm
-	retval=$?
+	_confirm; retval=$?
 	if [ "$retval" -eq 1 ]; then
 		gio trash --empty
 		echo "Trash emptied."
@@ -219,8 +229,7 @@ mkdin() {
 	mkdir $1 && cd $1
 }
 
-resetSublimePref()
-{
+resetSublimePref() {
 	prefFile=~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 	if [ ! -e "$prefFile"_backup ]; then
 		cp "$prefFile" "$prefFile"_backup
@@ -229,15 +238,23 @@ resetSublimePref()
 	fi
 }
 
-subl()
-{
-	sublTarget=$(which subl)
-	lastChar=$(echo -n $1 | tail -c 1)
-	if [ $# -ne 0 ] && [ "$lastChar" == "." ]; then
-		echo "Please provide a valid file extension."
-	else
-		$sublTarget $@
+subl() {
+	if [ $# -gt 5 ]; then
+		echo "Attempting to open many files ($#)."
+		_confirm; retval=$?
+		if [ $retval -eq 0 ]; then
+			return
+		fi
 	fi
+	sublTarget=$(which subl)
+	for arg in $@; do
+		lastChar=$(echo -n $arg | tail -c 1)
+		if [ $# -ne 0 ] && [ "$lastChar" == "." ]; then
+			echo "Please provide a valid file extension for: $arg"
+		else
+			$sublTarget $arg
+		fi
+	done
 }
 
 # Handling Youtube's pesky short videos:
@@ -255,4 +272,4 @@ fixYoutube() {
 	fi
 }
 
-# Note to unset a function, use: unset -f functioname
+# Note to unset a function, use: unset -f <function_name>

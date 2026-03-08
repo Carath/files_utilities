@@ -24,6 +24,7 @@ sudo apt-mark hold sublime-text
 - Package Control
 - Compare Side by Side
 - Dockerfile Syntax Highlighting
+- TOML
 
 Go to: ``` ~/.config/sublime-text-3/Packages/User ```
 

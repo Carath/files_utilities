@@ -45,7 +45,6 @@ To impersonate a given browser:
 yt-dlp --list-impersonate-targets
 yt-dlp --impersonate Chrome $TARGET
 deactivate
-clear_history
 ```
 
 
