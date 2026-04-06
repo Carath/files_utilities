@@ -17,6 +17,9 @@ if [ -f /etc/profile.d/bash_completion.sh ]; then
 	source /etc/profile.d/bash_completion.sh
 fi
 
+##########################################
+# General aliases, suitable for export:
+
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # Setting the locale. This sorts better (e.g. w/ ls) than LC_ALL=C:
@@ -31,9 +34,9 @@ export EDITOR=vi
 #export M2=$M2_HOME/bin
 #export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/OpenBLAS/lib/
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 PATH=
 PATH=$PATH:/bin
@@ -61,17 +64,23 @@ alias ll='ls -lh --color=auto'
 alias la='ls -Alh --color=auto --group-directories-first'
 
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+# alias fgrep='fgrep --color=auto'
+# alias egrep='egrep --color=auto'
+# alias egrep='rgrep --color=auto'
 
 alias vi='vim'
 alias cl='clear'
 alias py='python3'
+alias bat='batcat -p'
 alias smallhash='md5sum'
-
-alias trash-list='gio list trash://'
 alias resetFilesPerm='find . -type d -exec chmod 0755 {} \; && find . -type f -exec chmod 0644 {} \;'
 alias clear_history="cat /dev/null > ~/.bash_history && history -c && exit"
+
+##########################################
+# Other aliases:
+
+# List the trash directory content:
+alias trash-list='gio list trash://'
 
 # Docker:
 alias dc='sudo docker-compose'
@@ -88,7 +97,6 @@ alias wslcleanup='find . -name "*Zone.Identifier" -type f -delete'
 # User packages:
 alias calc='qalc'
 alias calculate='qalculate'
-alias bat='batcat -p'
 alias yt-dlp-mp3='yt-dlp -x --embed-thumbnail --audio-format mp3'
 
 # Specific to my system:
@@ -100,6 +108,27 @@ alias markd='open ~/git/markdown-editor/index.html'
 alias classify='hwrt serve'
 alias updateConfig='sudo cp ~/git/files_utilities/bashconfig/myconfig.sh /etc/profile.d/ && . ~/.bashrc'
 # alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
+
+##########################################
+# General functions, suitable for export:
+
+cdiff() {
+	if [ $# -ne 2 ]; then
+		echo "Please provide 2 valid files to compare."
+	elif [ ! -f $1 ]; then # file exist check
+		echo "'$1': No such file"
+	elif [ ! -f $2 ]; then
+		echo "'$2': No such file"
+	else
+		h1=$(sha256sum $1); h2=$(sha256sum $2)
+		if [ "$h1" == "$h2" ]; then # string equality check
+			echo "Identical files."
+		else
+			diff -u -r $1 $2 | colordiff | less -R
+			# wdiff -n $1 $2 | colordiff | less -R
+		fi
+	fi
+}
 
 # Forcing 'du' to sort its outputs in a readable fashion:
 du() {
@@ -113,13 +142,16 @@ du() {
 realpath() {
 	command realpath -e $@
 	# for arg in $@; do
-	# 	if [ ! -e $arg ]; then
+	# 	if [ ! -e $arg ]; then # file/dir exist check
 	# 		echo "'$1': No such file or directory"
 	# 	else
 	# 		command realpath $arg
 	# 	fi
 	# done
 }
+
+##########################################
+# Other functions:
 
 # Asking yes/no confirmation:
 _confirm() {

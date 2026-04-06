@@ -60,7 +60,7 @@ sudo -E apt-get -y install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-t
 
 # Other utilities (bat package name is batcat on some systems):
 sudo -E apt-get -y install bash-completion gitk zip unzip unrar gparted \
-  screenfetch neofetch mediainfo htop btop glogg chntpw tree meld bc jq bat colordiff \
+  screenfetch neofetch mediainfo htop btop glogg chntpw tree meld bc jq bat colordiff wdiff \
   linux-tools-common linux-tools-generic ntfs-3g dconf-editor pdfgrep
 
 # Video editing:
