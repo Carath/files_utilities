@@ -36,6 +36,19 @@ Then place (overwrite if needed) the settings files (which are in json format) i
 Shortcut to run the editor: ``` subl ```
 
 
+## Disabling the update check and license upgrading pop-up
+
+Simply append to the ``` /etc/hosts ``` file what follows, and restart Sublime Text:
+
+```
+# For Sublime Text
+127.0.0.1 www.sublimetext.com
+127.0.0.1 sublimetext.com
+127.0.0.1 sublimehq.com
+127.0.0.1 license.sublimehq.com
+```
+
+
 ## Editing files over SSH
 
 - Connect via SSH to the remote server with remote port forwarded, by running the command:

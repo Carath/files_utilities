@@ -279,6 +279,7 @@ subl() {
 		fi
 	fi
 	sublTarget=$(which subl)
+	if [ $# -eq 0 ]; then $sublTarget; fi
 	for arg in $@; do
 		lastChar=$(echo -n $arg | tail -c 1)
 		if [ $# -ne 0 ] && [ "$lastChar" == "." ]; then
