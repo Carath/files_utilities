@@ -25,6 +25,7 @@ sudo apt-mark hold sublime-text
 - Compare Side by Side
 - Dockerfile Syntax Highlighting
 - TOML
+- RemoteSubl
 
 Go to: ``` ~/.config/sublime-text-3/Packages/User ```
 
@@ -33,6 +34,24 @@ Then place (overwrite if needed) the settings files (which are in json format) i
 ``` /root/.config/sublime-text-3/Packages/User ```
 
 Shortcut to run the editor: ``` subl ```
+
+
+## Editing files over SSH
+
+- Connect via SSH to the remote server with remote port forwarded, by running the command:
+```sh
+ssh -R 52698:localhost:52698 user@example.com
+```
+
+- On the remote server, install *rmate* (here the bash version - do this only once):
+
+```sh
+sudo curl -o /usr/local/bin/rmate https://raw.githubusercontent.com/aurora/rmate/master/rmate
+sudo chmod +x /usr/local/bin/rmate
+```
+
+- Open Sublime Text on the local machine.
+- On the remote server, run the command ``` rmate my_file.txt ```. The file should now be opened in Sublime Text and updated on save.
 
 
 ## Potential replacements
