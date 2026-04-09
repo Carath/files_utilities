@@ -59,12 +59,15 @@ ssh -R 52698:localhost:52698 user@example.com
 - On the remote server, install *rmate* (here the bash version - do this only once):
 
 ```sh
-sudo curl -o /usr/local/bin/rmate https://raw.githubusercontent.com/aurora/rmate/master/rmate
+sudo curl -o /usr/local/bin/rmate \
+    https://raw.githubusercontent.com/aurora/rmate/96d5a7cebd4a52a5f02a7a879491071a1d1780b4/rmate
 sudo chmod +x /usr/local/bin/rmate
 ```
 
 - Open Sublime Text on the local machine.
 - On the remote server, run the command ``` rmate my_file.txt ```. The file should now be opened in Sublime Text and updated on save.
+
+*Note: fixing the commit hash to prevent supply chain attacks.*
 
 
 ## Potential replacements

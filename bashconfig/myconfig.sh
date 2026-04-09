@@ -112,6 +112,7 @@ alias updateConfig='sudo cp ~/git/files_utilities/bashconfig/myconfig.sh /etc/pr
 ##########################################
 # General functions, suitable for export:
 
+complete -f cdiff # set completion for filenames.
 cdiff() {
 	if [ $# -ne 2 ]; then
 		echo "Please provide 2 valid files to compare."
@@ -120,8 +121,9 @@ cdiff() {
 	elif [ ! -f $2 ]; then
 		echo "'$2': No such file"
 	else
-		h1=$(sha256sum $1); h2=$(sha256sum $2)
-		if [ "$h1" == "$h2" ]; then # string equality check
+		h1=$(sha256sum "$1" | cut -d' ' -f1) # hash w/o filename
+		h2=$(sha256sum "$2" | cut -d' ' -f1)
+		if [ "$h1" = "$h2" ]; then # string equality check (POSIX compliant)
 			echo "Identical files."
 		else
 			diff -u -r $1 $2 | colordiff | less -R
@@ -282,7 +284,7 @@ subl() {
 	if [ $# -eq 0 ]; then $sublTarget; fi
 	for arg in $@; do
 		lastChar=$(echo -n $arg | tail -c 1)
-		if [ $# -ne 0 ] && [ "$lastChar" == "." ]; then
+		if [ $# -ne 0 ] && [ "$lastChar" = "." ]; then
 			echo "Please provide a valid file extension for: $arg"
 		else
 			$sublTarget $arg
