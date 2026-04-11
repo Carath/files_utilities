@@ -73,6 +73,7 @@ alias cl='clear'
 alias py='python3'
 alias bat='batcat -p'
 alias smallhash='md5sum'
+alias realpath='command realpath -e'
 alias resetFilesPerm='find . -type d -exec chmod 0755 {} \; && find . -type f -exec chmod 0644 {} \;'
 alias clear_history="cat /dev/null > ~/.bash_history && history -c && exit"
 
@@ -134,22 +135,15 @@ cdiff() {
 
 # Forcing 'du' to sort its outputs in a readable fashion:
 du() {
-	if [ $# -eq 0 ]; then
-		command du -h . | sort -h
-	else
-		command du -h $1 | sort -h
-	fi
+	if [ $# -eq 0 ]; then d="."; else d="$1"; fi
+	command du -h "$d" | sort -h
 }
 
-realpath() {
-	command realpath -e $@
-	# for arg in $@; do
-	# 	if [ ! -e $arg ]; then # file/dir exist check
-	# 		echo "'$1': No such file or directory"
-	# 	else
-	# 		command realpath $arg
-	# 	fi
-	# done
+# Activating a Python virtual env:
+complete -d activate # set completion for directories.
+activate() {
+	if [ $# -eq 0 ]; then venv=".venv"; else venv="$1"; fi
+	. "$venv"/bin/activate
 }
 
 ##########################################
@@ -180,7 +174,7 @@ rm() {
 	for arg in $@; do
 		firstChar=$(expr substr $arg 1 1)
 		if [ "$firstChar" != "-" ]; then
-			if [ ! -e $arg ]; then
+			if [ ! -e $arg ]; then # file/dir exist check
 				echo "Cannot remove '$arg': No such file or directory"
 			fi
 			gio trash -f $arg
@@ -294,9 +288,9 @@ subl() {
 
 # Handling Youtube's pesky short videos:
 fixYoutube() {
-	domain=$(echo "$1" | cut -d "/" -f 3)
+	domain=$(echo "$1"   | cut -d "/" -f 3)
 	shortStr=$(echo "$1" | cut -d "/" -f 4)
-	videoId=$(echo "$1" | cut -d "/" -f 5)
+	videoId=$(echo "$1"  | cut -d "/" -f 5)
 	if [ "$domain" = "www.youtube.com" ] && [ "$shortStr" = "shorts" ]; then
 		if [ "$2" = "" ]; then opt=""; else opt="--private-window"; fi
 		link="https://www.youtube.com/watch?v=$videoId"
