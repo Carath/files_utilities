@@ -110,6 +110,9 @@ alias classify='hwrt serve'
 alias updateConfig='sudo cp ~/git/files_utilities/bashconfig/myconfig.sh /etc/profile.d/ && . ~/.bashrc'
 # alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
 
+# Other:
+alias accents='echo "ÀÉÈÊÔÇ¡¿«»©®™Ø÷√∞є≈≠≤≥±¹²³€"'
+
 ##########################################
 # General functions, suitable for export:
 
