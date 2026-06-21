@@ -1,0 +1,17 @@
+# Standard C gitignore
+*.d
+*.o
+*.a
+*.so
+*.out
+*.exe
+
+# Standard Python gitignore:
+__pycache__/
+.mypy_cache/
+.venv/
+*.py[cod]
+*$py.class
+
+# Files and directories:
+*.zip

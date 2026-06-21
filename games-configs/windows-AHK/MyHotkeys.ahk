@@ -39,6 +39,7 @@ GroupAdd, Game, ahk_class SDL_app ; for Return To Castle Wolfenstein
 GroupAdd, Game, ahk_class UnrealTournamentUnrealWWindowsViewportWindow ; UT99
 GroupAdd, Game, ahk_class KillingFloorUnrealWWindowsViewportWindow ; Killing Floor
 GroupAdd, Game, ahk_class Valve001 ; Left 4 Dead 2
+GroupAdd, Game, ahk_class OsWindow ; Diablo 2
 
 ahkclass(s)
 {

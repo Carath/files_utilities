@@ -71,6 +71,7 @@ alias grep='grep --color=auto'
 alias vi='vim'
 alias cl='clear'
 alias py='python3'
+alias ff='firefox'
 alias bat='batcat -p'
 alias smallhash='md5sum'
 alias realpath='command realpath -e'
@@ -107,11 +108,12 @@ alias vect='cd ~/git/vect_bench/'
 alias bench='sh ~/git/vect_bench/benchmark.sh'
 alias markd='open ~/git/markdown-editor/index.html'
 alias classify='hwrt serve'
+alias create_gitignore='cp ~/git/files_utilities/git/common_gitignore .gitignore'
 alias updateConfig='sudo cp ~/git/files_utilities/bashconfig/myconfig.sh /etc/profile.d/ && . ~/.bashrc'
 # alias eclipse='~/eclipse/java-2020-09/eclipse/eclipse </dev/null &>/dev/null &'
 
 # Other:
-alias accents='echo "ÀÉÈÊÔÇ¡¿«»©®™Ø÷√∞є≈≠≤≥±¹²³€"'
+alias accents='echo "ÀÉÈÊÔÇ¡¿«»©®™→Ø÷ΣΠ√π∞є≈≠≤≥±¹²³€"'
 
 ##########################################
 # General functions, suitable for export:
@@ -273,19 +275,29 @@ subl() {
 	if [ $# -gt 5 ]; then
 		echo "Attempting to open many files ($#)."
 		_confirm; retval=$?
-		if [ $retval -eq 0 ]; then
-			return
-		fi
+		if [ $retval -eq 0 ]; then return; fi
 	fi
 	sublTarget=$(which subl)
 	if [ $# -eq 0 ]; then $sublTarget; fi
+	nbNotExistFiles=0
 	for arg in $@; do
-		lastChar=$(echo -n $arg | tail -c 1)
-		if [ $# -ne 0 ] && [ "$lastChar" = "." ]; then
-			echo "Please provide a valid file extension for: $arg"
-		else
-			$sublTarget $arg
+		if [ ! -e $arg ]; then # file/directory doesn't exist
+			nbNotExistFiles=`expr $nbNotExistFiles + 1`
+			if [ $nbNotExistFiles -ne 1 ]; then
+				echo "Skipped non-existing file: $arg"
+				continue
+			fi
+		elif [ -d $arg ]; then # directory exists
+			echo "Given input is a directory: $arg"
+			_confirm; retval=$?
+			if [ $retval -eq 0 ]; then continue; fi
 		fi
+		lastChar=$(echo -n $arg | tail -c 1)
+		if [ "$lastChar" = "." ]; then # done whether $arg exist or is a directory.
+			echo "Please provide a valid extension for file: $arg"
+			continue
+		fi
+		$sublTarget $arg
 	done
 }
 
