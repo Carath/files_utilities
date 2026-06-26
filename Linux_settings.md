@@ -67,11 +67,7 @@ sudo -E apt-get -y install bash-completion gitk zip unzip unrar gparted \
 sudo -E apt-get -y install ffmpeg libavcodec-dev libavformat-dev atomicparsley
 ```
 
-To install some preselected python3 packages, run:
-
-```sh
-pip3 install -r requirements.txt
-```
+Install *uv* as indicated [here](https://docs.astral.sh/uv/getting-started/installation/).
 
 Also grab a basic text editor like gedit, pluma, xed, or Leafpad.
 

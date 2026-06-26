@@ -1,5 +1,7 @@
 # Python virtual environments
 
+*This is mostly deprecated. Use [uv](https://docs.astral.sh/uv/) instead.*
+
 Sources:
 - <https://virtualenv.pypa.io/en/latest/user_guide.html>
 - <https://docs.python.org/3/library/venv.html>

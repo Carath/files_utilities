@@ -17,6 +17,11 @@ if [ -f /etc/profile.d/bash_completion.sh ]; then
 	source /etc/profile.d/bash_completion.sh
 fi
 
+# Load default uv completion
+if command -v uv &>/dev/null; then
+	eval "$(uv generate-shell-completion bash 2>/dev/null)"
+fi
+
 ##########################################
 # General aliases, suitable for export:
 
