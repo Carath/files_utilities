@@ -2,6 +2,15 @@
 
 *This is mostly deprecated. Use [uv](https://docs.astral.sh/uv/) instead.*
 
+Global packages to install as *uv* tools:
+
+```sh
+uv tool install mypy
+uv tool install yt-dlp
+```
+
+--------------------------------------------------
+
 Sources:
 - <https://virtualenv.pypa.io/en/latest/user_guide.html>
 - <https://docs.python.org/3/library/venv.html>

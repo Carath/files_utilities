@@ -16,8 +16,8 @@ Flask-Cors
 requests
 tqdm
 tabulate
-youtube-dl
-yt-dlp
 pip-tools
+#youtube-dl
+#yt-dlp
 # tensorflow
 # tensorflow-datasets

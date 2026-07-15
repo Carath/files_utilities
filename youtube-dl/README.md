@@ -1,7 +1,9 @@
-# youtube-dl help
+# youtube-dl / yt-dlp help
 
-<https://youtube-dl.org/>
-<https://github.com/ytdl-org/youtube-dl>
+Links:
+- <https://github.com/yt-dlp/yt-dlp>
+- <https://youtube-dl.org/>
+- <https://github.com/ytdl-org/youtube-dl>
 
 
 ## Installation (Ubuntu)
@@ -25,6 +27,14 @@ sudo -H pip3 install --upgrade youtube-dl
 ```
 
 For installing the ``` yt-dlp ``` fork which enables to download age-restricted content, and isn't slow on youtube:
+
+- With *uv*:
+
+```sh
+uv tool install yt-dlp
+```
+
+- With *pip*:
 
 ```sh
 python3 -m virtualenv .venv

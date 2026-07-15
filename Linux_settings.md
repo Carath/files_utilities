@@ -191,7 +191,7 @@ See the ``` sublimeText/ ``` directory.
 See the ``` vlc/ ``` directory.
 
 
-## youtube-dl
+## Video downloader
 
 See the ``` youtube-dl/ ``` directory.
 
