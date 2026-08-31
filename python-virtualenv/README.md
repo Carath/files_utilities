@@ -1,8 +1,44 @@
 # Python virtual environments
 
-*This is mostly deprecated. Use [uv](https://docs.astral.sh/uv/) instead.*
 
-Global packages to install as *uv* tools:
+## *uv*
+
+See [uv](https://docs.astral.sh/uv/) for an introduction on what *uv* is.
+
+### Installing *uv*
+
+Follow the instructions indicated [here](https://docs.astral.sh/uv/getting-started/installation/).
+
+
+### Creating a venv using *uv* and installing packages
+
+```sh
+uv init
+uv add pillow numpy # for example
+```
+
+The created files ``` pyproject.toml ``` and ``` uv.lock ``` will track the project venv state.
+
+### Installing packages for an existing *uv* project
+
+```sh
+uv sync
+```
+
+### Running a python script through *uv*
+
+```sh
+uv run my_script.py
+```
+
+Or alternatively, using the standard way via *uv*'s venv:
+
+```sh
+. .venv/bin/activate
+python3 my_script.py
+```
+
+### Installing packages as global tools
 
 ```sh
 uv tool install mypy
@@ -10,6 +46,8 @@ uv tool install yt-dlp
 ```
 
 --------------------------------------------------
+
+*What follow is mostly deprecated. Use uv instead.*
 
 Sources:
 - <https://virtualenv.pypa.io/en/latest/user_guide.html>
@@ -87,8 +125,3 @@ The generated ``` pipgrip.lock ``` file contains the completed list of packages,
 ```sh
 pip install -r pipgrip.lock
 ```
-
-
-## TODO
-
-Add a section about [uv](https://docs.astral.sh/uv/).
