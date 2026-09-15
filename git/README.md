@@ -1,9 +1,22 @@
-## Commit (first time):
+# Git
 
-In the project directory:
 
+## Git LFS
+
+Install [Git LFS](https://git-lfs.com/) with:
+
+```sh
+sudo apt install git-lfs
+git lfs install # to globally configure git
 ```
-git commit
+
+How to index a large file:
+
+```sh
+git lfs track large-file.huge
+git add .gitattributes large-file.huge
+git lfs ls-files # to make sure the large file is tracked by git LFS
+git commit -m "Adding a large file."
 ```
 
 

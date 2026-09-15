@@ -45,35 +45,37 @@ sudo -E apt-get update
 sudo -E apt-get install --fix-broken # sometimes needed
 sudo -E apt-get upgrade
 
-# Necessary packages:
-sudo -E apt-get -y install curl wget git make cmake automake libc6-dev \
-  python3-pip python3-virtualenv software-properties-common # python3-venv
+# Necessary packages (bat package name is batcat on some systems):
+sudo -E apt-get -y install curl wget zip unzip unrar git git-lfs \
+  bash-completion htop btop bc jq wdiff colordiff rename tree bat \
+  python3-pip python3-virtualenv # python3-venv
 
-# Basic editors:
+# Other utilities:
+sudo -E apt-get -y install meld gitk glogg gparted pdfgrep software-properties-common \
+  ntfs-3g dconf-editor linux-tools-common linux-tools-generic input-remapper chntpw
+
+# Basic terminal editors:
 sudo -E apt-get -y install vim vim-tiny nano
 
 # Compilers, debugging and documentation:
-sudo -E apt-get -y install gcc clang g++-12 gfortran gdb valgrind manpages-dev glibc-doc cppman
+sudo -E apt-get -y install make cmake automake libc6-dev gcc clang g++-12 gfortran \
+  gdb valgrind manpages-dev glibc-doc cppman
 
 # Graphic libraries:
 sudo -E apt-get -y install freeglut3-dev libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libfreetype6-dev fonts-dejavu
 
-# Other utilities (bat package name is batcat on some systems):
-sudo -E apt-get -y install bash-completion gitk zip unzip unrar gparted \
-  screenfetch neofetch mediainfo htop btop glogg chntpw tree meld bc jq bat colordiff wdiff \
-  linux-tools-common linux-tools-generic ntfs-3g dconf-editor pdfgrep rename input-remapper
-
 # Video editing:
 sudo -E apt-get -y install ffmpeg libavcodec-dev libavformat-dev atomicparsley
+
+# Installing the uv package manager:
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-Install *uv* as indicated [here](https://docs.astral.sh/uv/getting-started/installation/).
+For hardware/OS info: ``` hostnamectl ``` (pre-installed) or ``` screenfetch ``` or ``` neofetch ```.
 
-Also grab a basic text editor like gedit, pluma, xed, or Leafpad.
+For files metadata: ``` exiftool ```.
 
-Furthermore, [Git LFS](https://git-lfs.github.com/) can be useful.
-
-An alternative to mediainfo: ``` exiftool ```
+Also grab a basic text editor like *gedit*, *pluma*, *xed*, or *Leafpad*.
 
 To check on the list of all installed packages:
 
@@ -103,6 +105,22 @@ To install a specific package version:
 
 ```sh
 sudo apt-get -y install firefox=115.0+build2-0ubuntu0.20.04.3
+```
+
+
+## LaTeX
+
+Install the following packages:
+
+```sh
+sudo apt-get -y install texlive-latex-base texlive-latex-extra \
+  texlive-fonts-recommended texlive-fonts-extra
+```
+
+Then compile your LaTeX file with:
+
+```sh
+pdflatex file.tex
 ```
 
 

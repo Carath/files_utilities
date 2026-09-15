@@ -3,11 +3,15 @@
 
 ## *uv*
 
-See [uv](https://docs.astral.sh/uv/) for an introduction on what *uv* is.
+See [uv](https://docs.astral.sh/uv/) for an introduction on the *uv* package manager.
 
 ### Installing *uv*
 
-Follow the instructions indicated [here](https://docs.astral.sh/uv/getting-started/installation/).
+Follow the instructions indicated [here](https://docs.astral.sh/uv/getting-started/installation/). Currently this boils down to:
+
+```sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
 
 
 ### Creating a venv using *uv* and installing packages
@@ -18,6 +22,8 @@ uv add pillow numpy # for example
 ```
 
 The created files ``` pyproject.toml ``` and ``` uv.lock ``` will track the project venv state.
+
+To freeze the project's Python version (e.g. ``` 3.12 ```), edit the ``` pyproject.toml ``` file with ``` requires-python = "==3.12.*" ```.
 
 ### Installing packages for an existing *uv* project
 
