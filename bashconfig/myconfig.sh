@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # This file must be in: /etc/profile.d/
-# Must be sourced from ~/.bashrc
+# And then be sourced from ~/.bashrc
 
 # To clear all previously defined aliases:
 unalias -a
@@ -80,7 +80,6 @@ alias ff='firefox'
 alias bat='batcat -p'
 alias smallhash='md5sum'
 alias realpath='command realpath -e'
-alias resetFilesPerm='find . -type d -exec chmod 0755 {} \; && find . -type f -exec chmod 0644 {} \;'
 alias clear_history="cat /dev/null > ~/.bash_history && history -c && exit"
 
 ##########################################
@@ -123,8 +122,43 @@ alias accents='echo "ÀÉÈÊÔÇ¡¿«»©®™→Ø÷ΣΠ√π∞є≈≠≤�
 ##########################################
 # General functions, suitable for export:
 
+_dir() {
+	if [ $# -eq 0 ]; then echo "."; else echo "$@"; fi
+}
+
+# Creates a directory and goes inside:
+mkdin() {
+	mkdir $1 && cd $1
+}
+
+# Forcing 'du' to sort its outputs in a readable fashion:
+du() {
+	command du -h $1 | sort -h
+}
+
+# Activating a Python virtual env:
+complete -d activate # set completion for directories.
+activate() {
+	if [ $# -le 1 ]; then venv=".venv"; else venv="$2"; fi
+	. "$(_dir $1)/$venv/bin/activate"
+}
+
+# Setting files and directories to standard permission levels:
+resetFilesPerm() {
+	find "$(_dir $1)" -type d -exec chmod 0755 {} \; && find "$(_dir $1)" -type f -exec chmod 0644 {} \;
+}
+
+# Printing a json file with color:
+jsonprint() { # needs the jq package.
+	if [ ! -e $1 ]; then
+		echo "'$1': No such file or directory"
+	elif [ ! -z "$1" ]; then
+		jq -C "." $1 | less -R
+	fi
+}
+
 complete -f cdiff # set completion for filenames.
-cdiff() {
+cdiff() { # needs the colordiff package.
 	if [ $# -ne 2 ]; then
 		echo "Please provide 2 valid files to compare."
 	elif [ ! -f $1 ]; then # file exist check
@@ -141,19 +175,6 @@ cdiff() {
 			# wdiff -n $1 $2 | colordiff | less -R
 		fi
 	fi
-}
-
-# Forcing 'du' to sort its outputs in a readable fashion:
-du() {
-	if [ $# -eq 0 ]; then d="."; else d="$1"; fi
-	command du -h "$d" | sort -h
-}
-
-# Activating a Python virtual env:
-complete -d activate # set completion for directories.
-activate() {
-	if [ $# -eq 0 ]; then venv=".venv"; else venv="$1"; fi
-	. "$venv"/bin/activate
 }
 
 ##########################################
@@ -192,21 +213,14 @@ rm() {
 	done
 }
 
-_open() {
-	if [ -e $1 ]; then
-		gio open $1 >/dev/null 2>&1
-	else
-		echo "open: cannot access '$1': No such file or directory"
-	fi
-}
-
 # Opens files or directories:
 open() {
-	if [ $# -eq 0 ]; then
-		_open .
-	fi
-	for arg in $@; do
-		_open $arg
+	for arg in $(_dir $@); do
+		if [ -e $arg ]; then
+			gio open $arg >/dev/null 2>&1
+		else
+			echo "open: cannot access '$arg': No such file or directory"
+		fi
 	done
 }
 
@@ -234,15 +248,6 @@ cleanfile() {
 	done
 }
 
-# Printing a json file with color, using jq:
-jsonprint() {
-	if [ ! -e $1 ]; then
-		echo "'$1': No such file or directory"
-	elif [ ! -z "$1" ]; then
-		jq -C "." $1 | less -R
-	fi
-}
-
 # Prints the size of a remote file without downloading it:
 checksize() {
 	foundSizes=$(curl -s -L -I $1 | grep -i "Content-Length" | cut -d ' ' -f2 | tr -d '\r')
@@ -260,11 +265,6 @@ checksize() {
 # Useful to convert an image format to another, supporting jpg, png, bmp, webp...
 convertimage() {
 	ffmpeg -loglevel error -y -i $1 $2
-}
-
-# Creates a directory and goes inside:
-mkdin() {
-	mkdir $1 && cd $1
 }
 
 resetSublimePref() {
