@@ -128,12 +128,12 @@ _dir() {
 
 # Creates a directory and goes inside:
 mkdin() {
-	mkdir $1 && cd $1
+	mkdir "$1" && cd "$1"
 }
 
 # Forcing 'du' to sort its outputs in a readable fashion:
 du() {
-	command du -h $1 | sort -h
+	command du -h "$(_dir $1)" | sort -h
 }
 
 # Activating a Python virtual env:
@@ -150,10 +150,10 @@ resetFilesPerm() {
 
 # Printing a json file with color:
 jsonprint() { # needs the jq package.
-	if [ ! -e $1 ]; then
-		echo "'$1': No such file or directory"
+	if [ ! -f "$1" ]; then # file exist check
+		echo "'$1': No such file"
 	elif [ ! -z "$1" ]; then
-		jq -C "." $1 | less -R
+		jq -C "." "$1" | less -R
 	fi
 }
 
@@ -161,9 +161,9 @@ complete -f cdiff # set completion for filenames.
 cdiff() { # needs the colordiff package.
 	if [ $# -ne 2 ]; then
 		echo "Please provide 2 valid files to compare."
-	elif [ ! -f $1 ]; then # file exist check
+	elif [ ! -f "$1" ]; then # file exist check
 		echo "'$1': No such file"
-	elif [ ! -f $2 ]; then
+	elif [ ! -f "$2" ]; then
 		echo "'$2': No such file"
 	else
 		h1=$(sha256sum "$1" | cut -d' ' -f1) # hash w/o filename
@@ -171,8 +171,8 @@ cdiff() { # needs the colordiff package.
 		if [ "$h1" = "$h2" ]; then # string equality check (POSIX compliant)
 			echo "Identical files."
 		else
-			diff -u -r $1 $2 | colordiff | less -R
-			# wdiff -n $1 $2 | colordiff | less -R
+			diff -u -r "$1" "$2" | colordiff | less -R
+			# wdiff -n "$1" "$2" | colordiff | less -R
 		fi
 	fi
 }
@@ -202,22 +202,22 @@ trash-empty() {
 
 # Moving files to the trash.
 rm() {
-	for arg in $@; do
-		firstChar=$(expr substr $arg 1 1)
+	for arg in "$@"; do
+		firstChar=$(expr substr "$arg" 1 1)
 		if [ "$firstChar" != "-" ]; then
-			if [ ! -e $arg ]; then # file/dir exist check
+			if [ ! -e "$arg" ]; then # file/dir exist check
 				echo "Cannot remove '$arg': No such file or directory"
 			fi
-			gio trash -f $arg
+			gio trash -f "$arg"
 		fi
 	done
 }
 
 # Opens files or directories:
 open() {
-	for arg in $(_dir $@); do
-		if [ -e $arg ]; then
-			gio open $arg >/dev/null 2>&1
+	for arg in "$(_dir $@)"; do
+		if [ -e "$arg" ]; then
+			gio open "$arg" >/dev/null 2>&1
 		else
 			echo "open: cannot access '$arg': No such file or directory"
 		fi
@@ -225,22 +225,22 @@ open() {
 }
 
 rmwindowscarriagereturn() {
-	for arg in $@; do
-		sed -i "s/\r$//g" $arg
+	for arg in "$@"; do
+		sed -i "s/\r$//g" "$arg"
 	done
 }
 
 # Removes Windows carriage returns and non utf-8 symbols.
 # This also resets files permission to default values.
 cleanfile() {
-	for arg in $@; do
-		if [ -e $arg ]; then
-			if [ -d $arg ]; then
+	for arg in "$@"; do
+		if [ -e "$arg" ]; then
+			if [ -d "$arg" ]; then
 				echo "Cannot process the input '$arg': Is a directory"
 			else
-				sed -i "s/\r$//g" $arg
-				iconv -f utf-8 -t utf-8 -c $arg > "$arg"_temp
-				mv "$arg"_temp $arg
+				sed -i "s/\r$//g" "$arg"
+				iconv -f utf-8 -t utf-8 -c "$arg" > "$arg"_temp
+				mv "$arg"_temp "$arg"
 			fi
 		else
 			echo "'$arg': No such file"
@@ -250,7 +250,7 @@ cleanfile() {
 
 # Prints the size of a remote file without downloading it:
 checksize() {
-	foundSizes=$(curl -s -L -I $1 | grep -i "Content-Length" | cut -d ' ' -f2 | tr -d '\r')
+	foundSizes=$(curl -s -L -I "$1" | grep -i "Content-Length" | cut -d ' ' -f2 | tr -d '\r')
 	if [ -z "$foundSizes" ]; then
 		echo "Remote file not found."
 		return
@@ -264,7 +264,7 @@ checksize() {
 
 # Useful to convert an image format to another, supporting jpg, png, bmp, webp...
 convertimage() {
-	ffmpeg -loglevel error -y -i $1 $2
+	ffmpeg -loglevel error -y -i "$1" "$2"
 }
 
 resetSublimePref() {
@@ -285,32 +285,32 @@ subl() {
 	sublTarget=$(which subl)
 	if [ $# -eq 0 ]; then $sublTarget; fi
 	nbNotExistFiles=0
-	for arg in $@; do
-		if [ ! -e $arg ]; then # file/directory doesn't exist
+	for arg in "$@"; do
+		if [ ! -e "$arg" ]; then # file/directory doesn't exist
 			nbNotExistFiles=`expr $nbNotExistFiles + 1`
 			if [ $nbNotExistFiles -ne 1 ]; then
 				echo "Skipped non-existing file: $arg"
 				continue
 			fi
-		elif [ -d $arg ]; then # directory exists
+		elif [ -d "$arg" ]; then # directory exists
 			echo "Given input is a directory: $arg"
 			_confirm; retval=$?
 			if [ $retval -eq 0 ]; then continue; fi
 		fi
-		lastChar=$(echo -n $arg | tail -c 1)
+		lastChar=$(echo -n "$arg" | tail -c 1)
 		if [ "$lastChar" = "." ]; then # done whether $arg exist or is a directory.
-			echo "Please provide a valid extension for file: $arg"
+			echo "Please provide a valid extension for file: '$arg'"
 			continue
 		fi
-		$sublTarget $arg
+		$sublTarget "$arg"
 	done
 }
 
 # Handling Youtube's pesky short videos:
 fixYoutube() {
-	domain=$(echo "$1"   | cut -d "/" -f 3)
+	domain=$(  echo "$1" | cut -d "/" -f 3)
 	shortStr=$(echo "$1" | cut -d "/" -f 4)
-	videoId=$(echo "$1"  | cut -d "/" -f 5)
+	videoId=$( echo "$1" | cut -d "/" -f 5)
 	if [ "$domain" = "www.youtube.com" ] && [ "$shortStr" = "shorts" ]; then
 		if [ "$2" = "" ]; then opt=""; else opt="--private-window"; fi
 		link="https://www.youtube.com/watch?v=$videoId"

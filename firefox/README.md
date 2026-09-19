@@ -18,6 +18,7 @@ media.videocontrols.picture-in-picture.video-toggle.enabled -> false
 browser.tabs.inTitlebar -> 1
 browser.toolbars.bookmarks.visibility -> always
 browser.tabs.groups.enabled -> false
+browser.tabs.splitView.enabled -> false
 ```
 
 ## Addons to install

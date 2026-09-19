@@ -69,12 +69,12 @@ _dir() {
 
 # Creates a directory and goes inside:
 mkdin() {
-	mkdir $1 && cd $1
+	mkdir "$1" && cd "$1"
 }
 
 # Forcing 'du' to sort its outputs in a readable fashion:
 du() {
-	command du -h $1 | sort -h
+	command du -h "$(_dir $1)" | sort -h
 }
 
 # Activating a Python virtual env:
@@ -91,10 +91,10 @@ resetFilesPerm() {
 
 # Printing a json file with color:
 jsonprint() { # needs the jq package.
-	if [ ! -e $1 ]; then
-		echo "'$1': No such file or directory"
+	if [ ! -f "$1" ]; then # file exist check
+		echo "'$1': No such file"
 	elif [ ! -z "$1" ]; then
-		jq -C "." $1 | less -R
+		jq -C "." "$1" | less -R
 	fi
 }
 
@@ -102,9 +102,9 @@ complete -f cdiff # set completion for filenames.
 cdiff() { # needs the colordiff package.
 	if [ $# -ne 2 ]; then
 		echo "Please provide 2 valid files to compare."
-	elif [ ! -f $1 ]; then # file exist check
+	elif [ ! -f "$1" ]; then # file exist check
 		echo "'$1': No such file"
-	elif [ ! -f $2 ]; then
+	elif [ ! -f "$2" ]; then
 		echo "'$2': No such file"
 	else
 		h1=$(sha256sum "$1" | cut -d' ' -f1) # hash w/o filename
@@ -112,8 +112,8 @@ cdiff() { # needs the colordiff package.
 		if [ "$h1" = "$h2" ]; then # string equality check (POSIX compliant)
 			echo "Identical files."
 		else
-			diff -u -r $1 $2 | colordiff | less -R
-			# wdiff -n $1 $2 | colordiff | less -R
+			diff -u -r "$1" "$2" | colordiff | less -R
+			# wdiff -n "$1" "$2" | colordiff | less -R
 		fi
 	fi
 }
