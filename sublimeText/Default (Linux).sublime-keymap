@@ -9,6 +9,7 @@
 	{ "keys": ["ctrl++"], "command": "unbound" },
 	{ "keys": ["ctrl+="], "command": "unbound" },
 	{ "keys": ["ctrl+-"], "command": "unbound" },
+	{ "keys": ["ctrl+shift+s"], "command": "save" },
 	{ "keys": ["ctrl+shift+l"], "command": "unbound" },
 	{ "keys": ["alt+shift+up"], "command": "unbound" },
 	{ "keys": ["alt+shift+down"], "command": "unbound" },

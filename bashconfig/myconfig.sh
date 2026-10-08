@@ -123,7 +123,8 @@ alias accents='echo "ÀÉÈÊÔÇ¡¿«»©®™→Ø÷ΣΠ√π∞є≈≠≤�
 # General functions, suitable for export:
 
 _dir() {
-	if [ $# -eq 0 ]; then echo "."; else echo "$@"; fi
+	[ $# -eq 0 ] && set -- . # replacing $@ by "." if no args.
+	printf '%s\n' "$@"
 }
 
 # Creates a directory and goes inside:
@@ -215,7 +216,7 @@ rm() {
 
 # Opens files or directories:
 open() {
-	for arg in "$(_dir $@)"; do
+	_dir "$@" | while IFS= read -r arg; do
 		if [ -e "$arg" ]; then
 			gio open "$arg" >/dev/null 2>&1
 		else

@@ -64,7 +64,8 @@ alias dockercleanup='sudo docker system prune'
 # General functions, suitable for export:
 
 _dir() {
-	if [ $# -eq 0 ]; then echo "."; else echo "$@"; fi
+	[ $# -eq 0 ] && set -- . # replacing $@ by "." if no args.
+	printf '%s\n' "$@"
 }
 
 # Creates a directory and goes inside:

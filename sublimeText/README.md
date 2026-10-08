@@ -29,7 +29,9 @@ sudo apt-mark hold sublime-text
 
 Go to: ``` ~/.config/sublime-text-3/Packages/User ```
 
-Then place (overwrite if needed) the settings files (which are in json format) in this directory. Also, do the same thing for the root user in:
+Then place (overwrite if needed) the settings files (which are in json format) in this directory. Then close and reopen Sublime Text.
+
+Also, do the same thing for the root user in:
 
 ``` /root/.config/sublime-text-3/Packages/User ```
 

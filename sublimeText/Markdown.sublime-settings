@@ -1,0 +1,7 @@
+// Use Markdown syntax highlighting for .qmd files:
+{
+	"extensions":
+	[
+		"qmd"
+	]
+}
